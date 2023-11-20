@@ -1,0 +1,155 @@
+{% load static %}
+
+<!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-X5_m3BWB2_rZ03U_y9ITHpom15HuBNc&callback=initMap">
+</script> -->
+<!-- <script src="{% static  'chatou/static/js/maps.js' %}"></script> -->
+<!--This modal need to be added if there is an "info-tooltip" class in the "cta-icon-container"
+    Or if there is a tile "Infos" in the sideabar -->
+
+
+<div class="modal modal-infos">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="tabs navbar-infos is-fullwidth">
+            <ul>
+                <li><a class="icon is-active" data-target="place"><img
+                        src="{% static  'chatou/static/images/Pictos_Pictos_info_Place_white.svg' %}" alt=""></a></li>
+                <li><a class="icon" data-target="bar"><img src="{% static  'chatou/static/images/Pictos_Pictos_info_Bar_white.svg' %}"
+                                                           alt=""></a></li>
+                <li><a class="icon" data-target="children"><img
+                        src="{% static  'chatou/static/images/Pictos_Pictos_info_Children_white.svg' %}" alt=""></a></li>
+                <li><a class="icon" data-target="restaurant"><img
+                        src="{% static  'chatou/static/images/Pictos_Pictos_info_Restaurant_white.svg' %}" alt=""></a></li>
+                <li><a class="icon" data-target="shopping"><img
+                        src="{% static  'chatou/static/images/Pictos_Pictos_info_Shopping_white.svg' %}" alt=""></a></li>
+                <li><a class="icon" data-target="toilets"><img
+                        src="{% static  'chatou/static/images/Pictos_Pictos_info_Toilets_white.svg' %}" alt=""></a></li>
+            </ul>
+        </div>
+
+        <!--Every element of the tab as follow is linked by the id of the data-target attribute of the tabs element above-->
+<!--        This data-target attribute also need to be on the sidebar infos element.-->
+        <div id="place" class="section is-active">
+            <div class="content">
+                <h3>Adresse</h3>
+                <p>
+                Ile des Impressionnistes <br/>
+                78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+
+            </div>
+
+        </div>
+        <div id="bar" class="section">
+            <div class="content">
+                <h3>Bar</h3>
+                <p>
+                    Ile des Impressionnistes <br/>
+                    78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+            </div>
+        </div>
+        <div id="children" class="section">
+            <div class="content">
+                <h3>Children</h3>
+                <p>
+                    Ile des Impressionnistes <br/>
+                    78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+            </div>
+        </div>
+        <div id="restaurant" class="section">
+            <div class="content">
+                <h3>Restaurant</h3>
+                <p>
+                    Ile des Impressionnistes <br/>
+                    78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+            </div>
+        </div>
+        <div id="shopping" class="section">
+            <div class="content">
+                <h3>Shopping</h3>
+                <p>
+                    Ile des Impressionnistes <br/>
+                    78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+            </div>
+        </div>
+        <div id="toilets" class="section">
+            <div class="content">
+                <h3>Toilettes</h3>
+                <p>
+                    Ile des Impressionnistes <br/>
+                    78400 Chatou
+                </p>
+                <p>
+                    Tél : <a href="tel:0130714191">01 30 71 41 91</a>
+                </p>
+                <h3>Comment y arriver ?</h3>
+                <p>
+                    RER : ligne A, station Chatou-Croissy <br>
+                    10 mn A pied (800m) : Prendre la direction nord-est sur Place Maurice Berteaux vers Place de la Gare - 78 m - Prendre complètement à droite sur Place Maurice Berteaux/D321
+                    <br>
+                    ...
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<script src="{% static  'chatou/static/js/modal_infos.js' %}">
+
+</script>

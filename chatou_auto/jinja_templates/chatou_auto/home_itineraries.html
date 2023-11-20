@@ -1,0 +1,38 @@
+{% load static %}
+<!--Edited by Shayan-->
+<div class="twocol_div">
+    {% for itinerary, menu, color in Itineraries %}
+    <div class="flexcol">
+        <div>
+            <a href="/{{menu.menu_link}}" class="is-thumbnail is-tour-thumbnail">
+                <div class="hero">
+                    
+                    
+                    
+                    <div class="hero-head has-background-primary-{{color.itinerary_colors}}">
+                    
+                    <!-- <div class="hero-head has-background-danger"> -->
+                    
+                  
+                        <h3 class="title is-family-secondary">
+                            
+                            {{ itinerary.itinerary_name }}
+                        </h3>
+                        
+                         </div>
+                         
+                         <!-- </div> -->
+                        
+                    <div class="hero-body is-paddingless">
+                        <img src="{{menu.menu_images}}" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>    
+   
+
+{% include 'mon_plan.html' %}

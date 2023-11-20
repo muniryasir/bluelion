@@ -1,0 +1,107 @@
+{% extends "base_template_auto.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'header_introduction.html' %}
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <article class="content column">
+
+                <div class="content">
+                    <h1 class="title is-size-2">
+                       Un peu d’histoire 
+                    </h1>
+                    <div class="cta-icon-container">
+                        <a class="audio-player-cta" data-track="MaPiste1">
+                            <img src="{% static  'chatou/static/images/Pictos_Big_Audio.svg' %}" alt="">
+                        </a>
+                        <a class="share-this">
+                            <img src="{% static  'chatou/static/images/Pictos_Big_sharing.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- <p class="is-description">
+                    Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements
+                    ayant lieu sur ses îles et le mouvement des Impressionnistes
+                </p> -->
+                <!-- <h3>
+                    Localisation
+                </h3> -->
+                <p>
+                    Connue pour ses fastes au XIX siècle, grâce à la fréquentation d’artistes et écrivains déjà affirmés comme Renoir, Monet et Maupassant, suivis plus tard par les fauves André Derain et Maurice de Vlaminck qui s’y étaient installés, Chatou a sa part d’histoires passionnantes à raconter, avec des grands jours et des brusques retournements. Ce qui n’était au départ qu’un petit village aux portes de Paris s’est transformé peu à peu en une ville à part entière, satellite oui, mais avec son propre caractère.</p>
+                <p>
+                    Au Quaternaire, avant l’arrivée de l’homme, le bassin Parisien, dont fait partie la boucle de Seine, est méconnaissable : la mer occupe une partie de l’Île de France et le niveau de l’eau du fleuve est supérieur d’au moins 37m à celui d’aujourd’hui ! La faune qui habite la région est surprenante : on a retrouvé des fossiles d’éléphants, des rhinocéros et d’autres espèces exotiques presque toutes disparues.
+                </p>
+                <p>
+                    Des peuples ou tribus préceltiques s’y installent : on a retrouvé dans la boucle de Seine des haches en silex (une pierre très dure utilisée pour la fabriquer des armes et des outils) qui datent du néolithique, probablement avant le IXe millénaire av. J.-C. Les Celtes arrivent en France autour de 450 av. J.-C. et établissent des villages le long de la Seine : l’eau poissonneuse et le gibier des forets sont amplement suffisants pour leur subsistance. Cette civilisation va être bousculée : entre 58 et 51 av. J.-C. Jules César conquiert la Gaule (pour les Romains les celtes de France sont des « Gaulois », nom qu’ils dérivent des combats de coqs pour lesquels ils étaient connus). La Seine, anciennement appelée « Sequana », démarque la province romaine de la Gaule de celle de la Belgique : c’est à cette dernière qu’appartiennent donc les territoires sur la rive droite de la Seine, y compris Chatou. Sous la pax romana, la région connait une longue période de stabilité et de prospérité. C’est de cette époque, en particulier du nom d’un riche possédant gallo-romain, Cattus, que selon certains auteurs, dérive le nom de la ville de Chatou, qui s’appelait à l’époque Catullaco ou Captunacum. 
+                </p>
+                <p>Avec les grandes invasions du Ve siècle, sous lesquelles s’effondre l’empire romain d’occident, on voit défiler dans la région Wisigoths, Vandales, Huns et les tribus germaniques des Francs. Certains n’envahissent que pour passer, d’autres, comme les Francs, s’installent en Gaule. C’est sous ces derniers que nait la dynastie des mérovingiens, premiers rois de France, dont le royaume s’étend peu à peu sur tout le territoire français.</p>
+                <p>Les rois mérovingiens, qui régnèrent du V au milieu du VIIIe siècle, bâtirent une villa – une demeure contournée d’un ensemble de fermes agricoles et ateliers – à Chatou, située probablement entre les lieux-dits le Chatelet et les Cures, pour profiter du gibier abondant de la forêt du Vésinet et du vin produit dans le territoire catovien. Avec Rueil, Saint-Germain et Saint-Denis, Chatou est l’un des centres privilégiés du roi Childebert (497-558) et de ses successeurs. Cette époque de paix se termine avec l’invasion et occupation de la région par les vikings (les Normands) au milieu du IXe siècle, vers 845-856 : lors des sièges de Paris, Chatou et les villes limitrophes sont occupées et rasées, les populations décimées ou enfuies.</p>
+                <p>De par sa position entre Paris et la résidence royale de Saint-Germain en Laye, Chatou est un point de passage privilégié du Roi et de sa cour. Au début du XVIe siècle, Henri IV, séjourne souvent dans son nouveau château de Saint-Germain achevé en 1599 et aime surtout chasser dans le bois du Vésinet qu’il vient d’acquérir peu avant, en 1595, à Albert de Gondi, comte de Retz. Mais la route de Saint-Germain n’est pas des plus aisées : le cortège royal doit choisir entre la route de Chatou, qui prévoit un passage par batelier bien périlleux pour le cortège royal, et celle via Bougival qui non seulement était plus longue mais aussi souvent inondée par la Seine. On décide donc de faire construire un pont à Chatou : c’est la fille de Thomas le Pileur, Justine, qui obtient la concession et construit un pont en bois, doté de boutiques et de deux moulins.  </p>
+                <p>D’autres seigneurs se succèdent à Chatou, tels que des membres de la famille des Portail, descendants de Justine Le Pileur et de Paul Portail, seigneur de Montesson, suivis au XVIIIe siècle par Marc-Antoine Laurent d’Allard, écuyer du Roi, et l’inspecteur des finances Henri-Léonard-Jean-Baptiste Bertin, futur ministre sous Louis XV et Louis XVI.  </p>
+                
+                <div class="wrapper-content">
+                    <figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-2">
+                        <img src="{% static  'chatou/static/images/pages/notice_historique/Roslin_-_Henri-Léonard_Bertin.png' %}" class="is-clearfix" alt="" >
+                        <figcaption>Alexandre Roslin, <i>Portrait d’Henri Bertin</i>, sans date (vers 1775)</figcaption>
+                    </figure>
+                    <!-- <h3 class="">
+                        Patrimoine
+                    </h3> -->
+                    <p>
+                        Le nouveau seigneur, Henri-Léonard-Jean-Baptiste Bertin, était un personnage important de la deuxième moitié du XVIIIe siècle : descendant d’une famille bourgeoise du Périgord qui s’était hissée peu à peu dans la société française et avait accumulé des richesses importantes, il eut une carrière notable dans le gouvernement royal étant aussi nommé ministre à deux reprises. Il avait des intérêts très divers allant de l’étude de l’histoire à l’agriculture, pour laquelle il cultivait une vraie passion. Contrôleur général des Finances, il fit rattacher l’agriculture à ses services et la garda sous la main quand il fut nommé ministre d’Etat en 1762. En tant que ministre, Bertin s’employa à innover dans la production agricole en cherchant la coopération étroite avec les agriculteurs et en instituant des écoles d’agriculture. Il fut aussi à l’origine de la fondation de l’École des Mines.  
+                    </p>
+                    <p>
+                        Pour se rapprocher des résidences royales, dont Versailles et Saint-Germain, et de la capitale, Bertin racheta en 1766 les domaines de Chatou et de Montesson, recouvrant une superficie de 55 hectares. L’ancien château était vétuste et modeste. Il voulut se doter d’une nouvelle résidence digne d’un ministre du gouvernement. Bertin refusa un don du Roi de 100.000 livres (1,2 millions d’euros) pour rénover l’ancien château : il avait suffisamment de revenus et de richesse pour en bâtir un à son compte. Il demanda à l’un des plus grands architectes de France, Jacques-Germain Soufflot, de lui dessiner le nouveau château avec des annexes somptueuses, dont le fameux Nymphée qu’on peut encore admirer aujourd’hui.   
+                    </p>
+                </div>
+                <p>Les vastes terrains en sa possession lui permirent d’y conduire ses expérimentations agricoles : il créa un potager de 6 hectares dans lequel il cultivait différents types d’arbres fruitiers, dont des cerisiers d’une qualité gustative bien appréciés à l’époque, des abricotiers et, surtout, des pommes de terre, qui étaient peu connues en France et dont Bertin devint l’un des plus fervents propagateurs pour leur propriétés nutritionnelles. </p>
+                <p>L’un des moments forts de l’histoire de Chatou se déroula justement sous la seigneurie de Bertin : en mai 1789 la population de Chatou se rebella contre la décision du seigneur de fermer la route de Carrière et de Montesson, que les paysans du village empruntaient pour se rendre labourer leurs champs. En englobant le chemin dans son domaine, bien protégé par un mur de ceinte qu’il fit ériger, le seigneur avait fait ouvrir une nouvelle route sur le tracé de l’actuel boulevard de la République. Les catoviens s’étaient opposés longtemps à ce projet qui prolongeait leur itinéraire quotidien, et avaient obtenu une suspension temporaire en 1788. Les travaux commencèrent au printemps suivant et les habitants, sous l’impulsion du maire, crurent bon d’en faire doléance en vue des Etats généraux, mais leur plainte ne fut pas retenue. N’ayant pas obtenu gain de cause avec tous leur recours, les habitants se révoltèrent : des actes de vandalisme furent commis contre les propriétés de Bertin, suivis d’un véritable tumulte durant lequel la population abattit le mur et occupa les terrains du seigneur. Un avant-goût de la révolte contre l’aristocratie sous la Révolution... Bertin vendit son domaine en 1791 et se retira à Spa où il mourut l’année suivante.</p>
+                <figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-3">
+                    <img src="{% static  'chatou/static/images/pages/notice_historique/Voiture à vapeur et chemin de fer, Anonyme RMN vs 2.JPG' %}" class="is-clearfix" alt="">
+                    <figcaption>Anonyme, <i>La locomotive à vapeur et le chemin de fer</i>, caricature, vers 1840</figcaption>
+                </figure>
+                <p>Le nouveau seigneur, Henri-Léonard Jean-Baptiste Bertin, est un personnage important de la deuxième moitié du XVIIIe siècle : descendant d’une famille bourgeoise du Périgord qui s’était hissée peu à peu dans la société française et avait accumulé des richesses importantes, il aura une carrière notable dans le gouvernement royal étant aussi nommé ministre à deux reprises. Il a des intérêts très divers, allant de l’étude de l’histoire à l’agriculture, pour laquelle il cultive une vraie passion. Contrôleur général des Finances, il fait rattacher l’agriculture à ses services et la garde sous la main quand il est nommé ministre d’État en 1762. En tant que ministre, Bertin s’emploie à innover dans la production agricole en cherchant la coopération étroite avec les agriculteurs et en instituant des écoles d’agriculture. Il est aussi à l’origine de la fondation de l’École des Mines.</p>
+                <figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-4">
+                    <img src="{% static  'chatou/static/images/pages/notice_historique/BNF Parc du Vésinet Plan_général_indiquant_le_lotissement.jpeg' %}" class="is-clearfix" alt="">
+                    <figcaption><i>Plan du Parc de Chatou</i>, sans date (vers 1875)</figcaption>
+                </figure>
+                <p>Pour se rapprocher des résidences royales, dont Versailles et Saint-Germain, et de la capitale, Bertin rachète en 1766 les domaines de Chatou et de Montesson, recouvrant une superficie de 55 hectares. L’ancien château est vétuste et modeste et Bertin veut se doter d’une nouvelle résidence digne d’un ministre du gouvernement. Il refuse un don du Roi de 100.000 livres (1,2 millions d’euros d’aujourd’hui) pour rénover l’ancien château : il a suffisamment de revenus et de richesse pour en bâtir un à son compte. Il demande à l’un des plus grands architectes de France, Jacques-Germain Soufflot, de lui dessiner un nouveau château avec des annexes somptueuses, dont le fameux Nymphée qu’on peut encore admirer aujourd’hui. </p>
+                <p>Les vastes terrains en sa possession lui permettent d’y conduire ses expérimentations agricoles : il crée un potager de 6 hectares dans lequel il cultive différents types d’arbres fruitiers, dont des cerisiers d’une qualité gustative bien appréciés à l’époque, des abricotiers et, surtout, des pommes de terre, qui étaient peu connues en France et dont Bertin devient l’un des plus fervents propagateurs pour leurs propriétés nutritionnelles. </p>
+                <p>L’un des moments forts de l’histoire de Chatou se déroule justement sous la seigneurie de Bertin : en mai 1789 la population de Chatou se rebelle contre la décision du seigneur de fermer la route de Carrière et de Montesson, que les paysans du village empruntent pour se rendre labourer leurs champs. En englobant le chemin dans son domaine, bien protégé par un mur de ceinte qu’il a fait ériger, le seigneur a fait ouvrir une nouvelle route sur le tracé de l’actuel boulevard de la République. Les catoviens se sont opposés depuis longtemps à ce projet qui prolonge leur itinéraire quotidien, et ont obtenu une suspension temporaire en 1788. Après le rejet de leur recours, les travaux commencent au printemps suivant. Les habitants, sous l’impulsion du maire, croient bon d’en faire doléance en vue des États généraux, mais leur plainte n’est pas retenue. Excédés par ce qu’ils considèrent un abus, les habitants se révoltent : des actes de vandalisme sont commis contre les propriétés de Bertin, suivis d’un véritable tumulte le 9 mai 1789 durant lequel la population abat le mur et occupe les terrains du seigneur. Un avant-goût de la révolte contre l’aristocratie sous la Révolution... Ayant compris que son futur de seigneur de Chatou était en danger, Bertin vend son domaine en 1791 et se retire à Spa où il meurt l’année suivante.</p>
+                <div>
+                    <!-- <a class="pagination-left" href="/chatou/introduction/">
+                        <span class="image">
+                            <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Left.svg' %}">
+                        </span>
+                        <span>
+                          INTRODUCTION
+                        </span>
+                    </a> -->
+                    <a class="pagination-right" href="/chatou_auto/limpressionnisme/">
+                        <span>
+                            À la source de l’impressionnisme
+                        </span>
+                        <span class="image">
+                            <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Right.svg' %}">
+                        </span>
+                    </a>
+                    <div class="is-clearfix">
+
+                    </div>
+
+                </div>
+            </article>
+            {% include 'menu_introduction_auto.html' %}
+        </div>
+    </div>
+</section>
+
+{% include 'footer_introduction_auto.html' %}
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "base_template_auto.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'header_introduction_auto.html' %}
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <article class="content column">
+
+                <div class="content">
+                    <h1 class="title is-size-2">
+                        {{Page.page_title}}
+                    </h1>
+                    <div class="cta-icon-container">
+                        {% if itin_audio == 'NA' %}
+                        {% else %}
+                        <a class="audio-player-cta" data-track="MaPiste1">
+                            <img src="{% static  'chatou/static/images/Pictos_Big_Audio.svg' %}" alt="">
+                        </a>
+                        {% endif %}
+                        <a class="share-this">
+                            <img src="{% static  'chatou/static/images/Pictos_Big_sharing.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- <p class="is-description">
+                    Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements
+                    ayant lieu sur ses îles et le mouvement des Impressionnistes
+                </p> -->
+                <!-- <h3>
+                    Localisation
+                </h3> -->
+                {{page_text|safe}}
+
+                <div>
+                    <!-- <a class="pagination-left" href="/chatou/introduction/">
+                        <span class="image">
+                            <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Left.svg' %}">
+                        </span>
+                        <span>
+                          INTRODUCTION
+                        </span>
+                    </a> -->
+                    
+                    {% if next_itin == 'NA' %}
+                    {% else  %}
+                    {% for ni in next_itin %}
+                    <a class="pagination-right" href="/{{ ni.menu.menu_link }}">
+                        <span>
+                            {{ ni.menu.menu_title }}
+                        </span>
+                        <span class="image">
+                            <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Right.svg' %}">
+                        </span>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                    
+
+                    {% if prev_itin == 'NA' %}
+                    {% else %}
+                    {% for pi in prev_itin %}
+                    
+                    
+                        <a class="pagination-left" href="/{{pi.menu.menu_link}}">
+                            <span class="image">
+                                <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Left.svg' %}">
+                            </span>
+                            <span>
+                                {{pi.menu.menu_title}}
+                            </span>
+                        </a>
+                   
+                    {% endfor %}
+                    {% endif %}
+                    <div class="is-clearfix">
+
+                    </div>
+
+                </div>
+            </article>
+            {% include 'menu_introduction_auto.html' %}
+        </div>
+    </div>
+</section>
+
+{% include 'footer_introduction_auto.html' %}
+
+{% endblock %}

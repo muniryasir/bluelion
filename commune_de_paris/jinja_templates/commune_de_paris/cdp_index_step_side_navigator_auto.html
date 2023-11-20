@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="tile is-parent is-vertical">
+    <div class="tile is-child">
+        <h2 class="title is-size-4">{{step.menu_title}}</h2>
+    </div>
+    <div class="next-steps">
+        {% for next_page in next_pages %}
+        {% if next_page == 'NA' %}
+        {% else %}
+          {%  for npm, np in next_page %}
+        <div class="tile is-parent is-child">
+        <a href="/{{npm.menu_link}}">
+            <div class="step-container">
+                <div class="image">
+                    <img src="{{npm.menu_images}}" alt="">
+                </div>
+                <div class="legend">
+                    <div class="BLUE">
+                        <div>
+
+                            <span class="number-BLUE">{{np.page_order}}</span>
+                            <span class="step-title-text">{{npm.menu_title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+      
+    </div>
+</div>

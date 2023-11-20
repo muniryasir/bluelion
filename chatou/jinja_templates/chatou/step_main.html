@@ -1,0 +1,38 @@
+{% extends "base_template.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+{% include 'step_menu.html' %}
+
+{% include 'header_introduction.html' %}
+
+
+
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title is-size-2">
+            
+                {{page_heading}}
+            </h1>
+            {% include 'step_controls.html' %}
+        </div>
+
+        <div class="columns">
+            
+{% include step_file %}
+
+   {% include 'step_side_section.html' %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

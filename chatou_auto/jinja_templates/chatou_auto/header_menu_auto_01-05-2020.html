@@ -1,0 +1,68 @@
+{% load static %}
+<nav id="navbar" class="navbar main-nav is-black">
+    <div class="nav-container">
+        <div class="navbar-icons">
+            <a class="navbar-item">
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+            </a>
+            <a class="navbar-item back-arrow is-not-active" onclick="returnToFunction('')">
+                <img src="{% static  'chatou_auto/static/images/Left-Arrow_Back.png' %}" alt="">
+            </a>
+        </div>
+
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/chatou_auto/">
+                <img src="{% static  'chatou_auto/static/images/Logo_Header.png' %}" alt="Logo">
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <a href="/chatou_auto/" class="navbar-item is-active">
+                Accueil
+            </a>
+            <!-- <a href="/chatou_auto/introduction/" class="navbar-item">
+                Introduction
+            </a> -->
+            <!-- <a href="/chatou_auto/historique/" class="navbar-item">
+                Un peu d’histoire 
+            </a>
+            <a href="/chatou_auto/limpressionnisme/" class="navbar-item">
+                À la source de l'impressionnisme
+            </a> -->
+            {% for burger_link in burger_menu %}
+            <a href="/{{burger_link.menu.menu_link}}" class="navbar-item">
+                {{burger_link.menu.menu_title}}
+            </a>
+            {% endfor %}
+            <!-- <a class="navbar-item">
+                Événements
+            </a> -->
+            <!-- <a class="navbar-item" href="#">
+                L'auteur
+            </a> -->
+            <!-- <a class="navbar-item">
+                À propos
+            </a> -->
+            <a class="navbar-item is-active">
+                <span class="image inline-icon is-size-4">
+                    <img src="{% static  'chatou_auto/static/images/Pictos_Big_Telech.svg' %}" alt="">
+                </span>
+                <span>
+                TÉLÉCHARGER L'APP
+                </span>
+            </a>
+        </div>
+        <div class="navbar-icons">
+            <a class="navbar-item has-badge-rounded has-badge-danger notif-cta" data-badge="8">
+                <img src="{% static  'chatou_auto/static/images/Picto_alert.png' %}" alt="">
+            </a>
+            <a class="navbar-item map-cta-reset">
+                <img src="{% static  'chatou_auto/static/images/Picto_map.png' %}" alt="Map">
+            </a>
+        </div>
+    </div>
+
+</nav>

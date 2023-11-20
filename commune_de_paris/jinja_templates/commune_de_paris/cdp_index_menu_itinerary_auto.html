@@ -1,0 +1,24 @@
+<div class="navbar-tourstep has-background-primary-BLUE">
+    <div class="container">
+        <div class="level is-mobile">
+            <div class="level-left">
+                <span>TABLE DES MATIÈRES</span>
+            </div>
+            <div class="level-right">
+                <div class="tabs">
+                    <ul>
+                        {% if page_title == 'impressionistes_a'  %}
+                            <li><a href="/commune_de_paris/impressionistes_a/" class="is-active">A</a></li>
+                            <!-- <li><a href="/commune_de_paris/impressionistes_b/" class="">B</a></li> -->
+                            <li><a href="#" class="">B</a></li>
+                        {% elif page_title == 'impressionistes_b' %}
+                            <li><a href="/commune_de_paris/impressionistes_a/" class="">A</a></li>
+                            <!-- <li><a href="/commune_de_paris/impressionistes_b/" class="is-active">B</a></li> -->
+                            <li><a href="#" class="is-active">B</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% load static %}
+
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title is-size-2">
+               {{ Page.page_title }} 
+            </h1>
+            <div class="cta-icon-container">
+                {% if info_section == 'YES' %}
+                <a class="info-tooltip">
+                    <img src="{% static  'commune_de_paris/static/images/Pictos_Big_Info.svg' %}" alt="">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns">
+            <article class="content column">
+               
+{%include 'cdp_itinerary_main_step_menu.html' %}
+            </article>
+
+            <aside class="column is-one-third-tablet is-one-quarter-fullhd">
+                <div class="section-aside">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-vertical">
+                            <div class="tile is-parent">
+                                {% include 'cdp_map_introduction.html' %}
+
+</div>
+                            <div class="tile is-parent is-mobile-margin">
+                                {% if info_section == 'YES' %}
+    <div class="tile is-child">
+        <h2 class="title is-size-4">INFOS PRATIQUES</h2>
+        <div class="breadcrumb  is-centered">
+            {% include 'cdp_step_side_menu_auto.html' %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href=" /static/commune_de_paris/static/manifest.webmanifest" rel="manifest"/>
+<script async="" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea6ae3d311af400127bcbc3&amp;product=sticky-share-buttons"></script>
+<style>
+.st-btns .st-btn { display:none !important; }
+.st-btns .st-btn[data-network='diaspora'],
+.st-btns .st-btn[data-network='digg'],
+.st-btns .st-btn[data-network='email'],
+.st-btns .st-btn[data-network='facebook'],
+.st-btns .st-btn[data-network='messenger'],
+.st-btns .st-btn[data-network='pinterest'],
+.st-btns .st-btn[data-network='print'],
+.st-btns .st-btn[data-network='reddit'],
+.st-btns .st-btn[data-network='skype'],
+.st-btns .st-btn[data-network='tumblr'],
+.st-btns .st-btn[data-network='twitter'],
+.st-btns .st-btn[data-network='whatsapp'] { display:block !important; margin:10px !important; float: left; }
+</style>
+<title>Les tombes devant le mur des Fédérés</title>
+<style>
+    /* google maps class for colors cannot be ported to css file */
+
+
+
+ .gm-style-iw.gm-style-iw-c {
+                max-height: unset !important;
+                padding: 0 !important;
+                border: 5px solid #E30613;
+                margin-left: -60px !important;
+                margin-top: 46px !important;
+            }
+.gm-style .gm-style-iw-t::after {
+    background: url(/static/commune_de_paris/static/images/maps/infowindow/home_downarrow_red_changed.png) no-repeat;
+    /* border: 5px solid #1f96de; */
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 35px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 38px !important;
+    transform: translate(-60%,114%) rotate(0deg) !important;
+}
+
+.wrapper_comparison_slider {
+      /* max-width: 768px; */
+      /* margin: 20px auto; */
+      text-align: center;
+    }
+   
+  #floating-panel {
+    position: absolute;
+    margin-top: 10px; margin-left: 10px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: "Source Sans Pro" !important;
+  }
+  #directions-panel {
+    margin-top: 70px;
+    margin-left: 10px;
+    max-height: 300px;
+    max-width: 300px;
+    overflow-x: hidden;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    font-family: "Source Sans Pro" !important;
+    z-index: 5;
+  }
+    </style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/static/commune_de_paris/static/css/style.css" rel="stylesheet"/>
+<link href="/static/commune_de_paris/static/css/ImageComparison.css" rel="stylesheet"/>
+<link href="/static/commune_de_paris/static/css/map_customization.css" rel="stylesheet"/>
+<script>
+ var staticAddress= /static/;
+</script>
+<script src="/static/commune_de_paris/static/js/jquery.js"></script>
+<script src="/static/commune_de_paris/static/js/maps.js"></script>
+<script src="/static/commune_de_paris/static/js/main.js"></script>
+<script src="/static/commune_de_paris/static/js/comparison_slider.js"></script>
+<script src="/static/commune_de_paris/static/js/ImageComparison.js"></script>
+<!--<script src="../js/audioplayer.js"></script>-->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script> -->
+<link href="/static/commune_de_paris/static/js/dist/simpleLightbox.css" rel="stylesheet"/>
+<script src="/static/commune_de_paris/static/js/dist/simpleLightbox.js"></script>
+<script src="/static/commune_de_paris/static/js/cookies-eu-support.js"></script>
+<script src="/static/commune_de_paris/static/js/app-download.js"></script>
+<!-- <script src="/static/commune_de_paris/static/js/dist/jssor.slider.min.js"></script> -->
+</head>
+<script>
+
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/commune_sw.js", { scope: '/' }).then(function(reg) {
+            // registration worked
+            console.log('Registration succeeded. Scope is ' + reg.scope);
+
+        }).catch(function(error) {
+            // registration failed
+            console.log('Registration failed with ' + error);
+        });
+    }
+    
+</script>
+<body>
+<nav class="navbar main-nav is-black" id="navbar">
+<div class="nav-container">
+<div class="navbar-icons">
+<a class="navbar-item">
+<span class="navbar-burger burger" data-target="navbarMenu">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</a>
+<a class="navbar-item back-arrow is-not-active" onclick="returnToFunction('')">
+<img alt="" src="/static/commune_de_paris/static/images/Left-Arrow_Back.png"/>
+</a>
+</div>
+<div class="navbar-brand">
+<a class="navbar-item" href="/">
+<img alt="Logo" src="/static/commune_de_paris/static/images/logos/Logo_Red_Small.png"/>
+</a>
+</div>
+<div class="navbar-menu" id="navbarMenu">
+<a class="navbar-item is-active" href="/">
+                Accueil
+            </a>
+<!-- <a href="/commune_de_paris/introduction/" class="navbar-item">
+                Introduction
+            </a> -->
+<!-- <a href="/commune_de_paris/historique/" class="navbar-item">
+                Un peu d’histoire 
+            </a>
+            <a href="/commune_de_paris/limpressionnisme/" class="navbar-item">
+                À la source de l'impressionnisme
+            </a> -->
+<!-- Introduction links -->
+<a class="navbar-item" href="/le-mur-des-federes">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+</span>
+                Le Mur des Fédérés
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/articles-thematiques">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Histoire de la Commune
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/les-communardars-au-pere-lachaise">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Les communards au Père Lachaise
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/name-index">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Index alphabétique
+            </a>
+<!-- Introduction links -->
+<a class="navbar-item" href="/a-propos">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+</span>
+                À propos
+            </a>
+<!-- <a class="navbar-item">
+                Événements
+            </a> -->
+<!-- <a class="navbar-item" href="#">
+                L'auteur
+            </a> -->
+<!-- <a class="navbar-item">
+                À propos
+            </a> -->
+<a class="navbar-item is-active">
+<span class="image inline-icon is-size-4 downloadimg_nav">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Telech.svg"/>
+</span>
+<span>
+                TÉLÉCHARGER L'APP
+                </span>
+</a>
+</div>
+<div class="navbar-icons">
+<!-- <a class="navbar-item has-badge-rounded has-badge-danger notif-cta" data-badge="8">
+                <img src="/static/commune_de_paris/static/images/Picto_alert.png" alt="">
+            </a> -->
+<a class="navbar-item map-cta-reset">
+<img alt="Map" src="/static/commune_de_paris/static/images/Picto_map.png"/>
+</a>
+</div>
+</div>
+</nav>
+<div class="navbar-tourstep has-background-primary-RED" id="blue_navbar">
+<div class="container">
+<div class="level is-mobile">
+<div class="level-left">
+<span class="itinerary-link"><a href="/les-communardars-au-pere-lachaise" style="all:inherit; cursor: pointer;">MES ETAPES</a></span>
+</div>
+<div class="level-right">
+<div class="tabs" id="step_menu">
+<ul>
+<li>
+<a href="/les-communards-au-pere-lachaise/ranc-arthur"><img src="/static/commune_de_paris/static/images/Arrow_back%20white_64.png"/></a>
+</li>
+<!-- <li><a class="is-active" href="/les-communards-au-pere-lachaise/devant-le-mur-des-federes">29</a></li> -->
+<li class="page-number"><span>29</span></li>
+<li class="left-arrow">
+<a href="/les-communards-au-pere-lachaise/le-mur-des-federes"><img src="/static/commune_de_paris/static/images/Arrow_next%20white_64.png"/></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+   
+    });
+    </script>
+<section class="header hero is-medium">
+<div class="hero-body is-paddingless slideshow-container">
+<div class="slide fade is-gallery-trigger" data-target="gallery-name-1 .img-1">
+<img alt="" src="/media/media/communde_de_paris/T_Devant_le_mur_des_Federes.jpg"/>
+<img alt="" class="is-clearfix" src="/static/commune_de_paris/static/images/pages/steps/zoom-in.png" style="all: initial; display: inline-block; position:absolute; height:8%; top:90%; left:90%;  float:right;"/>
+</div>
+</div>
+</section>
+<!--HTML And js components to add the simple-lightbox plugin to the page. Needed if there is clickable imgs in the page-->
+<script src="/static/commune_de_paris/static/js/simple-lightbox.js"></script>
+<div class="gallery-name-1" id="gallery-name-1" style="display: none">
+<a class="img-1" href="/media/media/communde_de_paris/T_Devant_le_mur_des_Federes.jpg"><img alt="" src="/media/media/communde_de_paris/T_Devant_le_mur_des_Federes.jpg" title="&lt;p&gt;Devant le mur des F&amp;eacute;d&amp;eacute;r&amp;eacute;s&lt;/p&gt;"/></a>
+</div></body></html>
+<a class="img-3" href="/media/media/communde_de_paris/P_R400_Chabert_Edme_Charles_par_Charles_Lafuma_P-L-Photo_Pierre-Yves_Beaudoin_W.jpg"><img alt="" src="/media/media/communde_de_paris/P_R400_Chabert_Edme_Charles_par_Charles_Lafuma_P-L-Photo_Pierre-Yves_Beaudoin_W.jpg" title="&lt;p&gt;Edme Charles ChabertPortrait de Edme Charles Chabert par Charles Lafuma au P&amp;egrave;re Lachaise (photo Pierre-Yves Beaudoin, via Wikimedia)&lt;/p&gt;"/></a>
+<a class="img-2" href="/media/media/communde_de_paris/T_Brousse_Paul_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Brousse_Paul_R400.jpg" title="&lt;p&gt;Tombeau de Paul Brousse&lt;/p&gt;"/></a>
+<a class="img-6" href="/media/media/communde_de_paris/T_Lafargue_Photo_Pierre-Yves_Beaudouin_W_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Lafargue_Photo_Pierre-Yves_Beaudouin_W_R400.jpg" title="&lt;p&gt;Tombeau de Paul et Laura Lafargue&lt;/p&gt;"/></a>
+<a class="img-7" href="/media/media/communde_de_paris/T_Lefrancais_Gustave_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Lefrancais_Gustave_R400.jpg" title="&lt;p&gt;Tombeau de Gustave Lefran&amp;ccedil;ais&lt;/p&gt;"/></a>
+<a class="img-8" href="/media/media/communde_de_paris/T_Malon_Benoit_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Malon_Benoit_R400.jpg" title="&lt;p&gt;Tombeau de Beno&amp;icirc;t Malon&lt;/p&gt;"/></a>
+<a class="img-9" href="/media/media/communde_de_paris/T_Mortier_Henri_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Mortier_Henri_R400.jpg" title="&lt;p&gt;Tombeau de Henri Mortier&lt;/p&gt;"/></a>
+<a class="img-10" href="/media/media/communde_de_paris/T_Pichio_Ernest_Louis_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Pichio_Ernest_Louis_R400.jpg" title="&lt;p&gt;Tombeau de Ernest Pichio&lt;/p&gt;"/></a>
+<a class="img-11" href="/media/media/communde_de_paris/T_Prudent-Devilliers_Onesime_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Prudent-Devilliers_Onesime_R400.jpg" title="&lt;p&gt;Tombeau de On&amp;eacute;sime Prudent-Dervilliers&lt;/p&gt;"/></a>
+<a class="img-12" href="/media/media/communde_de_paris/T_Wroblewsky_Valery-1_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Wroblewsky_Valery-1_R400.jpg" title="&lt;p&gt;Tombeau de Val&amp;eacute;ry Wroblewski&lt;/p&gt;"/></a>
+<a class="img-4" href="/media/media/communde_de_paris/T_Clement_Jean-Baptiste_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Clement_Jean-Baptiste_R400.jpg" title="&lt;p&gt;Tombeau de Jean-Baptiste Cl&amp;eacute;ment&lt;/p&gt;"/></a>
+<a class="img-5" href="/media/media/communde_de_paris/T_Faberot_Pascal_R400.jpg"><img alt="" src="/media/media/communde_de_paris/T_Faberot_Pascal_R400.jpg" title="&lt;p&gt;Tombeau de Pascal Faberot&lt;/p&gt;"/></a>
+
+<script>
+        var openx = 0;
+        var fb =  SimpleLightbox;
+        function callGallery(x) {
+             SimpleLightbox.open({
+            content: x,
+            elementClass: 'slbContentEl'
+            });
+        }
+      
+        $(function(){
+            var $gallery = $('.gallery-name-1 a').simpleLightbox({
+                captionPosition: 'outside',
+            });
+
+            $gallery.on('show.simplelightbox', function(){
+                // console.log('Requested for showing');
+            })
+            
+                .on('shown.simplelightbox', function(){
+                    // console.log('Shown');
+                })
+                .on('singletouch.simplelightbox', function(){
+                    console.log('singletouch');
+                    $gallery.hideCaption();
+                })
+                .on('close.simplelightbox', function(){
+                    // console.log('Requested for closing');
+                })
+                .on('closed.simplelightbox', function(){
+                    // console.log('Closed');
+                })
+                .on('change.simplelightbox', function(){
+                    // console.log('Requested for change');
+                })
+                .on('next.simplelightbox', function(){
+                    // console.log('Requested for next');
+                })
+                .on('prev.simplelightbox', function(){
+                    // console.log('Requested for prev');
+                })
+                .on('nextImageLoaded.simplelightbox', function(){
+                    // console.log('Next image loaded');
+                })
+                .on('prevImageLoaded.simplelightbox', function(){
+                    // console.log('Prev image loaded');
+                })
+                .on('changed.simplelightbox', function(){
+                    // console.log('Image changed');
+                })
+                .on('nextDone.simplelightbox', function(){
+                    // console.log('Image changed to next');
+                })
+                .on('prevDone.simplelightbox', function(){
+                    // console.log('Image changed to prev');
+                })
+                .on('error.simplelightbox', function(e){
+                    // console.log('No image found, go to the next/prev');
+                    // console.log(e);
+                });
+            //     .on('click', function(){
+            //     console.log('click');
+            // });
+        });
+        $('.sl-image').click(function(e) {
+            console.log('click');
+        });
+        $('.sl-image').on('click', function(e) {
+            if (e.target == this) {
+                // add "close" code here
+                console.log('click');
+            }
+        });
+    </script>
+<script>
+     $(document).ready(function() {
+        var slideIndex = 1;
+        // Thumbnail image controls
+        function currentSlide(n) {
+            resetInterval(window.intervallID);
+            showSlides(slideIndex = n);
+        }
+        // Next/previous controls
+        function plusSlides(n) {
+
+            showSlides(slideIndex += n);
+
+        }
+        function resetInterval(intervalID) {
+            clearInterval(intervalID);
+            // window.intervallID = setInterval(function () {
+            //     plusSlides(1)
+            // }, 5000);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        var xDown = null;
+        var yDown = null;
+        function getTouches(evt) {
+            return evt.touches ||             // browser API
+                evt.originalEvent.touches; // jQuery
+        }
+
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+
+        function handleTouchMove(evt) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+                if (xDiff > 0) {
+                    resetInterval(window.intervallID);
+                    plusSlides(1);
+                } else {
+                    resetInterval(window.intervallID);
+                    plusSlides(-1);
+                }
+            }
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        };
+
+
+       
+
+            showSlides(slideIndex);
+
+
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchstart', handleTouchStart, false);
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchmove', handleTouchMove, false);
+
+
+       
+
+ var prevScrollpos = window.pageYOffset;
+ var blueNavbarTop = document.getElementById("blue_navbar").style.top;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+    document.getElementById("blue_navbar").style.top = blueNavbarTop;
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+    document.getElementById("blue_navbar").style.top = "-50px";
+
+  }
+  prevScrollpos = currentScrollPos;
+}
+console.log('working');
+ });
+    </script>
+<section class="section">
+<div class="container">
+<div class="content">
+<h1 class="title is-size-2">
+           
+            
+            Les tombes devant le mur des Fédérés
+               
+            </h1>
+<div class="cta-icon-container">
+<a class="map-cta">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Map.svg"/>
+</a>
+<a class="share-this">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_sharing.svg"/>
+</a>
+</div>
+</div>
+<div class="columns">
+<article class="content column">
+<!-- <p class="is-description">
+        Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux
+        événements ayant lieu sur ses îles et le mouvement des Impressionnistes
+    </p> -->
+<!-- <h3>
+        Localisation
+    </h3> -->
+<div class="wrapper-content">
+<p><strong>Paul Brousse (1844 - 1912)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/Paul_Brousse.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-2">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Brousse_Paul_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Paul Brousse</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Paul Brousse&lt;/p&gt;"/>
+</figure>
+<p>Médecin. Il participe à la Commune. Il se réfugie à Barcelone, ensuite en Suisse. Il devient membre de la Première Internationale, actif dans la Fédération jurassienne, puis il remet en question l'abstentionnisme politique et l'isolement des anarchistes par rapport au reste du mouvement socialiste et ouvrier. Il se rallie alors aux socialistes possibilistes (réformistes). Il est l'auteur du chant "Le Drapeau Rouge".</p>
+<p><a href="https://maitron.fr/spip.php?article24584" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Edme Charles Chabert (1818 - 1890)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/CHABERT_Charles_mp3_48k_mono_2_dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-3">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/P_R400_Chabert_Edme_Charles_par_Charles_Lafuma_P-L-Photo_Pierre-Yves_Beaudoin_W.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Edme Charles Chabert</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Edme Charles ChabertPortrait de Edme Charles Chabert par Charles Lafuma au Père Lachaise (photo Pierre-Yves Beaudoin, via Wikimedia)&lt;/p&gt;"/>
+</figure>
+<p>Ouvrier graveur. Membre de la Première internationale. Il participe à la révolution de 1848 (mouvements de février et de juin). Il est membre du <a href="/articles-thematiques/la-garde-nationale" target="_self">Comité central</a> des vingt arrondissements. Emprisonné, puis relâché après 5 mois d'emprisonnement. Conseiller municipal du 19e.</p>
+<p><a href="https://maitron.fr/spip.php?article182644" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Jean-Baptiste Clément (1836 - 1903)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/CLEMENT_Jean_Baptiste_mp3_48k_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-4">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Clement_Jean-Baptiste_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Jean-Baptiste Clément</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Jean-Baptiste Clément&lt;/p&gt;"/>
+</figure>
+<p>Poète, journaliste et chansonnier. Il édite sa première chanson à 23 ans. Durant la Commune élu par le XIIIe arrondissement au Conseil de la Commune, il participe à la commission des services publics et des subsistances, il est délégué à la fabrication des munitions. Il collabore au "<a href="/articles-thematiques/la-presse" target="_self">Cri du peuple</a>" de Jules Vallès. Il combat pendant la semaine sanglante. Condamné à mort, il s'exile. Créateur de la chanson "Le temps des cerises" dédiée en 1882 à l'ambulancière Louise.</p>
+<p><a href="https://maitron.fr/spip.php?article182151" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Pascal Fabérot (1843 - 1803)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/FABEROT_Pascal_mp3_48K_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-5">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Faberot_Pascal_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Pascal Faberot</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Pascal Faberot&lt;/p&gt;"/>
+</figure>
+<p>Ouvrier chapelier. Pendant la Commune, il participe à la prise de la caserne Lobau et de l'Hôtel de ville. Député socialiste de la Seine de 1893 à 1898.</p>
+<p><a href="https://maitron.fr/spip.php?article86684&amp;id_mot=25" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Paul Emile Lafargue (1842 - 1911)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/LAFARGUE_Paul_mp3_48k_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-6">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Lafargue_Photo_Pierre-Yves_Beaudouin_W_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Paul et Laura Lafargue</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Paul et Laura Lafargue&lt;/p&gt;"/>
+</figure>
+<p>Journaliste, économiste, essayiste, écrivain, homme politique socialiste. Fait la connaissance de Proudhon après ses études de médecine. Présente « L’état du mouvement socialiste français » au conseil de l’AIT en 1865 à Londres. Il rencontre Engels et Marx, dont il épouse la seconde fille Laura. Durant la Commune de Paris, il est envoyé à Bordeaux pour y organiser un soutien au mouvement parisien. Incarcéré à la prison de Sainte Pélagie. En 1883, il y rédige le "Droit à la paresse". En 1911 s’étant fixé une limite d’âge de 70 ans, il se suicide avec son épouse à Draveil.</p>
+<p><a href="https://maitron.fr/spip.php?article24864" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Gustave Lefrançais (1826 - 1901)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/LEFRANCAIS_Gustave_mp3_48k_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-7">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Lefrancais_Gustave_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Gustave Lefrançais</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Gustave Lefrançais&lt;/p&gt;"/>
+</figure>
+<p>Il adhère à l’Association des instituteurs et institutrices socialistes, condamné à 3 mois de prison. Interdit d’enseignement, il séjourne à Londres, s’opposant au coup d’état de Napoléon III. La République proclamée le 4 septembre 1870, le IVe arrondissement de Paris l’envoie au Comité central des vingt arrondissements qui s’oppose au gouvernement de Défense nationale. Elu au <a href="/articles-thematiques/le-fonctionnement-de-la-commune" target="_self">conseil de la Commune</a>, il est membre de la commission exécutive puis de celle du travail et des finances. Il combat sur les barricades. Condamné à mort par contumace par le conseil de guerre. Après la <a href="/articles-thematiques/la-semaine-sanglante" target="_self">Semaine sanglante</a>, réfugié à Genève, il collabore à différents journaux anarchistes. Publie l’ « Etude sur le mouvement communaliste de Paris ». Eugène Pottier lui dédie son poème « L’Internationale » mis en musique en 1888.</p>
+<p><a href="https://maitron.fr/spip.php?article33693" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Benoît Malon (1841 - 1893)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/MALON_Benoit_mp3_48k_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-8">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Malon_Benoit_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Benoît Malon</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Benoît Malon&lt;/p&gt;"/>
+</figure>
+<p>Teinturier, autodidacte. Membre de la 1ère internationale.  Il organise et participe à de nombreuses luttes au cours du Second Empire. Après le 4 septembre, il siège au <a href="/articles-thematiques/la-garde-nationale" target="_self">Comité central</a> des vingt arrondissements et devient maire-adjoint du XVIIème arrondissement. Il est élu à l'Assemblée nationale le 8 février 1871, vote contre les préliminaires de paix et démissionne. Lors de la Commune, élu par le XVIIème arrondissement, il est membre de la <a href="/articles-thematiques/le-fonctionnement-de-la-commune" target="_self">commission du travail et des échanges</a>. Il vote contre le comité de salut public. Pendant la <a href="/articles-thematiques/la-semaine-sanglante" target="_self">semaine sanglante</a>, il combat aux Batignolles, s'exile en Suisse, rentre en France après l'<a href="/articles-thematiques/la-repression" target="_self">amnistie</a>. Auteur de la "Troisième défaite du prolétariat français".</p>
+<p><a href="https://www.commune1871.org/index.php?option=com_content&amp;view=article&amp;id=507:benoit-malon-1841-1893&amp;catid=12&amp;Itemid=109" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Henri Mortier (1843 - 1894)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/MORTIER_Henri_mp3_48k_ampl_2dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-9">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Mortier_Henri_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Henri Mortier</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Henri Mortier&lt;/p&gt;"/>
+</figure>
+<p>Ouvrier tourneur sur bois. Blanquiste et membre de l'Association internationale des travailleurs. Pendant le siège de Paris , il est capitaine du 191e bataillon de la <a href="/articles-thematiques/la-garde-nationale" target="_self">Garde nationale</a>. Le 26 mars il est élu au <a href="/articles-thematiques/le-fonctionnement-de-la-commune" target="_self">Conseil de la Commune</a> de Paris par le XIe arrondissement, il siège à la commission des Services publics puis à la commission de Sûreté générale. Après la <a href="/articles-thematiques/la-semaine-sanglante" target="_self">Semaine sanglante</a> il est condamné à mort par contumace par le Conseil de guerre, il se réfugie à Londres où il continue de militer dans les rangs blanquistes.</p>
+<p><a href="https://www.commune1871.org/index.php?option=com_content&amp;view=article&amp;id=509:henri-mortier-modeste-mais-efficace-elu-de-la-commune&amp;catid=12&amp;Itemid=109" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Ernest Louis Pichio (1840 - 1893)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/PICHIO_Ernest_Louis_mp3_48k_ampl_4dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-10">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Pichio_Ernest_Louis_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Ernest Pichio</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Ernest Pichio&lt;/p&gt;"/>
+</figure>
+<p>Né à Paris en 1840, c’est un artiste peintre qui expose dans de nombreux salons avant 1870. D’obédience communarde, il fait partie de la <a href="/articles-thematiques/la-federation-des-artistes" target="_self">Fédération des artistes</a> élue en avril 1871 et se bat sur les <a href="/articles-thematiques/la-semaine-sanglante" target="_self">barricades</a>. Exilé à Genève, il réalisera différents tableaux en l’honneur de la Commune (Le Triomphe de l’ordre, La Veuve du fusillé..). Il meurt à Paris en 1893.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Ernest_Pichio" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Onésime Prudent-Dervilliers (1849 - 1896)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/DERVILLERS_Onesime.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-11">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Prudent-Devilliers_Onesime_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Onésime Prudent-Dervilliers</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Onésime Prudent-Dervilliers&lt;/p&gt;"/>
+</figure>
+<p>Né dans l’Aisne en 1849, maître tailleur opposé à l’Empire, combat les Prussiens dans l’Armée du Nord. Il rejoint la Commune, officier dans la <a href="/articles-thematiques/la-garde-nationale" target="_self">Garde nationale</a>, participe à la défense du fort de Vanves, puis est blessé sur une <a href="/articles-thematiques/la-semaine-sanglante" target="_self">barricade</a>. Syndicaliste, collaborateur de plusieurs journaux, il meurt à Paris en 1896 alors qu’il est député de la Seine (XIXe arrondissement) sous l’étiquette du Parti Ouvrier Socialiste Révolutionnaire.</p>
+<p><a href="https://maitron.fr/spip.php?article79980" target="_self">Pour en savoir plus</a></p>
+</div>
+<hr/>
+<div class="wrapper-content">
+<p><strong>Valéry Wroblewski (1841 - 1908)</strong></p>
+<p><div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1" onclick="changeAudio('/media/media/commune_de_paris/audio_files/WROBLEWSKY_Valery_mp3_48k_ampl_4_dB.mp3')">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+</div></p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-12">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/T_Wroblewsky_Valery-1_R400.jpg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Tombeau de Valéry Wroblewski</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Tombeau de Valéry Wroblewski&lt;/p&gt;"/>
+</figure>
+<p>Né en Pologne en 1841, il est en exil à Paris en 1870 pour avoir participé à l’insurrection polonaise de 1863. Entré dans la <a href="/articles-thematiques/la-garde-nationale" target="_self">garde nationale</a>, il soutiendra la Commune dont il devient l’un des généraux en avril 1871. Il défend héroïquement les fortifications sur la rive gauche puis la Butte aux Cailles pendant la <a href="/articles-thematiques/la-semaine-sanglante" target="_self">Semaine sanglante</a>. Condamné à mort en 1872, exilé à Londres où il est membre du Conseil de l’AIT, il rentre en France en 1885 et y meurt en 1908.</p>
+<p><a href="https://www.commune1871.org/index.php?option=com_content&amp;view=article&amp;id=772:walery-wroblewski-general-de-la-commune&amp;catid=12&amp;Itemid=109" target="_self">Pour en savoir plus</a></p>
+</div>
+<p> </p>
+<div>
+<a class="pagination-right" href="/les-communards-au-pere-lachaise/le-mur-des-federes">
+<span>
+                                    Le Mur des Fédérés
+                                </span>
+<span class="image">
+<img src="/static/commune_de_paris/static/images/Pictos_Arrow_blue_Right.svg"/>
+</span>
+</a>
+<a class="pagination-left" href="/les-communards-au-pere-lachaise/ranc-arthur">
+<span class="image">
+<img src="/static/commune_de_paris/static/images/Pictos_Arrow_blue_Left.svg"/>
+</span>
+<span>
+                        Ranc, Arthur
+                    </span>
+</a>
+<div class="is-clearfix">
+</div>
+</div>
+</article>
+<aside class="column is-one-third-tablet is-one-quarter-fullhd">
+<div class="section-aside">
+<div class="tile is-ancestor">
+<div class="tile is-vertical">
+<div class="tile is-parent">
+<div class="tile is-child">
+<h2 class="title is-size-4">MON PLAN</h2>
+<figure class="image map-cta is-thumbnail" id="mapframe">
+<div class="stepmap" id="googleMap"></div>
+</figure>
+</div>
+</div>
+<div class="tile is-parent is-mobile-margin">
+</div>
+<!--place side step navigator-->
+<div class="tile is-parent is-vertical">
+<div class="tile is-child">
+<h2 class="title is-size-4"></h2>
+</div>
+<div class="next-steps">
+<div class="tile is-parent is-child">
+<a href="/les-communards-au-pere-lachaise/le-mur-des-federes">
+<div class="step-container">
+<div class="image">
+<img alt="" src="/media/media/communde_de_paris/Mur_des_Federes_-_2.jpg"/>
+</div>
+<div class="legend">
+<div class="RED">
+<div>
+<span class="number-RED">30</span>
+<span class="step-title-text">Le Mur des Fédérés</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="tile is-parent is-child">
+<a href="/les-communards-au-pere-lachaise/lejeune-adrien">
+<div class="step-container">
+<div class="image">
+<img alt="" src="/media/media/communde_de_paris/T_Lejeune_Adrien-2.jpg"/>
+</div>
+<div class="legend">
+<div class="RED">
+<div>
+<span class="number-RED">31</span>
+<span class="step-title-text">Lejeune, Adrien</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtcEVJm5a5u1ghSGlD7Fp1_kHYkC7hJ2Q&amp;callback=googleMapMethod"></script>
+<footer class="footer">
+<nav class="level">
+<div class="level-item has-text-centered">
+<p>
+            © BLUE LION 2020    <a href="/mentions-legales">MENTIONS LÉGALES</a>
+</p>
+</div>
+<div class="level-item">
+<img alt="" src="/static/commune_de_paris/static/images/Logo_BlueLion_footer.png"/>
+</div>
+<div class="level-item">
+<p>
+<!-- AVEC LE SOUTIEN DE  -->
+<a href="https://www.commune1871.org/"><img alt="" src="/static/commune_de_paris/static/images/logos/Logo_Red_Small.png"/></a>
+</p>
+</div>
+</nav>
+</footer>
+<div class="modal modal-map">
+<div class="modal-background"></div>
+<!--Edit by Shayan-->
+<div class="modal-content" style="width: 90%; max-width: 1040px;">
+<div class="map-container">
+<div class="mapfull" id="map">
+</div>
+</div>
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<!--Edit by Shayan-->
+<script>
+$(document).keydown(function(event) { 
+  if (event.keyCode == 27) { 
+    $('.modal-map .modal-close').click();
+  }
+});
+</script>
+<!--Edit by Shayan-->
+<div class="modal modal-infos-RED">
+<div class="modal-background"></div>
+<div class="modal-content">
+<!-- start Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+<button aria-label="close" class="modal-close is-large" onclick="jQuery(this).parent('div').parent('div').removeClass('is-active');"></button>
+<!-- end Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+<div class="tabs navbar-infos is-fullwidth">
+<ul>
+</ul>
+</div>
+<!--Every element of the tab as follow is linked by the id of the data-target attribute of the tabs element above-->
+<!--        This data-target attribute also need to be on the sidebar infos element.-->
+<div class="section is-active" id="place">
+<div class="content">
+<!-- <h3>Adresse</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+<div class="section" id="bar">
+<div class="content">
+<!-- <h3>Bar</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+<div class="section" id="children">
+<div class="content">
+<!-- <h3>Children</h3> -->
+<p>
+</p>
+<p>
+</p>
+<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt, mi at porttitor mollis, mauris dui ultrices ligula, vel placerat orci magna eget arcu. Fusce imperdiet diam augue, quis laoreet lectus pharetra sit amet. Mauris ullamcorper vitae felis non commodo. Phasellus at lorem massa. Maecenas tristique maximus nisl, non viverra tellus elementum id. Sed sed est elit. Fusce eu velit eu tellus tempus ultrices eget ut magna. Duis rutrum dui eu metus convallis volutpat ac imperdiet dolor. Donec imperdiet turpis vel massa placerat vestibulum ut non elit. Cras at mattis ligula. Aenean eu interdum sapien. Sed risus erat, maximus nec odio et, convallis dignissim nulla. Ut tristique nunc eget dui rutrum eleifend. In vel aliquet dolor. Quisque luctus lectus mattis aliquet faucibus.
+
+Morbi at lectus sed ipsum venenatis rhoncus ullamcorper et lorem. Vivamus nec sagittis purus, in ullamcorper ligula. Pellentesque interdum, orci mollis efficitur aliquam, neque est mollis enim, vitae congue dui risus nec orci. Sed sit amet vestibulum dolor. Nam facilisis varius orci ac ultricies. Vivamus risus velit, maximus non luctus pharetra, tempor vel eros. Aliquam erat volutpat. Ut quis turpis sit amet arcu iaculis dignissim quis et tellus. Curabitur fringilla bibendum nisl vitae tempor.
+
+Quisque ac tempor lacus. Curabitur at euismod justo. Phasellus facilisis, sapien sit amet pharetra tristique, orci quam feugiat mauris, vel sagittis arcu nunc gravida enim. Vivamus tristique enim arcu, eleifend placerat est laoreet et. Donec viverra massa ac nibh aliquet imperdiet. Aenean vehicula egestas diam, sed tristique nibh vestibulum quis. Mauris imperdiet velit ac sagittis finibus. Etiam euismod nisi et sollicitudin semper. Maecenas blandit volutpat lacus, sed tristique lacus accumsan dictum. Vestibulum eget mauris eget felis aliquet dignissim. Pellentesque finibus, odio ut fermentum lacinia, est erat egestas magna, vel rutrum lectus libero eu velit. Pellentesque at ullamcorper sapien. Mauris eget diam libero. Fusce nec dui urna. Aliquam pharetra faucibus orci, eu dapibus risus facilisis ut.</p> -->
+</div>
+</div>
+<div class="section" id="restaurant">
+<div class="content">
+<!-- <h3>Restaurant</h3> -->
+</div>
+</div>
+<div class="section" id="shopping">
+<div class="content">
+<!-- <h3>Shopping</h3> -->
+</div>
+</div>
+<div class="section" id="toilets">
+<div class="content">
+<!-- <h3>Toilettes</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+<div class="section" id="opening_hours">
+<div class="content">
+<!-- <h3>Opening Hours</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+<div class="section" id="tickets">
+<div class="content">
+<!-- <h3>Tickets</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+<div class="section" id="transport">
+<div class="content">
+<!-- <h3>Transport</h3> -->
+<p>
+</p>
+<p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<script src="/static/commune_de_paris/static/js/modal_infos.js">
+</script>
+<!-- stat Custom Audio Player -->
+<div class="audio-player level is-mobile" style="display:none;">
+<div class="level-left">
+<button class="button-play"></button>
+</div>
+<div class="progress-bar-cont">
+<div class="progress-bar">
+<em class="progression">
+</em>
+<a class="draggable"></a>
+</div>
+<div class="music-infos">
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="level-right">
+<div class="music-close"></div>
+</div>
+<!--    Place here the audio files in the page, linked by data-track="id" which is also as an attribute of audio-player-cta-->
+<audio data-track="MaPiste1" id="audio_player" src="">
+</audio>
+</div>
+<script src="/static/commune_de_paris/static/js/audioplayer.js">
+</script>
+<!-- end Custom Audio Player -->
+<!--Image Comparison slider modal with js plugin-->
+<!--To insert in document foot only if needed-->
+<!--This modal is triggered on click to an element with the "modal-comp-trigger" class-->
+<div class="modal modal-comp">
+<div class="modal-background"></div>
+<div class="modal-content">
+<figure class="cd-image-container">
+<img alt="Left Image" src="/static/commune_de_paris/static/images/Visuels/Vis_Seine.jpg"/>
+<span class="cd-image-label" data-type="original"></span>
+<div class="cd-resize-img"> <!-- the resizable image on top -->
+<img alt="Right Image" src="/static/commune_de_paris/static/images/Visuels/Vis_MaisonFournaise.jpg"/>
+<span class="cd-image-label" data-type="modified"></span>
+</div>
+<span class="cd-handle"></span> <!-- slider handle -->
+</figure> <!-- cd-image-container -->
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<script src="/static/commune_de_paris/static/js/image_comp_slider.js"></script>
+<div class="modal modal-cite" id="citation1">
+<div class="modal-background"></div>1
+    <div class="modal-content">
+<div class="section content">
+<p class="is-italic">
+                Pour moi un tableau doit être une chose
+                aimable, joyeuse et jolie, oui jolie ! Il y a assez
+                de choses embêtantes dans la vie pour que nous
+                n'en fabriquions pas encore d'autres.
+                Dans la peinture comme dans les autres arts, il
+                n’y a pas un seul procédé, si petit soit-il, qui
+                s’accommode d’être mis en formule.
+            </p>
+<span class="is-pulled-right">
+            de Pierre-Auguste Renoir
+        </span>
+</div>
+</div>
+<div class="cite-title">
+<span>Citation</span>
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<div id="cookies-eu-banner">
+    En continuant à visiter ce site, vous acceptez l'utilisation de cookies utile au bon fonctionnement du site et à des fins statistiques.
+    <div class="buttons are-small is-pulled-right">
+<a class="button is-dark" href="/mentions-legales" id="cookies-eu-more">Voir plus</a>
+<button class="button is-dark" id="cookies-eu-reject" onclick="rejectCookie()">Rejeter</button>
+<button class="button is-dark" id="cookies-eu-accept" onclick="acceptCookie()">Accepter</button>
+</div>
+</div>
+<script src="/static/commune_de_paris/static/js/cookies-eu-banner.min.js"></script>
+<script>
+new CookiesEuBanner(function () {
+
+});
+</script>
+

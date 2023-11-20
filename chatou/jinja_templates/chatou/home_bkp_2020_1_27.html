@@ -1,0 +1,148 @@
+{% extends "base_template.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="is-headless">
+    <div></div>
+</div>
+<div class="download-banner is-active">
+    <button class="modal-close"></button>
+    <p>
+        Profitez mieux de votre visite
+        en téléchargeant cette application.
+        Vous pourrez aussi le faire plus tard
+        en retrouvant ce lien dans nos pages.
+    </p>
+    <a class="download-app">
+        <span class="image inline-icon is-size-4">
+            <img src="{% static  'chatou/static/images/Pictos_Big_Telech.svg' %}" alt="Téléchargement app">
+        </span>
+        <span>
+            TÉLÉCHARGER L'APP
+        </span>
+    </a>
+</div>
+<section class="section">
+    <div class="header">
+        <div class="container">
+            <h1 class="title is-size-1 has-text-weight-normal">
+                Promenades de Chatou
+            </h1>
+            <h2 class="subtitle is-size-5">
+                PAR ULRIKE KASPER
+            </h2>
+        </div>
+    </div>
+    <div class="home-content">
+        <div class="tile is-ancestor is-vertical">
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou/introduction/">
+                        <fieldset>
+                            <legend class="is-size-4 title">
+                                Introduction
+                            </legend>
+                            <p>
+                                Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les
+                                nombreux événements ayant lieu sur ses îles et le mouvement des Impressionnistes...
+                                +
+                            </p>
+                        </fieldset>
+                    </a>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou/historique/">
+                        <fieldset>
+                            <legend class="is-size-4 title">
+                                Note historique
+                            </legend>
+                            <p>
+                                Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les
+                                nombreux événements ayant lieu sur ses îles et le mouvement des Impressionnistes...
+                                +
+                            </p>
+                        </fieldset>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <h3 class="home-title">
+            MES PARCOURS
+        </h3>
+        <div class="tile is-ancestor is-vertical">
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou/impressionistes_a/" class="is-thumbnail is-tour-thumbnail">
+                        <div class="hero">
+                            <div class="hero-head has-background-primary">
+                                <h3 class="title is-family-secondary">
+                                    La seine des impressionistes
+                                </h3>
+                            </div>
+                            <div class="hero-body is-paddingless">
+                                <img src="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                     <a href="/chatou/impressionistes_b/" class="is-thumbnail is-tour-thumbnail">
+                        <div class="hero">
+                            <div class="hero-head has-background-danger">
+                                <h3 class="title is-family-secondary">
+                                    Promenade à travers la ville
+                                </h3>
+                            </div>
+                            <div class="hero-body is-paddingless">
+                                <img src="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+{% include 'mon_plan.html' %}
+        <!-- <h3 class="home-title">
+            MES ÉVÉNEMENTS
+        </h3>
+        <div class="tile is-ancestor is-mobile">
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+                        <figure class="image">
+                            <img src="{% static  'chatou/static/images/Visuels/Vis_Event_Expo.jpg' %}" alt="">
+                            <figcaption>
+                                <h2 class="title">LES ATELIERS DU PAYSAGE</h2>
+                                <p class="timestamp">Jusqu'au 14 Juin 2019</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+                        <figure class="image">
+                            <img src="{% static  'chatou/static/images/Visuels/Vis_Event_brocante.jpg' %}" alt="">
+                            <figcaption>
+                                <h2 class="title">FOIRE AU JAMBON DE CHATOU</h2>
+                                <p class="timestamp">15 au 24 mars 2019</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

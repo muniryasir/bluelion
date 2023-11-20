@@ -1,0 +1,306 @@
+{% load static %}
+{% if page_title == 'impressionistes_b' or page_title == 'introduction' or page_title == 'impressionistes_a' or page_title == 'step0' or page_title == 'step1' or page_title == 'step2' or page_title == 'step3' or page_title == 'step4' or page_title == 'step5' or page_title == 'step6' or page_title == 'step7' or page_title == 'step8' or page_title == 'step9' or page_title == 'Note Historique' or page_title == 'limpressionnisme' %}
+    <section class="header hero is-medium">
+        <div class="hero-body is-paddingless slideshow-container">
+            <div class="slide fade is-gallery-trigger" data-target="gallery-name-1 .img-1">
+                {% if page_title == 'Note Historique'  %}
+                <img src="{% static  'chatou/static/images/pages/notice_historique/Camille_Corot_-_La_Seine_a_Chatou_-_Google_Art_Project.jpg' %}" alt="">
+                {% elif page_title == 'limpressionnisme'  %}
+                <img src="{% static  'chatou/static/images/pages/limpre/Pierre_Auguste_Renoir_les_canotiers.jpg' %}" alt="">
+                {% elif page_title == 'impressionistes_a'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/Header_1st Itinerary_Plan_de_la_forest_du_Vezinet_fait_en_lannée_1783_par_Main_premier_arpenteur_en_la_Maîtrise_des_Eaux_et_Forest_de_St_Germain_1783.jpg' %}" alt="">
+                {% elif page_title == 'step0'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step0/Chatou Île 042 La Maison Fournaise depuis le Pont.jpg' %}" alt="">
+                {% elif page_title == 'step1'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step1/W Adam78 Maison Levanneur.jpg' %}" alt="">
+                {% elif page_title == 'step2'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step2/Eglise 04.jpg' %}" alt="">
+                {% elif page_title == 'step3'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step3/Chatou Parc 080 Le Château Bertin 1910.jpg' %}" alt="">
+                {% elif page_title == 'step4'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step4/Chatou Parc 065 Le Nymphée 1905.jpg' %}" alt="">
+                {% elif page_title == 'step5'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step5/Chatou Pièce dEau 023 Villa Lambert.jpg' %}" alt="">
+                {% elif page_title == 'step6'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou - Av. de la République avant 1911.jpg' %}" alt="">
+                {% elif page_title == 'step7'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step7/Chatou_Mairie par Moonik Hôtel de Ville W.JPG' %}" alt="">
+                {% elif page_title == 'step8'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Entrée du Pays - Place du Marché 1910.jpg' %}" alt="">
+                {% elif page_title == 'step9'  %}
+                <img src="{% static  'chatou/static/images/pages/impressionistes_a/step9/Chatou Gare 013b Le Quai vers 1910.jpg' %}" alt="">
+                {% endif %}
+            </div>
+            {% if page_title == 'impressionistes_b' or page_title == 'introduction' or page_title == 'impressionistes_a' or page_title == 'step0' or page_title == 'step1' or page_title == 'step2' or page_title == 'step3'  %}
+
+            <div class="slide fade is-gallery-trigger" data-target="gallery-name-1 .img-2">
+                <!-- <img src="{% static  'chatou/static/images/Visuels/Vis_accueil.jpg' %}" alt=""> -->
+            </div>
+            {% endif %}
+            {% if page_title == 'impressionistes_b' or page_title == 'introduction' or page_title == 'impressionistes_a' or page_title == 'step0' or page_title == 'step1' or page_title == 'step2' or page_title == 'step3'  %}
+
+            <div class="slide fade is-gallery-trigger" data-target="gallery-name-1 .img-3">
+                <!-- <img src="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" alt=""> -->
+            </div>
+            {% endif %}
+
+            <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <!-- <span class="dot" onclick="currentSlide(2)"></span> -->
+                <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
+            </div>
+        </div>
+    </section>
+    <!--HTML And js components to add the simple-lightbox plugin to the page. Needed if there is clickable imgs in the page-->
+    <script src="{% static  'chatou/static/js/simple-lightbox.js' %}"></script>
+    <div class="gallery-name-1" id="gallery-name-1" style="display: none">
+    <!--    Insert here images -->
+    <!--    THis gallery modal is triggered on click over an element with the class "is-gallery-trigger",
+            the data-target attribute with the id of the gallery (gallery-name-1) and the class of the targeted image (.img-1)-->
+        <!-- <a href="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" alt="" title="Beautiful Image1" /></a>
+        <a href="{% static  'chatou/static/images/Visuels/Vis_accueil.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/Visuels/Vis_accueil.jpg' %}" alt="" title=""/></a>
+        <a href="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" alt="" title="Beautiful Image"/></a> -->
+        {% if page_title == 'Note Historique'  %}
+            <a href="{% static  'chatou/static/images/pages/notice_historique/Camille_Corot_-_La_Seine_a_Chatou_-_Google_Art_Project.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/notice_historique/Pierre-Auguste_Renoir_-_Le_Pont_de_Chatou Grand.jpg' %}" alt="" title="Jean-Baptiste Camille Corot,<i> La Seine à Chatou</i>, huile sur toile, 1855, Alte Nationalgalerie, Musées d'État de Berlin" /></a>
+            <a href="{% static  'chatou/static/images/pages/notice_historique/Roslin_-_Henri-Léonard_Bertin.png' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/notice_historique/Roslin_-_Henri-Léonard_Bertin.png' %}" alt="" title="<i>Henri-Léonard-Jean-Baptiste Bertin</i>, Portrait à l'huile par Alexandre Roslin. 3e quart du XVIIIe siècle. Huile sur toile, Issac, Château de Montréal" /></a>
+            <a href="{% static  'chatou/static/images/pages/notice_historique/Voiture à vapeur et chemin de fer, Anonyme RMN vs 2.JPG' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/notice_historique/Voiture à vapeur et chemin de fer, Anonyme RMN vs 2.JPG' %}" alt="" title="Anonyme, La <i>locomotive à vapeur et le chemin de fer</i>, caricature, sans date (vers 1840), RMN" /></a>
+            <a href="{% static  'chatou/static/images/pages/notice_historique/BNF Parc du Vésinet Plan_général_indiquant_le_lotissement.jpeg' %}" class="img-4"><img src="{% static  'chatou/static/images/pages/notice_historique/BNF Parc du Vésinet Plan_général_indiquant_le_lotissement.jpeg' %}" alt="" title="Plan <i>général indiquant le lotissement du parc du Vésinet, ligne de St-Germain</i>, Alphonse Pallu, BNF Gallica" /></a>
+        {% elif page_title == 'limpressionnisme'  %}
+        <a href="{% static  'chatou/static/images/pages/limpre/Pierre_Auguste_Renoir_les_canotiers.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/limpre/Pierre_Auguste_Renoir_les_canotiers.jpg' %}" alt="" title="Pierre-Auguste Renoir, <i>Les canotiers à Chatou</i> (vers 1879), Huile sur toile, National Gallery of Art, Washington, DC, Etats Unis]" /></a>
+
+        {% elif page_title == 'impressionistes_a'  %}
+        <a href="{% static  'chatou/static/images/pages/impressionistes_a/Header_1st Itinerary_Plan_de_la_forest_du_Vezinet_fait_en_lannée_1783_par_Main_premier_arpenteur_en_la_Maîtrise_des_Eaux_et_Forest_de_St_Germain_1783.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/Header_1st Itinerary_Plan_de_la_forest_du_Vezinet_fait_en_lannée_1783_par_Main_premier_arpenteur_en_la_Maîtrise_des_Eaux_et_Forest_de_St_Germain_1783.jpg' %}" alt="" title="<i>Atlas censier de la Seigneurie de Chatou, établi en 1780 par le Seigneur de Chatou et de Montesson de l’époque, Henri-Léonard Jean-Baptiste de Bertin</i> (detail), Archives de la Ville de Chatou." /></a>
+        {% elif page_title == 'step0'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step0/Chatou Île 042 La Maison Fournaise depuis le Pont.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step0/Chatou Île 042 La Maison Fournaise depuis le Pont.jpg' %}" alt="" title="Le <i>Restaurant Fournaise</i>, Vue depuis l’ancien pont de Chatou, vers 1905, carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step0/Chatou Île 047 La Maison Fournaise Façade laterale Moonik W.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step0/Chatou Île 047 La Maison Fournaise Façade laterale Moonik W.jpg' %}" alt="" title="<i>La façade latérale de la maison Fournaise</i>, Crédit photo : Moonik, Wikipedia" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step0/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_vs2_Google_Art_Project.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step0/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_vs2_Google_Art_Project.jpg' %}" alt="" title="Pierre-Auguste Renoir, <i>Le déjeuner des canotiers</i> (vers 1880-81), Huile sur toile, The Phillips Collection, Washington DC, Etats Unis" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step0/Pierre Auguste Renoir, Alphonsine Fournaise on the Isle of Chatou (1879).png' %}" class="img-4"><img src="{% static  'chatou/static/images//pages/impressionistes_a/step0/Pierre Auguste Renoir, Alphonsine Fournaise on the Isle of Chatou (1879).jpg' %}" alt="" title="Pierre-Auguste Renoir, <i>Portrait d'Alphonsine Fournaise</i>, (1879), Musée d'Orsay, Paris, France" /></a>
+        {% elif page_title == 'step1'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step1/W Adam78 Maison Levanneur.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step1/W Adam78 Maison Levanneur.jpg' %}" alt="" title="<i>La maison Levanneur</i>, Crédit photo : Adam78, Wikipedia" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step1//Derain_et_Vlaminck_en_1942.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step1//Derain_et_Vlaminck_en_1942.jpg' %}" alt="" title="" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step1/De Vlaminck Le pont de Chatou et lIle 1907.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step1/De Vlaminck Le pont de Chatou et lIle 1907.jpg' %}" alt="" title="Maurice De Vlaminck, <i>Le Pont de Chatou et l’île</i>, 1907" /></a>
+        {% elif page_title == 'step2'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step2/Eglise 04.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step2/Eglise 04.jpg' %}" alt="" title="<i>Chatou, Église de Notre-Dame de l’Assomption</i>, Crédit photo : Antonio Ca’ Zorzi" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step2/Chatou Eglise 06 Vue Aerienne est après 1960.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step2/Chatou Eglise 06 Vue Aerienne est après 1960.jpg' %}" alt="" title="Église de Chatou, Vue aérienne, s.d. (vers 1960)" /></a>
+        {% elif page_title == 'step3'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step3/Chatou Parc 080 Le Château Bertin 1910.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step3/Chatou Parc 080 Le Château Bertin 1910.jpg' %}" alt="" title="<i>Château de Chatou, construit en 1780 pour le Ministre Bertin ; demoli en 1910</i>, carte postale, avant 1910" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step3/Ancienne entrée Chateau de la pièce deau.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step3/Ancienne entrée Chateau de la pièce deau.jpg' %}" alt="" title="<i>CHATOU – La Pièce d’Eau, ancienne Entrée du Château [sic]</i>, carte postale, vers 1905. L’entrée est celle du château Bertin et non pas de la Pièce d’Eau" /></a>
+            {% elif page_title == 'step4'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step4/Chatou Parc 065 Le Nymphée 1905.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step4/Chatou Parc 065 Le Nymphée 1905.jpg' %}" alt="" title="<i>Chatou – Grotte du Château [Le Nymphée du château Bertin]</i>, vers 1905, carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (7 of 10).jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (7 of 10).jpg' %}" alt="" title="Le Nymphée de Soufflot. Crédit photo : Antonio Ca’ Zorzi, 2011" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (1 of 10).jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (1 of 10).jpg' %}" alt="" title="Le Nymphée de Soufflot. Crédit photo : Antonio Ca’ Zorzi, 2011" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (9 of 10).jpg' %}" class="img-4"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step4/Nymphée New (9 of 10).jpg' %}" alt="" title="Le Nymphée de Soufflot. Crédit photo : Antonio Ca’ Zorzi, 2011" /></a>
+            {% elif page_title == 'step5'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step5/Chatou Pièce dEau 023 Villa Lambert.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step5/Chatou Pièce dEau 023 Villa Lambert.jpg' %}" alt="" title="Chatou (S.-et- O.) – <i>Château de la Pièce d’Eau</i>, carte postale, date inconnue (avant 1910)" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step5/Chatou Pièce dEau 031 Le petit lac.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step5/Chatou Pièce dEau 031 Le petit lac.jpg' %}" alt="" title="<i>CHATOU (Seine et Oise) – La Pièce d’eau, le petit pont et le Château</i>, sans date (vers 1900-1910), carte postale" /></a>
+            {% elif page_title == 'step6'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou - Av. de la République avant 1911.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou - Av. de la République avant 1911.jpg' %}" alt="" title="<i>Avenue de la République</i>, aujourd’hui boulevard de la République, carte postale, avant 1911" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou République 041 La Faisandérie.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou République 041 La Faisandérie.jpg' %}" alt="" title="<i>Chatou – La Faisanderie – façade principale, s</i>. d. vers 1900-1910, carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou La faisanderie.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou La faisanderie.jpg' %}" alt="" title="<i>Chatou – La Faisanderie, sans</i> date (vers 1900-1910), carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou Sortie de lUsine Pathé avant 1908.jpg' %}" class="img-4"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou Sortie de lUsine Pathé avant 1908.jpg' %}" alt="" title="<i>CHATOU, - Sortie des Usines Pathé</i>, s. d. vers 1900-1910, carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Pathé_Phonographe_Le_Coquet.jpg' %}" class="img-5"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Pathé_Phonographe_Le_Coquet.jpg' %}" alt="" title="<i>Phonographe à cylindre Pathé Le Coquet d'Hubert Pernot équipé d'un mandrin Inter</i>, Source : Gallica, BNF)" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou République 024 Usines Pathé-Marconi.jpg' %}" class="img-6"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step6/Chatou République 024 Usines Pathé-Marconi.jpg' %}" alt="" title="<i>L’ancien bâtiment industriel de Pathé-Marconi dans les années 1950</i>, sans date, auteur inconnu." /></a>
+            {% elif page_title == 'step7'  %}
+          
+        
+          
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step7/Chatou_Mairie par Moonik Hôtel de Ville W.JPG' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step7/Chatou_Mairie par Moonik Hôtel de Ville W.JPG' %}" alt="" title="<i>L’hôtel de ville de Chatou</i>, Crédit photo : Moonik, via Wikipedia" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step7/Chatou Mairie 035 La Mairie.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step7/Chatou Mairie 035 La Mairie.jpg' %}" alt="" title="<i>L’hôtel de ville de Chatou</i>, sans date, carte postale" /></a>
+          
+                    
+            {% elif page_title == 'step8'  %}
+
+
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Entrée du Pays - Place du Marché 1910.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Entrée du Pays - Place du Marché 1910.jpg' %}" alt="" title="<i>Chatou, L’Entrée du Pays</i>, carte postale, vers 1905</i>" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 065 - Place du Marché.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 065 - Place du Marché.jpg' %}" alt="" title="<i>Chatou. – Le Marché</i> (s.d., vers 1900-1910), carte postale]" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 105c Funérailles Berteaux 1911.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 105c Funérailles Berteaux 1911.jpg' %}" alt="" title="<i>Funérailles Nationales de M. Berteaux, Ministre de Guerre. Chatou – L’Hôtel de Ville</i>, 1911, carte postale" /></a>
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 101 Monument Berteaux.jpg' %}" class="img-4"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step8/Chatou Gare 101 Monument Berteaux.jpg' %}" alt="" title="Auguste Maillard (sculpteur), <i>Monument à Maurice Berteaux</i>, 1922, carte postale, s.d" /></a>
+
+            
+
+            {% elif page_title == 'step9'  %}
+            <a href="{% static  'chatou/static/images/pages/impressionistes_a/step9/Chatou Gare 013b Le Quai vers 1910.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/pages/impressionistes_a/step9/Chatou Gare 013b Le Quai vers 1910.jpg' %}" alt="" title="<i>Gare de CHATOU-CROISSY</i>, carte postale, vers 1910]" /></a>
+
+        {% endif %}
+    </div>
+    <script>
+        $(function(){
+            var $gallery = $('.gallery-name-1 a').simpleLightbox();
+
+            $gallery.on('show.simplelightbox', function(){
+                console.log('Requested for showing');
+            })
+            
+                .on('shown.simplelightbox', function(){
+                    console.log('Shown');
+                })
+                .on('close.simplelightbox', function(){
+                    console.log('Requested for closing');
+                })
+                .on('closed.simplelightbox', function(){
+                    console.log('Closed');
+                })
+                .on('change.simplelightbox', function(){
+                    console.log('Requested for change');
+                })
+                .on('next.simplelightbox', function(){
+                    console.log('Requested for next');
+                })
+                .on('prev.simplelightbox', function(){
+                    console.log('Requested for prev');
+                })
+                .on('nextImageLoaded.simplelightbox', function(){
+                    console.log('Next image loaded');
+                })
+                .on('prevImageLoaded.simplelightbox', function(){
+                    console.log('Prev image loaded');
+                })
+                .on('changed.simplelightbox', function(){
+                    console.log('Image changed');
+                })
+                .on('nextDone.simplelightbox', function(){
+                    console.log('Image changed to next');
+                })
+                .on('prevDone.simplelightbox', function(){
+                    console.log('Image changed to prev');
+                })
+                .on('error.simplelightbox', function(e){
+                    console.log('No image found, go to the next/prev');
+                    console.log(e);
+                });
+            //     $gallery.currentSlide.on('click', function(){
+            //     console.log('click');
+            // });
+        });
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        // Thumbnail image controls
+        function currentSlide(n) {
+            resetInterval(window.intervallID);
+            showSlides(slideIndex = n);
+        }
+        // Next/previous controls
+        function plusSlides(n) {
+
+            showSlides(slideIndex += n);
+
+        }
+        function resetInterval(intervalID) {
+            clearInterval(intervalID);
+            // window.intervallID = setInterval(function () {
+            //     plusSlides(1)
+            // }, 5000);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        var xDown = null;
+        var yDown = null;
+        function getTouches(evt) {
+            return evt.touches ||             // browser API
+                evt.originalEvent.touches; // jQuery
+        }
+
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+
+        function handleTouchMove(evt) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+                if (xDiff > 0) {
+                    resetInterval(window.intervallID);
+                    plusSlides(1);
+                } else {
+                    resetInterval(window.intervallID);
+                    plusSlides(-1);
+                }
+            }
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        };
+
+
+        $(document).ready(function() {
+
+            showSlides(slideIndex);
+            // window.intervallID = setInterval(function () {
+            //     plusSlides(1)
+            // }, 5000);
+
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchstart', handleTouchStart, false);
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchmove', handleTouchMove, false);
+
+
+        });
+
+    </script>
+{% else %}
+<section class="header hero is-medium">
+    {% if page_title == 'introduction' %}
+        <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Chatou.jpg' %}')">
+    {% elif page_title == 'Note Historique'  %}
+        <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/pages/notice_historique/Pierre-Auguste_Renoir_-_Le_Pont_de_Chatou Grand.jpg' %}')">
+    {% elif page_title == 'impressionistes_a'  %}
+        <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}')">        
+    {% elif page_title == 'author'  %}
+    <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Ulrike.jpg' %}')">
+    {% elif page_title == 'step0'  %}
+    <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}')"></div>
+    {% elif page_title == 'step1'  %}
+    <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_MaisonFournaise.jpg' %}')"></div>
+    {% elif page_title == 'step2'  %}
+    <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Rives.jpg' %}')"></div>
+
+    {% elif page_title == 'step3'  %}
+    <div class="hero-body has-bg-img" style="background-image: url('{% static  'chatou/static/images/Visuels/Vis_Berges.jpg' %}')"></div>
+
+    {% endif %}
+        <div class="container has-text-centered">
+            <h1 class="title is-size-1 has-text-weight-normal">
+                {% if page_title == 'introduction' or page_title == 'Note Historique'  %}
+                    Promenades de Chatou
+                {% elif page_title == 'impressionistes'  %}
+                {% endif %}
+            </h1>
+            <h2 class="subtitle is-size-5">
+                {% if page_title == 'introduction' or page_title == 'Note Historique'  %}
+                    PAR ULRIKE KASPER
+                {% elif page_title == 'impressionistes_a'  %}
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,146 @@
+{% load static %}
+
+<div class="modal modal-infos-{{Itin_Color}}" >
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <!-- start Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+        <button class="modal-close is-large" aria-label="close" onclick="jQuery(this).parent('div').parent('div').removeClass('is-active');"></button>
+        <!-- end Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+        <div class="tabs navbar-infos is-fullwidth">
+            <ul>
+                {% if Lieu != 'NA' %}
+                <li><a class="icon is-active" data-target="place"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Place_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Transport != 'NA' %}
+                <li><a class="icon" data-target="transport"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Transport_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if opening_hours != 'NA' %}
+                <li><a class="icon" data-target="opening_hours"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Horaires_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Tickets  != 'NA' %}
+                <li><a class="icon" data-target="tickets"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Billets_white.svg' %}" alt=""></a></li>        
+                {% endif %}
+                {% if CE != 'NA' %}
+                <li><a class="icon" data-target="children"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Children_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Resturant != 'NA' %}
+                <li><a class="icon" data-target="restaurant"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Restaurant_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Bar  != 'NA' %}
+                <li><a class="icon" data-target="bar"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Bar_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Shopping  != 'NA' %}
+                <li><a class="icon" data-target="shopping"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Shopping_white.svg' %}" alt=""></a></li>
+                {% endif %}
+                {% if Toilet != 'NA' %}
+                <li><a class="icon" data-target="toilets"><img src="{% static  'chatou_auto/static/images/information_box_icons/white/Pictos_Pictos_info_Toilets_white.svg' %}" alt=""></a></li>   
+                {% endif %}
+            </ul>
+        </div>
+
+        <!--Every element of the tab as follow is linked by the id of the data-target attribute of the tabs element above-->
+<!--        This data-target attribute also need to be on the sidebar infos element.-->
+        <div id="place" class="section is-active">
+            <div class="content">
+                <!-- <h3>Adresse</h3> -->
+                {% for Li in Lieu %}
+                <p>
+                    {{Li.Lieu_Description|safe}}
+               
+                    
+                </p>
+                {%endfor%}
+            </div>
+
+        </div>
+        <div id="bar" class="section">
+            <div class="content">
+                <!-- <h3>Bar</h3> -->
+                {% for Bars in Bar %}
+                <p>
+                    {{Bars.Bar_Description|safe}}
+                
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="children" class="section">
+            <div class="content">
+                <!-- <h3>Children</h3> -->
+                {% for ce in CE %}
+                <p>
+                    {{ce.CE_Description|safe}}
+                </p>
+                {%endfor%}
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt, mi at porttitor mollis, mauris dui ultrices ligula, vel placerat orci magna eget arcu. Fusce imperdiet diam augue, quis laoreet lectus pharetra sit amet. Mauris ullamcorper vitae felis non commodo. Phasellus at lorem massa. Maecenas tristique maximus nisl, non viverra tellus elementum id. Sed sed est elit. Fusce eu velit eu tellus tempus ultrices eget ut magna. Duis rutrum dui eu metus convallis volutpat ac imperdiet dolor. Donec imperdiet turpis vel massa placerat vestibulum ut non elit. Cras at mattis ligula. Aenean eu interdum sapien. Sed risus erat, maximus nec odio et, convallis dignissim nulla. Ut tristique nunc eget dui rutrum eleifend. In vel aliquet dolor. Quisque luctus lectus mattis aliquet faucibus.
+
+Morbi at lectus sed ipsum venenatis rhoncus ullamcorper et lorem. Vivamus nec sagittis purus, in ullamcorper ligula. Pellentesque interdum, orci mollis efficitur aliquam, neque est mollis enim, vitae congue dui risus nec orci. Sed sit amet vestibulum dolor. Nam facilisis varius orci ac ultricies. Vivamus risus velit, maximus non luctus pharetra, tempor vel eros. Aliquam erat volutpat. Ut quis turpis sit amet arcu iaculis dignissim quis et tellus. Curabitur fringilla bibendum nisl vitae tempor.
+
+Quisque ac tempor lacus. Curabitur at euismod justo. Phasellus facilisis, sapien sit amet pharetra tristique, orci quam feugiat mauris, vel sagittis arcu nunc gravida enim. Vivamus tristique enim arcu, eleifend placerat est laoreet et. Donec viverra massa ac nibh aliquet imperdiet. Aenean vehicula egestas diam, sed tristique nibh vestibulum quis. Mauris imperdiet velit ac sagittis finibus. Etiam euismod nisi et sollicitudin semper. Maecenas blandit volutpat lacus, sed tristique lacus accumsan dictum. Vestibulum eget mauris eget felis aliquet dignissim. Pellentesque finibus, odio ut fermentum lacinia, est erat egestas magna, vel rutrum lectus libero eu velit. Pellentesque at ullamcorper sapien. Mauris eget diam libero. Fusce nec dui urna. Aliquam pharetra faucibus orci, eu dapibus risus facilisis ut.</p> -->
+               
+            </div>
+        </div>
+        <div id="restaurant" class="section">
+            <div class="content">
+                <!-- <h3>Restaurant</h3> -->
+                 {% for Res in Restaurant %}
+                <p>
+                    {{Res.Restaurant_Description|safe}}
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="shopping" class="section">
+            <div class="content">
+                <!-- <h3>Shopping</h3> -->
+                 {% for shop in shopping %}
+                <p>
+                    {{shop.Shopping_Description|safe}}
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="toilets" class="section">
+            <div class="content">
+                <!-- <h3>Toilettes</h3> -->
+                 {% for To in Toilet %}
+                <p>
+                    {{To.Toilet_Description|safe}}
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="opening_hours" class="section">
+            <div class="content">
+                <!-- <h3>Opening Hours</h3> -->
+                 {% for oh in opening_hours %}
+                <p>
+                    {{oh.oh_Description|safe}}
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="tickets" class="section">
+            <div class="content">
+                <!-- <h3>Tickets</h3> -->
+                 {% for ticket in Tickets %}
+                <p>
+                    {{ticket.tickets_Description|safe}}
+                
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+        <div id="transport" class="section">
+            <div class="content">
+                <!-- <h3>Transport</h3> -->
+                 {% for trans in Transport %}
+                <p>
+                    {{trans.transport_Description|safe}}
+                
+                </p>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>

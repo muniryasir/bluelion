@@ -1,0 +1,58 @@
+{% load static %}
+<aside class="column is-one-third-tablet is-one-quarter-fullhd">
+    <div class="section-aside">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical">
+          <div class="next-excerpt tile is-parent is-mobile-margin">
+{% if page_title == 'introduction'  %}
+<div class="tile is-child" onclick="window.location.assign('/commune_de_paris/historique/')">
+        <h2 class="title is-size-4">NOTE HISTORIQUE</h2>
+        <p class="is-hidden-mobile">
+            Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements ayant lieu sur ses îles et le mouvement des Impressionnistes...
+            <a href="/commune_de_paris/historique/">+</a>
+        </p>
+</div>
+{% endif %}
+</div>
+<div class="tile is-parent">
+{% include 'cdp_map_introduction.html' %}
+</div>
+<div class="tile is-parent is-vertical">
+<div class="tile is-child">
+    <h2 class="title is-size-4">MES PARCOURS</h2>
+</div>
+<div class="mobile-mosaique">
+
+    {% for itin,menu,color in itin_menu %}
+    <div class="tile is-child">
+        <a href="/{{menu.menu_link}}" class="is-thumbnail is-tour-thumbnail">
+            <div class="hero">
+               
+                <div class="hero-head has-background-primary-{{color.itinerary_colors}}">
+               
+                <!-- <div class="hero-head has-background-danger"> -->
+                
+                    <h3 class="title is-family-secondary">
+                        {{menu.menu_title}}
+                    </h3>
+                
+                <!-- </div> -->
+               
+                </div>
+               
+                <div class="hero-body is-paddingless">
+                    <img src="{{menu.menu_images}}" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+ 
+</div>
+
+</div>
+        
+        </div>
+      </div>
+    </div>
+  </aside>

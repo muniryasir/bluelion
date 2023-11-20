@@ -1,0 +1,90 @@
+{% load static %}
+<aside class="column is-one-third-tablet is-one-quarter-fullhd">
+    <div class="section-aside">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical">
+          <div class="next-excerpt tile is-parent is-mobile-margin">
+{% if page_title == 'introduction'  %}
+<div class="tile is-child" onclick="window.location.assign('/chatou/historique/')">
+        <h2 class="title is-size-4">NOTE HISTORIQUE</h2>
+        <p class="is-hidden-mobile">
+            Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements ayant lieu sur ses îles et le mouvement des Impressionnistes...
+            <a href="/chatou/historique/">+</a>
+        </p>
+</div>
+{% endif %}
+</div>
+<div class="tile is-parent">
+{% include 'map_introduction.html' %}
+</div>
+<div class="tile is-parent is-vertical">
+<div class="tile is-child">
+    <h2 class="title is-size-4">MES PARCOURS</h2>
+</div>
+<div class="mobile-mosaique">
+    <div class="tile is-child">
+        <a href="/chatou/impressionistes_a/" class="is-thumbnail is-tour-thumbnail">
+            <div class="hero">
+                <div class="hero-head has-background-primary">
+                    <h3 class="title is-family-secondary">
+                        Itinéraire d’art et d’histoire
+                    </h3>
+                </div>
+                <div class="hero-body is-paddingless">
+                    <img src="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="tile is-child">
+        <!-- <a href="/chatou/impressionistes_b/" class="is-thumbnail is-tour-thumbnail"> -->
+            <a href="#" class="is-thumbnail is-tour-thumbnail"></a>
+            <div class="hero">
+                <div class="hero-head has-background-danger">
+                    <h3 class="title is-family-secondary">
+                        Chatou d'antan
+                    </h3>
+                </div>
+                <div class="hero-body is-paddingless">
+                    <img src="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div>
+          <!-- <div class="tile is-parent is-vertical">
+<div class="tile is-child">
+  <h2 class="title is-size-4">ÉVÉNEMENTS</h2>
+</div>
+<div class="mobile-mosaique">
+    <div class="tile is-child">
+        <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+            <figure class="image">
+                <img src="{% static  'chatou/static/images/Visuels/Vis_Event_Expo.jpg' %}" alt="">
+                <figcaption>
+                    <h2 class="title">LES ATELIERS DU PAYSAGE</h2>
+                    <p class="timestamp">Jusqu'au 14 Juin 2019</p>
+                </figcaption>
+            </figure>
+        </a>
+
+    </div>
+    <div class="tile is-child">
+        <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+            <figure class="image">
+                <img src="{% static  'chatou/static/images/Visuels/Vis_Event_brocante.jpg' %}" alt="">
+                <figcaption>
+                    <h2 class="title">FOIRE AU JAMBON DE CHATOU</h2>
+                    <p class="timestamp">15 au 24 mars 2019</p>
+                </figcaption>
+            </figure>
+        </a>
+    </div>
+</div>
+</div> -->
+        </div>
+      </div>
+    </div>
+  </aside>

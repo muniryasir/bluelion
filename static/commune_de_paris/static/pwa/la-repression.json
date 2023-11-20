@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href=" /static/commune_de_paris/static/manifest.webmanifest" rel="manifest"/>
+<script async="" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea6ae3d311af400127bcbc3&amp;product=sticky-share-buttons"></script>
+<style>
+.st-btns .st-btn { display:none !important; }
+.st-btns .st-btn[data-network='diaspora'],
+.st-btns .st-btn[data-network='digg'],
+.st-btns .st-btn[data-network='email'],
+.st-btns .st-btn[data-network='facebook'],
+.st-btns .st-btn[data-network='messenger'],
+.st-btns .st-btn[data-network='pinterest'],
+.st-btns .st-btn[data-network='print'],
+.st-btns .st-btn[data-network='reddit'],
+.st-btns .st-btn[data-network='skype'],
+.st-btns .st-btn[data-network='tumblr'],
+.st-btns .st-btn[data-network='twitter'],
+.st-btns .st-btn[data-network='whatsapp'] { display:block !important; margin:10px !important; float: left; }
+</style>
+<title>La répression</title>
+<style>
+    /* google maps class for colors cannot be ported to css file */
+
+
+
+ .gm-style-iw.gm-style-iw-c {
+                max-height: unset !important;
+                padding: 0 !important;
+                border: 5px solid #E30613;
+                margin-left: -60px !important;
+                margin-top: 46px !important;
+            }
+.gm-style .gm-style-iw-t::after {
+    background: url(/static/commune_de_paris/static/images/maps/infowindow/home_downarrow_red_changed.png) no-repeat;
+    /* border: 5px solid #1f96de; */
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 35px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 38px !important;
+    transform: translate(-60%,114%) rotate(0deg) !important;
+}
+
+.wrapper_comparison_slider {
+      /* max-width: 768px; */
+      /* margin: 20px auto; */
+      text-align: center;
+    }
+   
+  #floating-panel {
+    position: absolute;
+    margin-top: 10px; margin-left: 10px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: "Source Sans Pro" !important;
+  }
+  #directions-panel {
+    margin-top: 70px;
+    margin-left: 10px;
+    max-height: 300px;
+    max-width: 300px;
+    overflow-x: hidden;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    font-family: "Source Sans Pro" !important;
+    z-index: 5;
+  }
+    </style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/static/commune_de_paris/static/css/style.css" rel="stylesheet"/>
+<link href="/static/commune_de_paris/static/css/ImageComparison.css" rel="stylesheet"/>
+<link href="/static/commune_de_paris/static/css/map_customization.css" rel="stylesheet"/>
+<script>
+ var staticAddress= /static/;
+</script>
+<script src="/static/commune_de_paris/static/js/jquery.js"></script>
+<script src="/static/commune_de_paris/static/js/maps.js"></script>
+<script src="/static/commune_de_paris/static/js/main.js"></script>
+<script src="/static/commune_de_paris/static/js/comparison_slider.js"></script>
+<script src="/static/commune_de_paris/static/js/ImageComparison.js"></script>
+<!--<script src="../js/audioplayer.js"></script>-->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script> -->
+<link href="/static/commune_de_paris/static/js/dist/simpleLightbox.css" rel="stylesheet"/>
+<script src="/static/commune_de_paris/static/js/dist/simpleLightbox.js"></script>
+<script src="/static/commune_de_paris/static/js/cookies-eu-support.js"></script>
+<script src="/static/commune_de_paris/static/js/app-download.js"></script>
+<!-- <script src="/static/commune_de_paris/static/js/dist/jssor.slider.min.js"></script> -->
+</head>
+<script>
+
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/commune_sw.js", { scope: '/' }).then(function(reg) {
+            // registration worked
+            console.log('Registration succeeded. Scope is ' + reg.scope);
+
+        }).catch(function(error) {
+            // registration failed
+            console.log('Registration failed with ' + error);
+        });
+    }
+    
+</script>
+<body>
+<nav class="navbar main-nav is-black" id="navbar">
+<div class="nav-container">
+<div class="navbar-icons">
+<a class="navbar-item">
+<span class="navbar-burger burger" data-target="navbarMenu">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</a>
+<a class="navbar-item back-arrow is-not-active" onclick="returnToFunction('')">
+<img alt="" src="/static/commune_de_paris/static/images/Left-Arrow_Back.png"/>
+</a>
+</div>
+<div class="navbar-brand">
+<a class="navbar-item" href="/">
+<img alt="Logo" src="/static/commune_de_paris/static/images/logos/Logo_Red_Small.png"/>
+</a>
+</div>
+<div class="navbar-menu" id="navbarMenu">
+<a class="navbar-item is-active" href="/">
+                Accueil
+            </a>
+<!-- <a href="/commune_de_paris/introduction/" class="navbar-item">
+                Introduction
+            </a> -->
+<!-- <a href="/commune_de_paris/historique/" class="navbar-item">
+                Un peu d’histoire 
+            </a>
+            <a href="/commune_de_paris/limpressionnisme/" class="navbar-item">
+                À la source de l'impressionnisme
+            </a> -->
+<!-- Introduction links -->
+<a class="navbar-item" href="/le-mur-des-federes">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+</span>
+                Le Mur des Fédérés
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/articles-thematiques">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Histoire de la Commune
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/les-communardars-au-pere-lachaise">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Les communards au Père Lachaise
+            </a>
+<!-- Itinerary links -->
+<a class="navbar-item" href="/name-index">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+<!-- <img src="/static/commune_de_paris/static/images/PCT_Arrow_white_Right.png" alt="" /> -->
+</span>
+                Index alphabétique
+            </a>
+<!-- Introduction links -->
+<a class="navbar-item" href="/a-propos">
+<span class="image inline-icon is-size-4 rightarrow_nav">
+</span>
+                À propos
+            </a>
+<!-- <a class="navbar-item">
+                Événements
+            </a> -->
+<!-- <a class="navbar-item" href="#">
+                L'auteur
+            </a> -->
+<!-- <a class="navbar-item">
+                À propos
+            </a> -->
+<a class="navbar-item is-active">
+<span class="image inline-icon is-size-4 downloadimg_nav">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Telech.svg"/>
+</span>
+<span>
+                TÉLÉCHARGER L'APP
+                </span>
+</a>
+</div>
+<div class="navbar-icons">
+<!-- <a class="navbar-item has-badge-rounded has-badge-danger notif-cta" data-badge="8">
+                <img src="/static/commune_de_paris/static/images/Picto_alert.png" alt="">
+            </a> -->
+<a class="navbar-item map-cta-reset">
+<img alt="Map" src="/static/commune_de_paris/static/images/Picto_map.png"/>
+</a>
+</div>
+</div>
+</nav>
+<div class="navbar-tourstep has-background-primary-BLUE" id="blue_navbar">
+<div class="container">
+<div class="level is-mobile">
+<div class="level-left">
+<span class="itinerary-link"><a href="/articles-thematiques" style="all:inherit; cursor: pointer;">CHAPITRES</a></span>
+</div>
+<div class="level-right">
+<div class="tabs" id="step_menu">
+<ul>
+<li>
+<a href="/articles-thematiques/la-semaine-sanglante"><img src="/static/commune_de_paris/static/images/Arrow_back%20white_64.png"/></a>
+</li>
+<!-- <li><a class="is-active" href="/articles-thematiques/la-repression">14</a></li> -->
+<li class="page-number"><span>14</span></li>
+<li class="left-arrow">
+<a href="/histoire-de-la-commune/le-temps-des-cerises"><img src="/static/commune_de_paris/static/images/Arrow_next%20white_64.png"/></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+   
+    });
+    </script>
+<section class="header hero is-medium">
+<div class="hero-body is-paddingless slideshow-container">
+<div class="slide fade is-gallery-trigger" data-target="gallery-name-1 .img-1">
+<img alt="" src="/media/media/communde_de_paris/Le_proces_des_communards.jpg"/>
+<img alt="" class="is-clearfix" src="/static/commune_de_paris/static/images/pages/steps/zoom-in.png" style="all: initial; display: inline-block; position:absolute; height:8%; top:90%; left:90%;  float:right;"/>
+</div>
+</div>
+</section>
+<!--HTML And js components to add the simple-lightbox plugin to the page. Needed if there is clickable imgs in the page-->
+<script src="/static/commune_de_paris/static/js/simple-lightbox.js"></script>
+<div class="gallery-name-1" id="gallery-name-1" style="display: none">
+<a class="img-1" href="/media/media/communde_de_paris/Le_proces_des_communards.jpg"><img alt="" src="/media/media/communde_de_paris/Le_proces_des_communards.jpg" title="&lt;p&gt;Versailles, S&amp;eacute;ance du troisi&amp;egrave;me Conseil de guerre, Anonyme. Saint-Denis, mus&amp;eacute;e d&amp;#39;art et d&amp;#39;histoire&lt;/p&gt;"/></a>
+</div></body></html>
+<a class="img-2" href="/media/media/communde_de_paris/communards-deportes-ile-des_med_.jpeg"><img alt="" src="/media/media/communde_de_paris/communards-deportes-ile-des_med_.jpeg" title="&lt;p&gt;Les communards d&amp;eacute;port&amp;eacute;s en Nouvelle Cal&amp;eacute;donie&lt;/p&gt;"/></a>
+
+<script>
+        var openx = 0;
+        var fb =  SimpleLightbox;
+        function callGallery(x) {
+             SimpleLightbox.open({
+            content: x,
+            elementClass: 'slbContentEl'
+            });
+        }
+      
+        $(function(){
+            var $gallery = $('.gallery-name-1 a').simpleLightbox({
+                captionPosition: 'outside',
+            });
+
+            $gallery.on('show.simplelightbox', function(){
+                // console.log('Requested for showing');
+            })
+            
+                .on('shown.simplelightbox', function(){
+                    // console.log('Shown');
+                })
+                .on('singletouch.simplelightbox', function(){
+                    console.log('singletouch');
+                    $gallery.hideCaption();
+                })
+                .on('close.simplelightbox', function(){
+                    // console.log('Requested for closing');
+                })
+                .on('closed.simplelightbox', function(){
+                    // console.log('Closed');
+                })
+                .on('change.simplelightbox', function(){
+                    // console.log('Requested for change');
+                })
+                .on('next.simplelightbox', function(){
+                    // console.log('Requested for next');
+                })
+                .on('prev.simplelightbox', function(){
+                    // console.log('Requested for prev');
+                })
+                .on('nextImageLoaded.simplelightbox', function(){
+                    // console.log('Next image loaded');
+                })
+                .on('prevImageLoaded.simplelightbox', function(){
+                    // console.log('Prev image loaded');
+                })
+                .on('changed.simplelightbox', function(){
+                    // console.log('Image changed');
+                })
+                .on('nextDone.simplelightbox', function(){
+                    // console.log('Image changed to next');
+                })
+                .on('prevDone.simplelightbox', function(){
+                    // console.log('Image changed to prev');
+                })
+                .on('error.simplelightbox', function(e){
+                    // console.log('No image found, go to the next/prev');
+                    // console.log(e);
+                });
+            //     .on('click', function(){
+            //     console.log('click');
+            // });
+        });
+        $('.sl-image').click(function(e) {
+            console.log('click');
+        });
+        $('.sl-image').on('click', function(e) {
+            if (e.target == this) {
+                // add "close" code here
+                console.log('click');
+            }
+        });
+    </script>
+<script>
+     $(document).ready(function() {
+        var slideIndex = 1;
+        // Thumbnail image controls
+        function currentSlide(n) {
+            resetInterval(window.intervallID);
+            showSlides(slideIndex = n);
+        }
+        // Next/previous controls
+        function plusSlides(n) {
+
+            showSlides(slideIndex += n);
+
+        }
+        function resetInterval(intervalID) {
+            clearInterval(intervalID);
+            // window.intervallID = setInterval(function () {
+            //     plusSlides(1)
+            // }, 5000);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        var xDown = null;
+        var yDown = null;
+        function getTouches(evt) {
+            return evt.touches ||             // browser API
+                evt.originalEvent.touches; // jQuery
+        }
+
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+
+        function handleTouchMove(evt) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+                if (xDiff > 0) {
+                    resetInterval(window.intervallID);
+                    plusSlides(1);
+                } else {
+                    resetInterval(window.intervallID);
+                    plusSlides(-1);
+                }
+            }
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        };
+
+
+       
+
+            showSlides(slideIndex);
+
+
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchstart', handleTouchStart, false);
+            document.getElementsByClassName("slideshow-container").item(0).addEventListener('touchmove', handleTouchMove, false);
+
+
+       
+
+ var prevScrollpos = window.pageYOffset;
+ var blueNavbarTop = document.getElementById("blue_navbar").style.top;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+    document.getElementById("blue_navbar").style.top = blueNavbarTop;
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+    document.getElementById("blue_navbar").style.top = "-50px";
+
+  }
+  prevScrollpos = currentScrollPos;
+}
+console.log('working');
+ });
+    </script>
+<section class="section">
+<div class="container">
+<div class="content">
+<h1 class="title is-size-2">
+           La répression
+               
+            </h1>
+<div class="cta-icon-container">
+<a class="audio-player-cta" data-track="MaPiste1">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Audio.svg"/>
+</a>
+<a class="map-cta">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_Map.svg"/>
+</a>
+<!-- <a class="info-tooltip">
+        <img src="/static/commune_de_paris/static/images/Pictos_Big_Info.svg" alt="">
+    </a> -->
+<a class="share-this">
+<img alt="" src="/static/commune_de_paris/static/images/Pictos_Big_sharing.svg"/>
+</a>
+</div>
+</div>
+<div class="columns">
+<article class="content column">
+<!-- <p class="is-description">
+        Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux
+        événements ayant lieu sur ses îles et le mouvement des Impressionnistes
+    </p> -->
+<!-- <h3>
+        Localisation
+    </h3> -->
+<p>Dès le 21 mai 1871, l’armée rentre dans Paris. Commence alors une effroyable chasse aux insurgés.  Elle sera dénommée la semaine sanglante. Exécutions  sommaires, simulacre de procès au Châtelet et au Luxembourg avec pour finalité la mort à la caserne Lobau ou dans les jardins du Luxembourg ou l’Ecole militaire. Bien d’autres lieux serviront d’abattoirs et de fosses communes. Les parcs Monceau et Buttes –Chaumont, square Saint Jacques en sont un exemple.</p>
+<p>Dès le mois de juin 1871, vient la répression  légale. Plus de tuerie mais des emprisonnements. Plus de 36 000 prisonniers hommes, femmes et enfants sont dirigés vers tous les ports de l'Atlantique de Rochefort à Cherbourg dans l’attente d’être traduits dans les conseils de guerre.  Ces conseils de guerre au nombre de 26 fonctionneront jusqu’en 1878.  Les femmes sont réparties entre les maisons d’arrêts de  Clermont (60) Rouen (76)  Auberive (52) et Arras (62).</p>
+<p>Les prisons étant pleines, des navires désarmés appelés pontons, ainsi que les forts sur les Iles de l’océan, serviront de lieux d’enfermement. Des enfants de 8 ans côtoient des adultes de plus de 70 ans. Ils y restent 2, 3 voire plus de 6 mois avant qu’une décision ne soit prise à leur encontre : non lieu ou enfermement dans une prison ou déportation en Nouvelle- Calédonie. Les enfants de moins de 15 ans condamnés seront dirigés vers la maison de correction de Rouen.  Près d’un millier d’hommes, de femmes et d’enfants décéderont durant l’instruction.</p>
+<figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-2">
+<img alt="" class="is-clearfix" src="/media/media/communde_de_paris/communards-deportes-ile-des_med_.jpeg"/>
+<!-- <img src="/static/commune_de_paris/static/images/pages/steps/zoom-in-black.png"  style="all: initial; display: inline-block; width:10%; height:10%; float:right;" class="is-clearfix" alt="">-->
+<figcaption><p>Les communards déportés en Nouvelle Calédonie</p></figcaption>
+<input id="long_description" name="long_description" type="hidden" value=".img-&lt;p&gt;Les communards déportés en Nouvelle Calédonie&lt;/p&gt;"/>
+</figure>
+<p> </p>
+<p>Les condamnés aux travaux forcés, déportation en enceinte fortifiée, déportation simple effectueront leurs peines en Nouvelle-Calédonie.  Sept femmes sont condamnées à mort, leurs  peines seront commuées en travaux forcés à perpétuité à effectuer sur les Iles du Salut en Guyane.</p>
+<p>Les convois vers la Nouvelle-Calédonie s’effectuent depuis les ports de Brest, de Toulon ou de Saint Martin de Ré. La traversée pour la Nouvelle-Calédonie dure au minimum 147 jours. Le scorbut fait des ravages parmi les déportés.</p>
+<p>Une amnistie partielle fut votée le 3 mars 1879. 5 bateaux arrivèrent à Port-Vendres (66) entre le 1er septembre et le 12 octobre 1879. L'aministie totale est promulguée le 11 juillet 1880. Les convois débarqueront les déportés dans le port de Brest.</p>
+<p> </p>
+<p><strong>Pontons et prisons de la côte Atlantique de Rochefort à Cherbourg</strong></p>
+<p><strong>Secteur de Rochefort</strong><br/>
+-           Fort de l’Ile d’Aix<br/>
+-           Fort du Château d’Oléron<br/>
+-           Fort d’Enet<br/>
+-           Fort Boyard<br/>
+-           Fort Fouras<br/>
+-           Fort de l’ile Madame<br/>
+-           Fort de Noirmoutier<br/>
+-           Fort des Saumonards<br/>
+-           Fort de l’ile d’Yeu<br/>
+-           Pontons : La Foudre, L’Orne, L’Iphigénie, Le Pandore<br/>
+-           Hôpital maritime de Rochefort</p>
+<p><strong>Secteur de Lorient</strong><br/>
+-           Maison de détention de Belle-Ile<br/>
+-           Fort Port-Louis<br/>
+-           Pontons : La Pénélope, La Prudence, La Vengeance</p>
+<p><strong>Secteur de Cherbourg</strong><br/>
+-           Fort des iles Chausey<br/>
+-           Fort du Hommet<br/>
+-           Fort de l’ile Pelée<br/>
+-           Fort de l’ile Saint Marcouf<br/>
+-           Pontons : L’Arcole, Le Bayard, Le Calvados, La Garonne, Le Rhône, Le Tage, Tourville, Ville de Nantes<br/>
+-           Navire Hôpital l’Impétueuse</p>
+<p><strong>Secteur de Brest </strong><br/>
+-           Fort Quelern<br/>
+-           Prison de Brest<br/>
+-           Pontons : L’Aube, L’Austerlitz, Breslau, Le Duguay-Trouin, Le Fontenoy, L’Hermione, La Marne, le Napoléon, Le Tilsitt, Ville de Bordeaux, Ville de Lyon, L’Yonne<br/>
+-           Hôpital maritime de Brest<br/>
+-           Navire hôpital La Renommée<br/>
+-           Navire hôpital La Souveraine<br/>
+-           Lazaret de Tréberon</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<cite>
+<!-- <a class="image inline-icon audio-player-cta" data-track="MaPiste1">
+            <img src="/static/commune_de_paris/static/images/Pictos_Text_Audio.svg" alt="">
+        </a> -->
+<!-- <a class="has-text-primary cite-cta" data-target="citation1">Voici une liste non-exhaustive de ...</a>
+    <a class="image inline-icon cite-cta" data-target="citation1">
+        <img src="/static/commune_de_paris/static/images/Pictos_Text_Citation.svg" alt="">
+    </a> -->
+</cite>
+<div>
+<a class="pagination-right" href="/histoire-de-la-commune/le-temps-des-cerises">
+<span>
+                                    Le temps des cerises
+                                </span>
+<span class="image">
+<img src="/static/commune_de_paris/static/images/Pictos_Arrow_blue_Right.svg"/>
+</span>
+</a>
+<a class="pagination-left" href="/articles-thematiques/la-semaine-sanglante">
+<span class="image">
+<img src="/static/commune_de_paris/static/images/Pictos_Arrow_blue_Left.svg"/>
+</span>
+<span>
+                        La semaine sanglante fin de la Commune
+                    </span>
+</a>
+<div class="is-clearfix">
+</div>
+</div>
+</article>
+<aside class="column is-one-third-tablet is-one-quarter-fullhd">
+<div class="section-aside">
+<div class="tile is-ancestor">
+<div class="tile is-vertical">
+<div class="tile is-parent">
+<div class="tile is-child">
+<h2 class="title is-size-4">MON PLAN</h2>
+<figure class="image map-cta is-thumbnail" id="mapframe">
+<div class="stepmap" id="googleMap"></div>
+</figure>
+</div>
+</div>
+<!--place side step navigator-->
+<div class="tile is-parent is-vertical">
+<div class="tile is-child">
+<h2 class="title is-size-4"></h2>
+</div>
+<div class="next-steps">
+<div class="tile is-parent is-child">
+<a href="/histoire-de-la-commune/le-temps-des-cerises">
+<div class="step-container">
+<div class="image">
+<img alt="" src="/media/media/communde_de_paris/Temps_des_Cerises_Couverture_originale.png"/>
+</div>
+<div class="legend">
+<div class="BLUE">
+<div>
+<span class="number-BLUE">15</span>
+<span class="step-title-text">Le temps des cerises</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtcEVJm5a5u1ghSGlD7Fp1_kHYkC7hJ2Q&amp;callback=googleMapMethod"></script>
+<footer class="footer">
+<nav class="level">
+<div class="level-item has-text-centered">
+<p>
+            © BLUE LION 2020    <a href="/mentions-legales">MENTIONS LÉGALES</a>
+</p>
+</div>
+<div class="level-item">
+<img alt="" src="/static/commune_de_paris/static/images/Logo_BlueLion_footer.png"/>
+</div>
+<div class="level-item">
+<p>
+<!-- AVEC LE SOUTIEN DE  -->
+<a href="https://www.commune1871.org/"><img alt="" src="/static/commune_de_paris/static/images/logos/Logo_Red_Small.png"/></a>
+</p>
+</div>
+</nav>
+</footer>
+<div class="modal modal-map">
+<div class="modal-background"></div>
+<!--Edit by Shayan-->
+<div class="modal-content" style="width: 90%; max-width: 1040px;">
+<div class="map-container">
+<div class="mapfull" id="map">
+</div>
+</div>
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<!--Edit by Shayan-->
+<script>
+$(document).keydown(function(event) { 
+  if (event.keyCode == 27) { 
+    $('.modal-map .modal-close').click();
+  }
+});
+</script>
+<!--Edit by Shayan-->
+<div class="modal modal-infos-">
+<div class="modal-background"></div>
+<div class="modal-content">
+<!-- start Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+<button aria-label="close" class="modal-close is-large" onclick="jQuery(this).parent('div').parent('div').removeClass('is-active');"></button>
+<!-- end Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+<div class="tabs navbar-infos is-fullwidth">
+<ul>
+<li><a class="icon is-active" data-target="place"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Place_white.svg"/></a></li>
+<li><a class="icon" data-target="transport"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Transport_white.svg"/></a></li>
+<li><a class="icon" data-target="opening_hours"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Horaires_white.svg"/></a></li>
+<li><a class="icon" data-target="tickets"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Billets_white.svg"/></a></li>
+<li><a class="icon" data-target="children"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Children_white.svg"/></a></li>
+<li><a class="icon" data-target="restaurant"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Restaurant_white.svg"/></a></li>
+<li><a class="icon" data-target="bar"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Bar_white.svg"/></a></li>
+<li><a class="icon" data-target="shopping"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Shopping_white.svg"/></a></li>
+<li><a class="icon" data-target="toilets"><img alt="" src="/static/commune_de_paris/static/images/information_box_icons/white/Pictos_Pictos_info_Toilets_white.svg"/></a></li>
+</ul>
+</div>
+<!--Every element of the tab as follow is linked by the id of the data-target attribute of the tabs element above-->
+<!--        This data-target attribute also need to be on the sidebar infos element.-->
+<div class="section is-active" id="place">
+<div class="content">
+<!-- <h3>Adresse</h3> -->
+</div>
+</div>
+<div class="section" id="bar">
+<div class="content">
+<!-- <h3>Bar</h3> -->
+</div>
+</div>
+<div class="section" id="children">
+<div class="content">
+<!-- <h3>Children</h3> -->
+<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt, mi at porttitor mollis, mauris dui ultrices ligula, vel placerat orci magna eget arcu. Fusce imperdiet diam augue, quis laoreet lectus pharetra sit amet. Mauris ullamcorper vitae felis non commodo. Phasellus at lorem massa. Maecenas tristique maximus nisl, non viverra tellus elementum id. Sed sed est elit. Fusce eu velit eu tellus tempus ultrices eget ut magna. Duis rutrum dui eu metus convallis volutpat ac imperdiet dolor. Donec imperdiet turpis vel massa placerat vestibulum ut non elit. Cras at mattis ligula. Aenean eu interdum sapien. Sed risus erat, maximus nec odio et, convallis dignissim nulla. Ut tristique nunc eget dui rutrum eleifend. In vel aliquet dolor. Quisque luctus lectus mattis aliquet faucibus.
+
+Morbi at lectus sed ipsum venenatis rhoncus ullamcorper et lorem. Vivamus nec sagittis purus, in ullamcorper ligula. Pellentesque interdum, orci mollis efficitur aliquam, neque est mollis enim, vitae congue dui risus nec orci. Sed sit amet vestibulum dolor. Nam facilisis varius orci ac ultricies. Vivamus risus velit, maximus non luctus pharetra, tempor vel eros. Aliquam erat volutpat. Ut quis turpis sit amet arcu iaculis dignissim quis et tellus. Curabitur fringilla bibendum nisl vitae tempor.
+
+Quisque ac tempor lacus. Curabitur at euismod justo. Phasellus facilisis, sapien sit amet pharetra tristique, orci quam feugiat mauris, vel sagittis arcu nunc gravida enim. Vivamus tristique enim arcu, eleifend placerat est laoreet et. Donec viverra massa ac nibh aliquet imperdiet. Aenean vehicula egestas diam, sed tristique nibh vestibulum quis. Mauris imperdiet velit ac sagittis finibus. Etiam euismod nisi et sollicitudin semper. Maecenas blandit volutpat lacus, sed tristique lacus accumsan dictum. Vestibulum eget mauris eget felis aliquet dignissim. Pellentesque finibus, odio ut fermentum lacinia, est erat egestas magna, vel rutrum lectus libero eu velit. Pellentesque at ullamcorper sapien. Mauris eget diam libero. Fusce nec dui urna. Aliquam pharetra faucibus orci, eu dapibus risus facilisis ut.</p> -->
+</div>
+</div>
+<div class="section" id="restaurant">
+<div class="content">
+<!-- <h3>Restaurant</h3> -->
+</div>
+</div>
+<div class="section" id="shopping">
+<div class="content">
+<!-- <h3>Shopping</h3> -->
+</div>
+</div>
+<div class="section" id="toilets">
+<div class="content">
+<!-- <h3>Toilettes</h3> -->
+</div>
+</div>
+<div class="section" id="opening_hours">
+<div class="content">
+<!-- <h3>Opening Hours</h3> -->
+</div>
+</div>
+<div class="section" id="tickets">
+<div class="content">
+<!-- <h3>Tickets</h3> -->
+</div>
+</div>
+<div class="section" id="transport">
+<div class="content">
+<!-- <h3>Transport</h3> -->
+</div>
+</div>
+</div>
+</div>
+<script src="/static/commune_de_paris/static/js/modal_infos.js">
+</script>
+<!-- stat Custom Audio Player -->
+<div class="audio-player level is-mobile" style="display:none;">
+<div class="level-left">
+<button class="button-play"></button>
+</div>
+<div class="progress-bar-cont">
+<div class="progress-bar">
+<em class="progression">
+</em>
+<a class="draggable"></a>
+</div>
+<div class="music-infos">
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="level-right">
+<div class="music-close"></div>
+</div>
+<!--    Place here the audio files in the page, linked by data-track="id" which is also as an attribute of audio-player-cta-->
+<audio data-track="MaPiste1" id="audio_player" src="/media/media/commune_de_paris/audio_files/LA_REPRESSION_et_PONTONS_ET_PRISONS_mp3_48k_mono_ampl_0dB.mp3">
+</audio>
+</div>
+<script src="/static/commune_de_paris/static/js/audioplayer.js">
+</script>
+<!-- end Custom Audio Player -->
+<!--Image Comparison slider modal with js plugin-->
+<!--To insert in document foot only if needed-->
+<!--This modal is triggered on click to an element with the "modal-comp-trigger" class-->
+<div class="modal modal-comp">
+<div class="modal-background"></div>
+<div class="modal-content">
+<figure class="cd-image-container">
+<img alt="Left Image" src="/static/commune_de_paris/static/images/Visuels/Vis_Seine.jpg"/>
+<span class="cd-image-label" data-type="original"></span>
+<div class="cd-resize-img"> <!-- the resizable image on top -->
+<img alt="Right Image" src="/static/commune_de_paris/static/images/Visuels/Vis_MaisonFournaise.jpg"/>
+<span class="cd-image-label" data-type="modified"></span>
+</div>
+<span class="cd-handle"></span> <!-- slider handle -->
+</figure> <!-- cd-image-container -->
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<script src="/static/commune_de_paris/static/js/image_comp_slider.js"></script>
+<div class="modal modal-cite" id="citation1">
+<div class="modal-background"></div>1
+    <div class="modal-content">
+<div class="section content">
+<p class="is-italic">
+                Pour moi un tableau doit être une chose
+                aimable, joyeuse et jolie, oui jolie ! Il y a assez
+                de choses embêtantes dans la vie pour que nous
+                n'en fabriquions pas encore d'autres.
+                Dans la peinture comme dans les autres arts, il
+                n’y a pas un seul procédé, si petit soit-il, qui
+                s’accommode d’être mis en formule.
+            </p>
+<span class="is-pulled-right">
+            de Pierre-Auguste Renoir
+        </span>
+</div>
+</div>
+<div class="cite-title">
+<span>Citation</span>
+</div>
+<button aria-label="close" class="modal-close is-large"></button>
+</div>
+<div id="cookies-eu-banner">
+    En continuant à visiter ce site, vous acceptez l'utilisation de cookies utile au bon fonctionnement du site et à des fins statistiques.
+    <div class="buttons are-small is-pulled-right">
+<a class="button is-dark" href="/mentions-legales" id="cookies-eu-more">Voir plus</a>
+<button class="button is-dark" id="cookies-eu-reject" onclick="rejectCookie()">Rejeter</button>
+<button class="button is-dark" id="cookies-eu-accept" onclick="acceptCookie()">Accepter</button>
+</div>
+</div>
+<script src="/static/commune_de_paris/static/js/cookies-eu-banner.min.js"></script>
+<script>
+new CookiesEuBanner(function () {
+
+});
+</script>
+

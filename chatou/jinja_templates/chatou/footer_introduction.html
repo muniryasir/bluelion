@@ -1,0 +1,108 @@
+{% load static %}
+<!-- Custom Audio Player -->
+
+<div class="audio-player level is-mobile" style="display:none;">
+    <div class="level-left">
+        <button class="button-play"></button>
+    </div>
+    <div class="progress-bar-cont">
+        <div class="progress-bar">
+            <em class="progression">
+            </em>
+            <a class="draggable"></a>
+        </div>
+        <div class="music-infos">
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+    </div>
+    <div class="level-right">
+        <div class="music-close"></div>
+    </div>
+<!--    Place here the audio files in the page, linked by data-track="id" which is also as an attribute of audio-player-cta-->
+    <audio src="{% static  'chatou/static/images/mobile_34484_Going-Blind-Court.mp3' %}" data-track="MaPiste1">
+
+    </audio>
+</div>
+
+<script src="{% static  'chatou/static/js/audioplayer.js' %}">
+
+</script>
+
+
+<!-- <div class="modal modal-map">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="map-container">
+            <div id="map">
+
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div> -->
+
+
+
+  <!--HTML And js components to add the simple-lightbox plugin to the page. Needed if there is clickable imgs in the page-->
+
+<!-- <script src="{% static  'chatou/static/js/simple-lightbox.js' %}"></script>
+<div class="gallery-name-1" id="gallery-name-1" style="display: none"> -->
+<!--    Insert here images -->
+<!--    THis gallery modal is triggered on click over an element with the class "is-gallery-trigger",
+        the data-target attribute with the id of the gallery (gallery-name-1) and the class of the targeted image (.img-1)-->
+    <!-- <a href="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" class="img-1"><img src="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" alt="" title="Beautiful Image" /></a> -->
+    <!-- <a href="{% static  'chatou/static/images/Visuels/Vis_accueil.jpg' %}" class="img-2"><img src="{% static  'chatou/static/images/Visuels/Vis_accueil.jpg' %}" alt="" title=""/></a> -->
+    <!-- <a href="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" class="img-3"><img src="{% static  'chatou/static/images/Visuels/Vis_Promenade.jpg' %}" alt="" title="Beautiful Image"/></a> -->
+    <!-- <a href="{% static  'chatou/static/images/pages/notice_historique/Roslin_-_Henri-Léonard_Bertin.png' %}" class="img-2"><img src="{% static  'chatou/static/images/pages/notice_historique/Roslin_-_Henri-Léonard_Bertin.png' %}" alt="" title="<i>Henri-Léonard-Jean-Baptiste Bertin</i>, Portrait à l'huile par Alexandre Roslin. 3e quart du XVIIIe siècle. Huile sur toile, Issac, Château de Montréal" /></a>
+    <a href="{% static  'chatou/static/images/pages/notice_historique/Voiture à vapeur et chemin de fer, Anonyme RMN vs 2.JPG' %}" class="img-3"><img src="{% static  'chatou/static/images/pages/notice_historique/Voiture à vapeur et chemin de fer, Anonyme RMN vs 2.JPG' %}" alt="" title="Anonyme, La <i>locomotive à vapeur et le chemin de fer</i>, caricature, sans date (vers 1840), RMN" /></a>
+    <a href="{% static  'chatou/static/images/pages/notice_historique/BNF Parc du Vésinet Plan_général_indiquant_le_lotissement.jpeg' %}" class="img-4"><img src="{% static  'chatou/static/images/pages/notice_historique/BNF Parc du Vésinet Plan_général_indiquant_le_lotissement.jpeg' %}" alt="" title="Plan <i>général indiquant le lotissement du parc du Vésinet, ligne de St-Germain</i>, Alphonse Pallu, BNF Gallica" /></a>
+</div> -->
+<!-- <script>
+    $(function(){
+        var $gallery = $('.gallery-name-1 a').simpleLightbox();
+
+        $gallery.on('show.simplelightbox', function(){
+            console.log('Requested for showing');
+        })
+            .on('shown.simplelightbox', function(){
+                console.log('Shown');
+            })
+            .on('close.simplelightbox', function(){
+                console.log('Requested for closing');
+            })
+            .on('closed.simplelightbox', function(){
+                console.log('Closed');
+            })
+            .on('change.simplelightbox', function(){
+                console.log('Requested for change');
+            })
+            .on('next.simplelightbox', function(){
+                console.log('Requested for next');
+            })
+            .on('prev.simplelightbox', function(){
+                console.log('Requested for prev');
+            })
+            .on('nextImageLoaded.simplelightbox', function(){
+                console.log('Next image loaded');
+            })
+            .on('prevImageLoaded.simplelightbox', function(){
+                console.log('Prev image loaded');
+            })
+            .on('changed.simplelightbox', function(){
+                console.log('Image changed');
+            })
+            .on('nextDone.simplelightbox', function(){
+                console.log('Image changed to next');
+            })
+            .on('prevDone.simplelightbox', function(){
+                console.log('Image changed to prev');
+            })
+            .on('error.simplelightbox', function(e){
+                console.log('No image found, go to the next/prev');
+                console.log(e);
+            });
+    });
+</script> -->

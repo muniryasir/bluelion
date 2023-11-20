@@ -1,0 +1,267 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{% static 'chatou_auto/manifest.json' %}">
+    <link rel="apple-touch-icon" href="{% static  'chatou_auto/static/icon_1024x1024.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static  'chatou_auto/static/icon_152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static  'chatou_auto/static/icon_180x180.png' %}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{% static  'chatou_auto/static/icon_167x167.png' %}">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="{% static  'chatou_auto/static/apple_splash_2048.png' %}" sizes="2048x2732" rel="apple-touch-startup-image" />    
+    <link href="{% static  'chatou_auto/static/apple_splash_1668.png' %}" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="{% static  'chatou_auto/static/apple_splash_1536.png' %}" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="{% static  'chatou_auto/static/apple_splash_1125.png' %}" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="{% static  'chatou_auto/static/apple_splash_1242.png' %}" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="{% static  'chatou_auto/static/apple_splash_750.png' %}" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="{% static  'chatou_auto/static/apple_splash_640.png' %}" sizes="640x1136" rel="apple-touch-startup-image" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176115564-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-176115564-1');
+    </script>
+    <script>
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register("{% url 'chatou_sw.js' %}", { scope: '/' }).then(function(reg) {
+                // registration worked
+                // console.log('Registration succeeded. Scope is ' + reg.scope);
+             
+  
+            }).catch(function(error) {
+                // registration failed
+                // console.log('Registration failed with ' + error);
+            });
+        }
+    </script>
+    
+    
+    <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea6ae3d311af400127bcbc3&product=sticky-share-buttons"></script>
+<style>
+.st-btns .st-btn { display:none !important; }
+.st-btns .st-btn[data-network='diaspora'],
+.st-btns .st-btn[data-network='digg'],
+.st-btns .st-btn[data-network='email'],
+.st-btns .st-btn[data-network='facebook'],
+.st-btns .st-btn[data-network='messenger'],
+.st-btns .st-btn[data-network='pinterest'],
+.st-btns .st-btn[data-network='print'],
+.st-btns .st-btn[data-network='reddit'],
+.st-btns .st-btn[data-network='skype'],
+.st-btns .st-btn[data-network='tumblr'],
+.st-btns .st-btn[data-network='twitter'],
+.st-btns .st-btn[data-network='whatsapp'] { display:block !important; margin:10px !important; float: left; }
+</style>
+    
+<title>{{page_title}}</title>
+<style>
+
+/* google maps class for colors cannot be ported to css file */
+{% if Itin_Color == 'BLUE' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #1f96de;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat;
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 35px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 38px !important;
+    transform: translate(-60%,114%) rotate(0deg) !important;
+}
+{% elif Itin_Color == 'RED' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #c90c5d;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_red.png' %}) no-repeat;
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 35px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 38px !important;
+    transform: translate(-60%,114%) rotate(0deg) !important;
+}
+{%endif%}
+
+{% if page_level == 'home' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #1f96de;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    /* background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat; */
+    /* border: 5px solid #1f96de; */
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 35px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 38px !important;
+    transform: translate(-60%,114%) rotate(0deg) !important;
+}
+{%endif%}
+.wrapper_comparison_slider {
+      /* max-width: 768px; */
+      /* margin: 20px auto; */
+      text-align: center;
+    }
+   
+  #floating-panel {
+    position: absolute;
+    margin-top: 10px; margin-left: 10px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: "Source Sans Pro" !important;
+  }
+  #directions-panel {
+    margin-top: 70px;
+    margin-left: 10px;
+    max-height: 300px;
+    max-width: 300px;
+    overflow-x: hidden;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    font-family: "Source Sans Pro" !important;
+    z-index: 5;
+  }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/style.css' %}">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/ImageComparison.css' %}">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/map_customization.css' %}">
+<script>
+ var staticAddress= {% get_static_prefix %};
+</script>
+<script src="{% static  'chatou_auto/static/js/jquery.js' %}"></script>
+
+<script src="{% static  'chatou_auto/static/js/maps.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/main.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/comparison_slider.js' %}"></script>
+  <script src="{% static  'chatou_auto/static/js/ImageComparison.js' %}"></script>
+<!--<script src="../js/audioplayer.js"></script>-->
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script> -->
+
+<link rel="stylesheet" href="{% static  'chatou_auto/static/js/dist/simpleLightbox.css' %}">
+<script src="{% static  'chatou_auto/static/js/dist/simpleLightbox.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/cookies-eu-support.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/app-download.js' %}"></script>
+<!-- <script src="{% static  'chatou_auto/static/js/dist/jssor.slider.min.js' %}"></script> -->
+
+</head>
+{% if page_title == 'Guide Chatou'  %}
+   <body class="is-home-page">
+{% else %}
+    <body >
+{% endif %}
+    {% include 'header_menu_auto.html' %}
+    {% block content %}
+
+	{% endblock %}
+    {% include 'download_dialog_auto.html' %}
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtcEVJm5a5u1ghSGlD7Fp1_kHYkC7hJ2Q&callback=googleMapMethod" async defer></script>
+
+<footer class="footer">
+    <nav class="level">
+    <div class="level-item has-text-centered">
+        <p>
+            © BLUE LION 2020    <a href="/mentions-legales">MENTIONS LÉGALES</a>
+        </p>
+    </div>
+    <div class="level-item">
+        <img src="{% static  'chatou_auto/static/images/Logo_BlueLion_footer.png' %}" alt="">
+    </div>
+    <div class="level-item">
+        <p>
+            AVEC LE SOUTIEN DE <a href="https://www.chatou.fr"><img src="{% static  'chatou_auto/static/images/Logo_small_Footer.png' %}" alt=""></a>
+        </p>
+
+    </div>
+
+</nav>
+</footer>
+<div class="modal modal-map">
+    <div class="modal-background"></div>
+    <!--Edit by Shayan-->
+    <div class="modal-content" style="width: 90%; max-width: 1040px;">
+        <div class="map-container">
+            <div id="map" class="mapfull">
+
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<!--Edit by Shayan-->
+<script>
+$(document).keydown(function(event) { 
+  if (event.keyCode == 27) { 
+    $('.modal-map .modal-close').click();
+  }
+});
+</script>
+<!--Edit by Shayan-->
+
+{% if step_title == 'step'   %}
+{% include 'step_footer_auto.html' %}
+{% endif  %}
+
+<div id="cookies-eu-banner">
+    En continuant à visiter ce site, vous acceptez l'utilisation de cookies utile au bon fonctionnement du site et à des fins statistiques.
+    <div class="buttons are-small is-pulled-right">
+        <a href="/mentions-legales" class="button is-dark" id="cookies-eu-more">Voir plus</a>
+        <button id="cookies-eu-reject" onclick="rejectCookie()" class="button is-dark">Rejeter</button>
+        <button id="cookies-eu-accept" onclick="acceptCookie()" class="button is-dark">Accepter</button>
+    </div>
+</div>
+
+<script src="{% static  'chatou_auto/static/js/cookies-eu-banner.min.js' %}"></script>
+<script>
+new CookiesEuBanner(function () {
+
+});
+</script>
+
+</body>

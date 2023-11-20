@@ -1,0 +1,77 @@
+{% load static %}
+
+<div class="modal modal-infos-download-BLUE" >
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <!-- start Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+        <button class="modal-close is-large" aria-label="close" onclick="jQuery(this).parent('div').parent('div').removeClass('is-active');"></button>
+        <!-- end Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 -->
+        
+
+        <!--Every element of the tab as follow is linked by the id of the data-target attribute of the tabs element above-->
+<!--        This data-target attribute also need to be on the sidebar infos element.-->
+        
+        
+        
+        <div id="restaurant" class="section is-active">
+            <div class="content">
+                <!-- <h3>Restaurant</h3> -->
+                 
+                <table style="width:100%" id="android-table">
+                    <tr>
+                    
+                        <td></td><td>Pour ajouter l’appli à l’écran d’accueil</td>
+                    </tr>    
+                        <td colspan="1"> <img style="width:160px; height:100%;" src="{% static  'commune_de_paris/static/images/dialog_boxes/mini-burger.png' %}" alt="" /></td><td colspan="4">Cliquez sur l’icône du menu</td>
+                    <tr>
+                        <td colspan="1"><img style="width:160px; height:100%;" src="{% static  'commune_de_paris/static/images/dialog_boxes/mini-download.png' %}" alt="" /></td><td>Cliquez sur Télécharger</td>
+                    </tr>
+                    <tr>
+                        <td></td><td>Une fenêtre de dialogue apparaît. Cliquez sur « Ajouter »</td>
+                    </tr>
+                    <tr>
+                        <td></td><td>L’icône Promenades apparaitra soit directement sur votre bureau (écran d’accueil) soit dans la liste de vos applications</td>
+                    </tr>  
+                    <tr>
+                        <td></td>
+                        <td>
+                        <a class="navbar-item is-active info-tooltip" on="download-app" onclick="downloadApp()">
+                <!-- <a class="info-tooltip"  > -->
+                <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'commune_de_paris/static/images/Pictos_Big_Telech.svg' %}" alt="" />
+                </span>
+                <span style="color:#1f96de;">
+                TÉLÉCHARGER 
+                </span>
+            </a>
+                        </td>
+                    </tr>  
+                </table>    
+                  
+                <table style="width:100%" id="ios-table">
+                    <tr>
+                    
+                        <td></td><td>Pour ajouter l’appli à l’écran d’accueil</td>
+                    </tr>    
+                        <td colspan="1"> <img style="width:80px; height:100%;" src="{% static  'commune_de_paris/static/images/dialog_boxes/mini-home.png' %}" alt="" /></td><td colspan="4">Cliquez sur l’icône Transférer</td>
+                    <tr>
+                        <td colspan="1"><img style="width:80px; height:100%;" src="{% static  'commune_de_paris/static/images/dialog_boxes/mini-add.png' %}" alt="" /></td><td>Cliquez sur l’icône Sur l’écran d’accueil</td>
+                    </tr>
+                    <tr>
+                        <td></td><td>Une fenêtre de dialogue apparaît. Cliquez sur « Ajouter »</td>
+                    </tr>
+                    <tr>
+                        <td></td><td>Retrouvez l’icône Promenades sur votre écran</td>
+                    </tr>  
+                     
+                </table>   
+               
+            </div>
+        </div>
+        
+        
+        
+      
+       
+    </div>
+</div>

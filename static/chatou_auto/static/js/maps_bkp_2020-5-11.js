@@ -1,0 +1,367 @@
+function initMap() {
+    let map = new google.maps.Map(document.getElementById('map'), {
+        // zoom: 14,
+        // center: {lat: 48.8954021, lng: 2.1484749}
+    });
+
+    // let image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+    // let beachMarker = new google.maps.Marker({
+    //     position: {lat: 48.8954021, lng: 2.1484749},
+    //     map: map,
+    //     icon: image
+    // });
+}
+var stepMarkers = [];
+// var stepMarkersRed = [];
+var stepinfowindows = [];
+var globalContext;
+var globalMap;
+var slat;
+var slongt;
+var MarkerData;
+var userPositionMarker;
+function googleMapMethod() {
+  var noPoi = [
+    {
+        featureType: "poi",
+        stylers: [
+          { visibility: "off" }
+        ]   
+      }
+    ];
+  // var locstep1 =  new google.maps.LatLng(48.889756,2.163500);
+    var mapProp= {
+    // center:locstep1,
+    disableDefaultUI: true,
+    // zoom:15,
+  };
+
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  map.setOptions({styles: noPoi});
+  window.globalMap = map;
+  window.mapOptions = mapProp;
+  $.ajax({
+    type: 'POST',
+    url: '/chatou_auto/gcookie/',
+    dataType: 'json',
+
+    success: function (data) {
+        // deleteMarkers();
+        placeMarkersOnMap(map,data.context);
+        globalMap = map;
+        showUserPosition();  
+    }
+  });
+  // placeMarkersOnMap(map);
+  
+}
+
+
+function adjustMap(map) {
+  $.ajax({
+		type: 'POST',
+		url: '/chatou_auto/gmapcontrols/',
+    dataType: 'json',
+    success: function (data) {
+      
+      // console.log(data.zoom);
+      // console.log(data.page);
+      // console.log(data.level);
+      // console.log(stepMarkers.length)
+      map.setZoom(parseFloat(data.zoom));
+      if(data.level=='home') {
+        var locstep1 =  new google.maps.LatLng(48.889756,2.163500);
+        map.setCenter(locstep1);
+      } else {
+
+        let labelIndex = searchMarkers(map,data.page);
+        // console.log(globalContext);
+        let marker = stepMarkers[labelIndex];
+        map.setCenter(marker.getPosition());
+        if(globalContext != 'home') {
+          openInfoWindow(map,marker,labelIndex);
+
+        }
+      }
+    }
+  });
+}
+
+function openInfoWindow(map, marker, labelIndex) {
+  let infowindow = stepinfowindows[labelIndex];
+  infowindow.open(map, marker);
+}
+
+function placeMarkersOnMap(map, context='none') {
+// console.log(context);
+globalContext =context
+  $.ajax({
+		type: 'POST',
+		url: '/chatou_auto/mapdata/',
+    dataType: 'json',
+    data: {'context':context},
+		success: function (data) {
+      MarkerData = data;
+
+      contextBasedMarkersOnMap()
+      
+       
+      
+		}
+    });
+}
+function contextBasedMarkersOnMap(context='none') {
+  if(context=='none') {
+    
+  } else {
+    globalContext = context;
+  }
+
+  for(var color in MarkerData) {
+
+    // console.log(color);
+    if(globalContext=='home') {}
+    else if(globalContext!=color) {
+      continue;
+    }
+    
+   
+    if(MarkerData[color] instanceof Object) {
+
+        itinerary = MarkerData[color];
+        for(var step in itinerary) {
+          if(itinerary[step] instanceof Object) {
+            (function () {
+            // console.log(step)
+            // console.log(itinerary[step]);
+           
+            markersOnMap(step, color)
+
+          })();
+          }
+        }
+
+    } 
+      
+  }
+  adjustMap(map); 
+}
+  function markersOnMap(step, color) {
+    step_details = itinerary[step];
+
+    var pin_color = color
+    var label = step_details["page_title"];
+    var image = "/media/"+step_details["image"];
+    var lat = step_details["lat"];
+    var longt = step_details["longt"];
+    var step_link = step_details["page_link"];
+    var page_order = step_details["page_order"];
+
+   
+
+    var marker_image;
+    var text_color;
+    if (pin_color == "BLUE") {
+      text_color = "#2D94D2";
+      marker_image = staticAddress+'chatou_auto/static/images/maps/markers/Pictos_Epingle_Map_blue.png';
+      arrow_link = staticAddress+'chatou_auto/static/images/maps/infowindow/arrow_link_blue.svg';
+    } else if (pin_color == "RED") {
+      text_color = "#C90C5D"
+      marker_image = staticAddress+'chatou_auto/static/images/maps/markers/Pictos_Epingle_Map_red.png';
+      arrow_link = staticAddress+'chatou_auto/static/images/maps/infowindow/arrow_link_red.svg';
+    }
+
+    var directions_method = `openNativeMap(${lat},${longt})`;
+    var locstep =  new google.maps.LatLng(lat,longt);
+
+    var content_layout =`<div class="main_div">
+    <div class="image" style="background:url(${image}) no-repeat;background-size:cover;background-position:center;float:left;width:35%;height:60px;"></div>
+    <div class="title" style="color:${text_color};text-transform:uppercase;float:left;width:47%;height:60px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;text-align:center;font-size:13px;overflow-x:hidden;padding:0 5px;font-weight:bold;margin:0;">
+    <a href="/${step_link}"><span style="color:${text_color};" >${label.toUpperCase()}</span></a>
+    </div>
+    <div class="map_nav" style="float:right;width:16%;height:50px;line-height:60px;display: flex;flex-wrap: wrap;justify-content: center;text-align: center;align-items: center;">
+      <a href="javascript:;" onclick="${directions_method}" style="display: inline-block;margin-top:10px;">
+        <img src="${arrow_link}" style="height:20px;" alt="" />
+      </a>
+    </div>
+    <div style="clear:both;"></div>
+  </div>`;
+  var infowindow = new google.maps.InfoWindow({
+    
+    content:content_layout
+  });
+
+  stepinfowindows.push(infowindow);
+  // alert(data.winning_combo);
+  var markerstep = new google.maps.Marker({
+  position: locstep,
+  icon:{
+    url:marker_image,
+    labelOrigin: new google.maps.Point(31,22)
+  },
+  label: {
+    text: JSON.stringify(page_order),
+    color: text_color,
+    fontSize: "20px",
+    fontWeight: "bold",
+    font: "Source Sans Bold"
+  }
+});
+
+markerstep.setMap(map);
+
+stepMarkers.push(markerstep);
+
+
+    markerstep.addListener('click', function() {
+      
+      for (var i=0; i<stepMarkers.length; i++) {
+       
+        if (stepMarkers[i].getPosition().equals(markerstep.getPosition())) { 
+
+          stepinfowindows[i].open(map,markerstep);
+          /* start Dynamic css code for info window */
+          // console.log(stepinfowindows[i].attr("gm-style-iw.gm-style-iw-c"));
+          /* End Dynamic css code for info window */
+          google.maps.event.addListener(stepinfowindows[i], 'domready', function() {
+            var l = $('.gm-style-iw.gm-style-iw-c');
+            var m = $('.gm-style .gm-style-iw-t::after');
+            // console.log(l);
+            var img;
+            if (pin_color == "BLUE") {
+              img = staticAddress+'chatou_auto/static/images/maps/infowindow/downarrow_blue.png';
+              l.css({
+                'border': '5px solid #2D94D2',
+                // 'background':`url(${img})  no-repeat`,
+                // 'box-shadow': 'unset !important',
+                // 'content': '"" !important',
+                // 'height': '28px !important',
+                // 'background-size': 'contain',
+                // 'background-position': 'center',
+                // 'background-size':'cover',
+                // 'left': '0 !important',
+                // 'position': 'absolute !important',
+                // 'margin-top': '46px !important',
+                // 'top': '0 !important',
+                // 'width': '30px !important',
+                // 'transform': 'translate(-80%,160%) rotate(0deg) !important',
+              });
+              m.css({'background':`${img} no-repeat`,});
+            } else {
+              img = staticAddress+'chatou_auto/static/images/maps/infowindow/downarrow_red.png';
+              l.css({
+                'border': '5px solid #C90C5D',
+                // 'background':`url(${img})  no-repeat`,
+            });
+              m.css({'background':`${img} no-repeat;`,});
+            }
+            
+        });
+
+
+        }
+        else {
+          stepinfowindows[i].close();
+        }
+        
+    }
+    }); 
+
+     /*** Edit by Shayan ***/ 
+  google.maps.event.addListener(map, "click", function(event) {
+    for (var i=0;i<stepMarkers.length;i++) {
+       stepinfowindows[i].close();
+    }
+  });
+  }
+
+ 
+
+
+
+function deleteMarkers() {
+  setMapOnAll(null);
+  stepMarkers = [];
+  stepinfowindows = [];
+}
+
+function setMapOnAll(map) {
+  for (var i = 0; i < stepMarkers.length; i++) {
+    stepMarkers[i].setMap(map);
+  }
+}
+
+function searchMarkers(map, label) {
+  var page_position= label.split(',');
+  
+  // var page_position =  new google.maps.LatLng(parseFloat(label[0]),parseFloat(label[1]));
+  for (var i = 0; i < stepMarkers.length; i++) {
+  //  console.log(stepMarkers[i].getPosition().lat()+"---"+stepMarkers[i].getPosition().lng());
+    // console.log( parseFloat(page_position[0]));
+    // console.log( parseFloat(page_position[1]));
+    // console.log((stepMarkers[i].getPosition().lat() == parseFloat(page_position[0])) && (stepMarkers[i].getPosition().lng() == parseFloat(page_position[1])));
+    if( (stepMarkers[i].getPosition().lat() == parseFloat(page_position[0])) && (stepMarkers[i].getPosition().lng() == parseFloat(page_position[1])) )
+      {
+        return i;
+      }
+  }
+}
+
+function showUserPosition() {
+  map = globalMap;
+  // infoWindow = new google.maps.InfoWindow;
+        var globale_marker_image = staticAddress+'chatou_auto/static/images/maps/markers/place_holder_marker.png';
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            slat = position.coords.latitude;
+            slongt = position.coords.longitude;
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            userPositionMarker = new google.maps.Marker({
+              position: pos,
+              icon:{
+                url:globale_marker_image,
+                
+              }
+              
+            });
+            userPositionMarker.setMap(map);
+            map.setCenter(pos);
+            
+          }, function() {
+            // handleLocationError(true, infoWindow, map.getCenter());
+            console.log(JSON.stringify(err));
+            window.alert("Unable to locate user");
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          // handleLocationError(false, infoWindow, map.getCenter());hjhj
+          window.alert("Browser doesn't support Geolocation");
+
+        }
+      
+}
+
+
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//   infoWindow.setPosition(pos);
+//   infoWindow.setContent(browserHasGeolocation ?
+//                         'Error: The Geolocation service failed.' :
+//                         'Error: Your browser doesn\'t support geolocation.');
+//   infoWindow.open(map);
+// }
+
+function openNativeMap(lat, longt) {
+  if /* if we're on iOS, open in Apple Maps */
+    ((navigator.platform.indexOf("iPhone") != -1) || 
+     (navigator.platform.indexOf("iPad") != -1) || 
+     (navigator.platform.indexOf("iPod") != -1))
+    // window.open(`maps://maps.google.com/maps?daddr=${lat},${longt}&amp;ll=&travelmode=bicycling`);
+    window.open(`http://maps.apple.com/?daddr=${lat},${longt}`);
+else /* else use Google */
+
+    window.open(`https://maps.google.com/maps?daddr=${lat},${longt}&amp;ll=&dirflg=w&saddr=${slat},${slongt}`);
+}

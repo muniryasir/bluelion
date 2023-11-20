@@ -1,0 +1,95 @@
+{% load static %}
+
+
+
+{% include 'step_addresses_auto.html' %}
+
+<script src="{% static  'chatou_auto/static/js/modal_infos.js' %}">
+
+</script>
+
+
+<!-- stat Custom Audio Player -->
+{% if step_audio == 'NA' %}
+{% else %}   
+<div class="audio-player level is-mobile" style="display:none;">
+    <div class="level-left">
+        <button class="button-play"></button>
+    </div>
+    <div class="progress-bar-cont">
+        <div class="progress-bar">
+            <em class="progression">
+            </em>
+            <a class="draggable"></a>
+        </div>
+        <div class="music-infos">
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+    </div>
+    <div class="level-right">
+        <div class="music-close"></div>
+    </div>
+<!--    Place here the audio files in the page, linked by data-track="id" which is also as an attribute of audio-player-cta-->
+
+
+<audio src="{{step_audio.audio.audio_file.url}}" data-track="MaPiste1">
+
+    </audio>
+    
+</div>
+
+<script src="{% static  'chatou_auto/static/js/audioplayer.js' %}">
+
+</script>
+{% endif %}
+<!-- end Custom Audio Player -->
+
+<!--Image Comparison slider modal with js plugin-->
+<!--To insert in document foot only if needed-->
+<!--This modal is triggered on click to an element with the "modal-comp-trigger" class-->
+<div class="modal modal-comp">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+
+    <figure class="cd-image-container">
+        <img src="{% static  'chatou_auto/static/images/Visuels/Vis_Seine.jpg' %}" alt="Left Image">
+        <span class="cd-image-label" data-type="original"></span>
+
+        <div class="cd-resize-img"> <!-- the resizable image on top -->
+            <img src="{% static  'chatou_auto/static/images/Visuels/Vis_MaisonFournaise.jpg' %}" alt="Right Image">
+            <span class="cd-image-label" data-type="modified"></span>
+        </div>
+
+        <span class="cd-handle"></span> <!-- slider handle -->
+    </figure> <!-- cd-image-container -->
+</div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<script src="{% static  'chatou_auto/static/js/image_comp_slider.js' %}"></script>
+<div id="citation1" class="modal modal-cite">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="section content">
+            <p class="is-italic">
+                Pour moi un tableau doit être une chose
+                aimable, joyeuse et jolie, oui jolie ! Il y a assez
+                de choses embêtantes dans la vie pour que nous
+                n'en fabriquions pas encore d'autres.
+                Dans la peinture comme dans les autres arts, il
+                n’y a pas un seul procédé, si petit soit-il, qui
+                s’accommode d’être mis en formule.
+            </p>
+            <span class="is-pulled-right">
+            de Pierre-Auguste Renoir
+        </span>
+        </div>
+    </div>
+    <div class="cite-title">
+        <span>Citation</span>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>

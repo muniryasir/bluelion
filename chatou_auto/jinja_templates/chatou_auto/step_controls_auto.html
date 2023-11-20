@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="cta-icon-container">
+    {% if step_audio == 'NA' %}
+    {% else %}
+        <a class="audio-player-cta" data-track="MaPiste1">
+            <img src="{% static  'chatou_auto/static/images/Pictos_Big_Audio.svg' %}" alt="">
+        </a>
+    {% endif %}
+    <a class="map-cta">
+        <img src="{% static  'chatou_auto/static/images/Pictos_Big_Map.svg' %}" alt="">
+    </a>
+    {% if info_section == 'YES' %}
+    <a class="info-tooltip">
+        <img src="{% static  'chatou_auto/static/images/Pictos_Big_Info.svg' %}" alt="">
+    </a>
+    {% endif %}
+    <a class="share-this">
+        <img src="{% static  'chatou_auto/static/images/Pictos_Big_sharing.svg' %}" alt="">
+    </a>
+</div>

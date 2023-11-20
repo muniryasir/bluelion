@@ -1,0 +1,21 @@
+{% load static %}
+{% for p_intros, m_intros in Page_introductions  %}
+<!--Edited by Shayan-->
+<div class="flexcol">
+    <div>
+        <!-- <a href="/chatou_auto/historique/"> -->
+            <a href="/{{m_intros.menu_link}}">
+            <fieldset>
+                <legend class="is-size-4 title">
+                    {{p_intros.page_title}}
+                </legend>
+                <p>
+                    <i>{{ p_intros.page_Summary }}</i>
+                    <!-- <i>Parcourons brièvement l’histoire de Chatou, ville fluviale, marquée par sa position stratégique aux portes de Paris et sur le chemin vers la ville royale de Saint-Germain-en-Laye. Traversée par les gaulois, romains, francs et vikings, détruite plusieurs fois par les armées de passage, Chatou connais son épanouissement à partir du XIXe siècle quand elle mue en ville-villégiature, puis industrielle et artistique</i>. -->
+                    +
+                </p>
+            </fieldset>
+        </a>
+    </div>
+</div>
+{% endfor %}

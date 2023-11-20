@@ -1,0 +1,64 @@
+{% load static %}
+<ul>
+   {% if Itin_Color == 'BLUE' %}
+     {% if Lieu != 'NA' %}
+    <li><a class="infos-action" data-target="place"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Place.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Adresse et contact</span></a></li>
+    {% endif %}
+    {% if Transport != 'NA' %}
+    <li><a class="infos-action" data-target="transport"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Transport.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Comment y arriver?</span></a></li>
+    {% endif %}
+    {% if opening_hours != 'NA' %}
+    <li><a class="infos-action" data-target="Opening_hours"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Horaires.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Horaires d'ouverture</span></a></li>
+    {% endif %}
+    {% if Tickets  != 'NA' %}
+    <li><a class="infos-action" data-target="tickets"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Billets.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Billets d'entrée</span></a></li>
+    {% endif %}
+    {% if CE != 'NA' %}
+    <li><a class="infos-action" data-target="children"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Children.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Pour les enfants</span></a></li>
+    {% endif %}
+    {% if Resturant != 'NA' %}
+    <li><a class="infos-action" data-target="restaurant"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Restaurant.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Restaurants</span></a></li>
+    {% endif %}
+    {% if Bar  != 'NA' %}
+    <li><a class="infos-action" data-target="bar"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Bar.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Bars</span></a></li>
+    {% endif %}
+    {% if Shopping  != 'NA' %}
+    <li><a class="infos-action" data-target="shopping"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Shopping.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Shopping</span></a></li>
+    {% endif %}
+    {% if Toilet != 'NA' %}
+    <li><a class="infos-action" data-target="toilets"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/blue/Pictos_Pictos_info_Toilets.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Toilettes</span></a></li>
+    {% endif %}
+
+    
+     {% elif Itin_Color == "RED" %}
+     {% if Lieu != 'NA' %}
+    <li><a class="infos-action" data-target="place"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Place_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Lieu</span></a></li>
+    {% endif %}
+    {% if Transport != 'NA' %}
+    <li><a class="infos-action" data-target="transport"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Transport_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Transports</span></a></li>
+    {% endif %}
+    {% if opening_hours != 'NA' %}
+    <li><a class="infos-action" data-target="Opening_hours"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Horaires_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Opening Hours</span></a></li>
+    {% endif %}
+    {% if Tickets  != 'NA' %}
+    <li><a class="infos-action" data-target="tickets"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Billets_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Tickets</span></a></li>
+    {% endif %}
+    {% if CE != 'NA' %}
+    <li><a class="infos-action" data-target="children"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Children_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Pour les enfants</span></a></li>
+    {% endif %}
+    {% if Resturant != 'NA' %}
+    <li><a class="infos-action" data-target="restaurant"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Restaurant_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Restaurants</span></a></li>
+    {% endif %}
+    {% if Bar  != 'NA' %}
+    <li><a class="infos-action" data-target="bar"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Bar_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Bars</span></a></li>
+    {% endif %}
+    {% if Shopping  != 'NA' %}
+    <li><a class="infos-action" data-target="shopping"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Shopping_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Shopping</span></a></li>
+    {% endif %}
+    {% if Toilet != 'NA' %}
+    <li><a class="infos-action" data-target="toilets"><span class="icon"><img src="{% static  'commune_de_paris/static/images/information_box_icons/red/Pictos_Pictos_info_Toilets_red.svg' %}" alt=""></span><span class="{{Itin_Color}}-text">Toilettes</span></a></li>
+    {% endif %}
+
+
+   {% endif %}
+</ul>

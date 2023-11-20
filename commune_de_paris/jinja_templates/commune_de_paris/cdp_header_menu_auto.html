@@ -1,0 +1,139 @@
+{% load static %}
+<nav id="navbar" class="navbar main-nav is-black">
+    <div class="nav-container">
+        <div class="navbar-icons">
+            <a class="navbar-item">
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+            </a>
+            <a class="navbar-item back-arrow is-not-active" onclick="returnToFunction('')">
+                <img src="{% static  'commune_de_paris/static/images/Left-Arrow_Back.png' %}" alt="">
+            </a>
+        </div>
+
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="{% static  'commune_de_paris/static/images/logos/Logo_Red_Small.png' %}" alt="Logo">
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <a href="/" class="navbar-item is-active">
+                Accueil
+            </a>
+            <!-- <a href="/commune_de_paris/introduction/" class="navbar-item">
+                Introduction
+            </a> -->
+            <!-- <a href="/commune_de_paris/historique/" class="navbar-item">
+                Un peu d’histoire 
+            </a>
+            <a href="/commune_de_paris/limpressionnisme/" class="navbar-item">
+                À la source de l'impressionnisme
+            </a> -->
+            {% for burger_link in burger_menu %}
+            
+            {% if burger_link.itinerary.itinerary_type == 'INTRO' %}   <!-- Introduction links -->
+            <a href="/{{burger_link.menu.menu_link}}" class="navbar-item">
+                <span class="image inline-icon is-size-4 rightarrow_nav">
+                    
+                </span>
+                {{burger_link.menu.menu_title}}
+            </a>
+            {%elif burger_link.itinerary.itinerary_type == 'ITIN' %} <!-- Itinerary links -->
+            <a href="/{{burger_link.menu.menu_link}}" class="navbar-item">
+                <span class="image inline-icon is-size-4 rightarrow_nav">
+                    <!-- <img src="{% static  'commune_de_paris/static/images/PCT_Arrow_white_Right.png' %}" alt="" /> -->
+                </span>
+                {{burger_link.menu.menu_title}}
+            </a>
+            
+            {%elif burger_link.itinerary.itinerary_type == 'ITIN_INDEX' %} <!-- Itinerary links -->
+            <a href="/{{burger_link.menu.menu_link}}" class="navbar-item">
+                <span class="image inline-icon is-size-4 rightarrow_nav">
+                    <!-- <img src="{% static  'commune_de_paris/static/images/PCT_Arrow_white_Right.png' %}" alt="" /> -->
+                </span>
+                {{burger_link.menu.menu_title}}
+            </a>
+            {%elif burger_link.itinerary.itinerary_type == 'ITIN_NAME_INDEX' %} <!-- Itinerary links -->
+            <a href="/{{burger_link.menu.menu_link}}" class="navbar-item">
+                <span class="image inline-icon is-size-4 rightarrow_nav">
+                    <!-- <img src="{% static  'commune_de_paris/static/images/PCT_Arrow_white_Right.png' %}" alt="" /> -->
+                </span>
+                {{burger_link.menu.menu_title}}
+            </a>
+            {%endif%}
+            {% endfor %}
+            <!-- <a class="navbar-item">
+                Événements
+            </a> -->
+            <!-- <a class="navbar-item" href="#">
+                L'auteur
+            </a> -->
+            <!-- <a class="navbar-item">
+                À propos
+            </a> -->
+            <!-- <a class="navbar-item is-active">
+                <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'commune_de_paris/static/images/Pictos_Big_Telech.svg' %}" alt="">
+                </span>
+                <span>
+                TÉLÉCHARGER L'APP
+                </span>
+            </a> -->
+             
+            <p><br/></p>
+            <p><br/></p>
+            <p><br/></p>
+            <a class="info-tooltip-download"  >
+                <!-- <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'chatou_auto/static/images/Pictos_Big_Telech.svg' %}" alt="" />
+                </span> -->
+                <span class="image inline-icon is-size-4 downloadimg_nav" style="width:5%; height:5%;">
+                    <img src="{% static  'commune_de_paris/static/images/Pictos_Big_Telech.svg' %}" alt="">
+                </span>
+                <span>
+                    AJOUTER À L'ÉCRAN D'ACCEUIL
+                </span>
+            </a>
+            <p><br/></p>
+            <p><br/></p>
+            <a href="https://play.google.com/store/apps/details?id=icu.bluelion.commune1871.twa"  id="google_play_link" class="navbar-item" style=" display: block;  margin-left: auto; margin-right: auto; width: 40%;">
+                <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'commune_de_paris/static/images/logos/badge.png' %}" alt="" style=" height: auto; width: 3em;">
+                </span>
+                
+            </a>
+            <p><br/></p>
+            <p><br/></p>
+            
+            <a href="#"  id="google_play_link" class="navbar-item" style=" display: block;  margin-left: auto; margin-right: auto; width: 40%;">
+                <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'commune_de_paris/static/images/logos/Logo_Red_Small.png' %}" alt="" style=" height: auto; width: 3em;">
+                </span>
+                
+            </a>
+            <p><br/></p>
+            
+            <a href="https://www.bluelionguides.com/" class="navbar-item" style=" display: block;  margin-left: auto; margin-right: auto; width: 40%;">
+                <span class="image inline-icon is-size-4 downloadimg_nav">
+                    <img src="{% static  'commune_de_paris/static/images/Logo_BlueLion_footer.png' %}" alt="" style=" height: auto; width: 3em;">
+                </span>
+                
+            </a>
+           
+        </div>
+        <div class="navbar-icons">
+            <!-- <a class="navbar-item has-badge-rounded has-badge-danger notif-cta" data-badge="8">
+                <img src="{% static  'commune_de_paris/static/images/Picto_alert.png' %}" alt="">
+            </a> -->
+            <a class="navbar-item map-cta-reset">
+                <img src="{% static  'commune_de_paris/static/images/Picto_map.png' %}" alt="Map">
+            </a>
+        </div>
+        
+    </div>
+    
+</nav>
+

@@ -1,0 +1,22 @@
+{
+    "name": "Commune de Paris",
+    "short_name": "Commune",
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#FFF",
+    "theme_color": "#493174",
+    "description": "Test app for Django and PWA",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "icons": [{
+        "src": "/static/commune_de_paris/static/pwa/icon_96x96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+    }, {
+        "src": "/static/commune_de_paris/static/pwa/icon_512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }]
+}

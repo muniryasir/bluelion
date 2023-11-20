@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "icu.bluelion.commune1871.twa",
+      "sha256_cert_fingerprints": [
+        "D8:7D:9B:6A:BB:5B:0D:5C:76:B7:8D:0F:8E:3F:C8:98:E2:06:AD:87:BC:60:AE:B0:A2:46:B7:E7:F3:59:5C:99"
+      ]
+    }
+  }]

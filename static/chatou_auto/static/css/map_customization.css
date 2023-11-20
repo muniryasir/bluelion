@@ -1,0 +1,86 @@
+ /*** Edit by Shayan ***/ 
+/* .gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #1f96de;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat;
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 28px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 30px !important;
+    transform: translate(-80%,160%) rotate(0deg) !important;
+} */
+.gm-style-iw-d {
+    max-height: unset !important;
+    height: auto !important;
+    max-width: unset !important;
+    width: 220px !important;
+    overflow: hidden !important;
+    font-family: "Source Sans Pro" !important;
+}
+/*** Edit by Shayan ***/ 
+
+.gm-style-iw.gm-style-iw-c button[title="Close"] {
+  display: none !important;
+}
+/*** Edit by Shayan ***/ 
+
+.infoPopupContainer {
+    width:300px; 
+    height:100px; 
+    padding: 5px; 
+    margin: auto;
+}    
+.infoPopupImg {
+    width:40%; 
+    height:inherit;  
+    position:relative;  
+    float:left; 
+    padding: 5px 0 5px 0; 
+    margin: auto;
+}
+.infoPopupImg img {
+    max-width:100%; 
+    max-height:100%;
+}
+.infoPopupLink {
+    width:40%; 
+    height:inherit;   
+    float:left; 
+    padding: 15px 0 15px 0;
+    margin: auto; 
+    text-align:center; 
+    vertical-align:middle;
+}
+.infoPopupLink span {
+    /* color: #3385ff; */
+    /* color: #4a4a4a; */
+    /* font-size: 18px; */
+    font-weight: 400;
+    line-height: 1.25;
+    font-size: 12px;
+}
+.infoPopupDirections {
+    width:20%; 
+    height:inherit;
+    /* background-color:blue;  */
+    float:right;
+}
+
+
+/* start Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 */
+@media screen and (max-width: 374px){
+    .gm-style-iw-d {
+        width: 170px !important;
+    }
+}
+/* end Edit by Shayan task Info box tasks document Shayan_task_2020-5-6 */

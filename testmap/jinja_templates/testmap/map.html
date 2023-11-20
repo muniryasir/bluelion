@@ -1,0 +1,117 @@
+{% load pwa %}
+{% load static %}
+<html>
+    <head>
+      {% progressive_web_app_meta %}
+      <style>
+            #googleMap .gm-style-iw {
+              background-color: #252525;
+              padding: 2% 11%;
+            }
+            #googleMap .iw-content p {
+              color: #a5a5a5;
+            }
+            #googleMap .iw-subTitle {
+              color: white;
+              font-size: 16px;
+              font-weight: 700;
+              padding: 5px 0;
+            }
+      </style>
+    </head>
+    <body>
+        <h1>Test Map1</h1>
+       
+        <div id="googleMap" style="width:500px;height:500px;"></div>
+
+        <script>
+          var staticAddress= {% get_static_prefix %};
+          //alert(staticAddress);
+            function googleMapMethod() {
+              
+              var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+              var loc1 =  new google.maps.LatLng(48.889489,2.163139);
+              var loc2 =  new google.maps.LatLng(48.889119,2.159622);
+              var loc3 =  new google.maps.LatLng(48.889754,2.157464);
+              var loc4 =  new google.maps.LatLng(48.886198,2.155050);
+            var mapProp= {
+              center:loc1,
+              zoom:15,
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+           
+            var marker1 = new google.maps.Marker({
+              position: loc1,
+              icon: {
+                url: staticAddress+'testmap/static/images/markers/Pictos_Epingle_Map_blue.png', 
+                labelOrigin: new google.maps.Point(31,22)
+              },
+              label: {
+                      text: '1',
+                      color: "#eb3a44",
+                      fontSize: "20px",
+                      fontWeight: "bold"
+              }
+            });
+            var infowindow1 = new google.maps.InfoWindow({
+                content:"<a href='description/'>Marker 1 Description!</a>"
+              });
+            google.maps.event.addListener(marker1, 'click', function() {
+            infowindow1.open(map,marker1);
+            });
+            google.maps.event.addListener(infowindow2, 'domready', function() {
+
+              var iwOuter = $('.gm-style-iw');
+
+              var iwBackground = iwOuter.prev();
+
+              iwBackground.children(':nth-child(2)').css({'background' : '#252525'});
+
+              var iwmain = iwBackground.children(':nth-child(2)');
+
+              iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+              var iwCloseBtn = iwOuter.next();
+
+            });
+            var marker2 = new google.maps.Marker({
+              position: loc2,
+              icon: {
+                url: staticAddress+'testmap/static/images/markers/Pictos_Epingle_Map_blue.png', 
+                labelOrigin: new google.maps.Point(31,22)
+              },
+              label: {
+                      text: '2',
+                      color: "#eb3a44",
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                      font: "Source Sans Pro"
+              }
+            });
+            var content = '<div id="content2" class="iw-content">Hello  </div>';
+            var infowindow2 = new google.maps.InfoWindow({
+                content:content
+              });
+            google.maps.event.addListener(marker2, 'click', function() {
+            infowindow2.open(map,marker2);
+            });                  
+            // document.getElementById("content2").style.backgroundImage = "url(staticAddress+'testmap/static/images/markers/Pictos_Epingle_Map_blue.png')";
+            var marker3 = new google.maps.Marker({
+              position: loc3,
+              icon:staticAddress+'testmap/static/images/markers/Pictos_Epingle_Map_blue.png',
+            });
+            var marker4 = new google.maps.Marker({
+              position: loc4,
+              icon:staticAddress+'testmap/static/images/markers/Pictos_Epingle_Map_blue.png',
+            });
+            marker1.setMap(map);
+            marker2.setMap(map);
+            marker3.setMap(map);
+            marker4.setMap(map);   
+          }
+            </script>
+            
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCKQ0_pW8BdUsS1jdAd200kvdyFDghFWw&callback=googleMapMethod"></script>
+    </body>
+</html>

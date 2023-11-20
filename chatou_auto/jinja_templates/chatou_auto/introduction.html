@@ -1,0 +1,116 @@
+{% extends "base_template.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% include 'header_introduction.html' %}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <article class="content column">
+
+          <div class="content">
+              <h1 class="title is-size-2">
+                  Introduction
+              </h1>
+              <div class="cta-icon-container">
+                  <a class="audio-player-cta" data-track="MaPiste1">
+                      <img src="{% static  'chatou/static/images/Pictos_Big_Audio.svg' %}" alt="">
+                  </a>
+                  <a class="share-this">
+                      <img src="{% static  'chatou/static/images/Pictos_Big_sharing.svg' %}" alt="">
+                  </a>
+              </div>
+          </div>
+          <p class="is-description">
+            Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements
+            ayant lieu sur ses îles et le mouvement des Impressionnistes
+          </p>
+          <h3>
+            Localisation
+          </h3>
+          <p>
+            Le territoire communal, entièrement urbanisé, se trouve dans une boucle de la Seine. En regardant le plan de
+            la ville, on peut constater qu'il ressemble à une girafe assise. L'île des Impressionnistes, rattachée
+            àChatou, héberge un parc des expositions où est organisée deux fois par an la « foire nationale à la
+            brocante
+            et aux jambons » ainsi que le festival de musique électronique Elektrik Park (anciennement Inox Park).
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+            dignissimsit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula
+            massa,
+            variusa, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi,
+            nonfermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in,
+            pretiuma,
+            enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendumaugue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blanditsodales.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquamnibh. Mauris
+            ac
+            mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodaleshendrerit.
+          </p>
+          <p>
+            Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla
+            sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien
+            erosvitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam.
+            Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Morbivel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
+            convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum
+            posuere, metuspurus iaculis lectus, et tristique ligula justo vitae magna.
+          </p>
+          <div class="wrapper-content">
+            <figure class="is-pulled-left image is-gallery-trigger" data-target="gallery-name-1 .img-2">
+              <img src="{% static  'chatou/static/images/Visuels/Vis_Seine.jpg' %}" class="is-clearfix" alt="">
+            </figure>
+            <h3 class="">
+              Patrimoine
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+              dignissimsit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula
+              massa, variusa, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est
+              eleifend mi, nonfermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae,
+              consequat in, pretiuma, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras
+              vestibulum bibendumaugue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed
+              dui
+              ut augue blanditsodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+              Curae; Aliquamnibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam
+              sodaleshendrerit.
+            </p>
+            <p>
+              Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar.
+              Nulla
+              sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien
+              erosvitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque
+              diam.
+              Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              Morbivel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus,
+              convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum
+              posuere, metuspurus iaculis lectus, et tristique ligula justo vitae magna.
+            </p>
+          </div>
+          <div>
+            <a class="pagination-right" href="/chatou/historique/">
+                    <span>
+                      NOTE HISTORIQUE
+                    </span>
+              <span class="image">
+                        <img src="{% static  'chatou/static/images/Pictos_Arrow_blue_Right.svg' %}">
+                    </span>
+            </a>
+            <div class="is-clearfix">
+
+            </div>
+          </div>
+      </article>
+      {% include 'menu_introduction.html' %}
+    </div>
+  </div>
+</section>
+  
+{% include 'footer_introduction.html' %}
+
+{% endblock %}

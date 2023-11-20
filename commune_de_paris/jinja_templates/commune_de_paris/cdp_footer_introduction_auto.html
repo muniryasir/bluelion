@@ -1,0 +1,36 @@
+{% load static %}
+<!-- start Custom Audio Player -->
+{% if step_audio == 'NA' %}
+{% else %}
+<div class="audio-player level is-mobile" style="display:none;">
+    <div class="level-left">
+        <button class="button-play"></button>
+    </div>
+    <div class="progress-bar-cont">
+        <div class="progress-bar">
+            <em class="progression">
+            </em>
+            <a class="draggable"></a>
+        </div>
+        <div class="music-infos">
+            <span>
+            </span>
+            <span>
+            </span>
+        </div>
+    </div>
+    <div class="level-right">
+        <div class="music-close"></div>
+    </div>
+<!--    Place here the audio files in the page, linked by data-track="id" which is also as an attribute of audio-player-cta-->
+    <audio src="{{itin_audio.audio.audio_file.url}}" data-track="MaPiste1">
+
+    </audio>
+</div>
+
+<script src="{% static  'commune_de_paris/static/js/audioplayer.js' %}">
+
+</script>
+
+{% endif %}
+<!-- end Custom Audio Player -->

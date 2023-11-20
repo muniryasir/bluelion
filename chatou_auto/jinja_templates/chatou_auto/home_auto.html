@@ -1,0 +1,129 @@
+{% extends "base_template_auto.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- <div class="is-headless">
+    <div></div>
+</div>
+<div class="download-banner is-active">
+    <button class="modal-close" onclick="downloadlater()"></button>
+    <p>
+        Profitez mieux de votre visite
+        en téléchargeant cette application.
+        Vous pourrez aussi le faire plus tard
+        en retrouvant ce lien dans nos pages.
+    </p>
+    <a class="download-app" onclick="appdownloaded()">
+        <span class="image inline-icon is-size-4">
+            <img src="{% static  'chatou_auto/static/images/Pictos_Big_Telech.svg' %}" alt="Téléchargement app">
+        </span>
+        <span>
+           TÉLÉCHARGER L'APP
+        </span>
+    </a>
+</div> -->
+<section class="section">
+    <div class="header">
+        <div class="container">
+            <h1 class="title is-size-1 has-text-weight-normal">
+                Promenades à Chatou
+            </h1>
+            <!-- <h2 class="subtitle is-size-5">
+                PAR ULRIKE KASPER
+            </h2> -->
+        </div>
+    </div>
+    <div class="home-content">
+        <!--Edited by Shayan-->
+        <div class="twocol_div">
+            <!-- <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou_auto/introduction/">
+                        <fieldset>
+                            <legend class="is-size-4 title">
+                                Introduction
+                            </legend>
+                            <p>
+                                Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les
+                                nombreux événements ayant lieu sur ses îles et le mouvement des Impressionnistes...
+                                +
+                            </p>
+                        </fieldset>
+                    </a>
+                </div>
+            </div> -->
+            <!-- <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou_auto/historique/">
+                        <fieldset>
+                            <legend class="is-size-4 title">
+                                Un peu d’histoire 
+                            </legend>
+                            <p>
+                                <i>Parcourons brièvement l’histoire de Chatou, ville fluviale, marquée par sa position stratégique aux portes de Paris et sur le chemin vers la ville royale de Saint-Germain-en-Laye. Traversée par les gaulois, romains, francs et vikings, détruite plusieurs fois par les armées de passage, Chatou connais son épanouissement à partir du XIXe siècle quand elle mue en ville-villégiature, puis industrielle et artistique</i>.
+                                +
+                            </p>
+                        </fieldset>
+                    </a>
+                </div>
+            </div> -->
+            <!-- <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="/chatou_auto/limpressionnisme/">
+                        <fieldset>
+                            <legend class="is-size-4 title">
+                                À la source de l’impressionnisme
+                            </legend>
+                            <p>
+                                <i>Au XIXe siècle Chatou et les autres petites bourgades de la boucle de Seine, avec leurs restaurants, guinguettes et la fraîcheur du fleuve sont très appréciés des peintres : les pinceaux impressionnistes, à commencer par Renoir, s’attardent sur les berges de Seine et les fêtes où le beau monde parisien se mélange aux jeunes ouvriers et bourgeois des environs. Derain et Vlaminck reprennent le flambeau artistique de Chatou en lançant le mouvement fauve.</i>.
+                                +
+                            </p>
+                        </fieldset>
+                    </a>
+                </div>
+            </div> -->
+        {% include 'home_introductions.html' %}
+        </div>
+        <h3 class="home-title">
+            MES PARCOURS
+        </h3>
+        {% include 'home_itineraries.html' %}
+        <!-- <h3 class="home-title">
+            MES ÉVÉNEMENTS
+        </h3>
+        <div class="tile is-ancestor is-mobile">
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+                        <figure class="image">
+                            <img src="{% static  'chatou_auto/static/images/Visuels/Vis_Event_Expo.jpg' %}" alt="">
+                            <figcaption>
+                                <h2 class="title">LES ATELIERS DU PAYSAGE</h2>
+                                <p class="timestamp">Jusqu'au 14 Juin 2019</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <a href="page-event.html" class="is-thumbnail is-event-thumbnail">
+                        <figure class="image">
+                            <img src="{% static  'chatou_auto/static/images/Visuels/Vis_Event_brocante.jpg' %}" alt="">
+                            <figcaption>
+                                <h2 class="title">FOIRE AU JAMBON DE CHATOU</h2>
+                                <p class="timestamp">15 au 24 mars 2019</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

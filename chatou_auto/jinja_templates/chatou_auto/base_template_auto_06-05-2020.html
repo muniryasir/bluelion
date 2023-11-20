@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5ea6ae3d311af400127bcbc3&product=sticky-share-buttons"></script>
+    
+<title>{{page_title}}</title>
+<style>
+
+/* google maps class for colors cannot be ported to css file */
+{% if Itin_Color == 'BLUE' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #1f96de;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat;
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 28px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 30px !important;
+    transform: translate(-80%,160%) rotate(0deg) !important;
+}
+{% elif Itin_Color == 'RED' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #C90C5D;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat;
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 28px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 30px !important;
+    transform: translate(-80%,160%) rotate(0deg) !important;
+}
+{%endif%}
+
+{% if page_level == 'home' %}
+.gm-style-iw.gm-style-iw-c {
+    max-height: unset !important;
+    padding: 0 !important;
+    border: 5px solid #1f96de;
+    margin-left: -60px !important;
+    margin-top: 46px !important;
+}
+.gm-style .gm-style-iw-t::after {
+    background: url({% static  'chatou_auto/static/images/maps/infowindow/downarrow_blue.png' %}) no-repeat;
+    /* border: 5px solid #1f96de; */
+    box-shadow: unset !important;
+    content: "" !important;
+    height: 28px !important;
+    background-size: contain;
+    background-position: center;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 30px !important;
+    transform: translate(-80%,160%) rotate(0deg) !important;
+}
+{%endif%}
+.wrapper_comparison_slider {
+      /* max-width: 768px; */
+      /* margin: 20px auto; */
+      text-align: center;
+    }
+   
+  #floating-panel {
+    position: absolute;
+    margin-top: 10px; margin-left: 10px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: "Source Sans Pro" !important;
+  }
+  #directions-panel {
+    margin-top: 70px;
+    margin-left: 10px;
+    max-height: 300px;
+    max-width: 300px;
+    overflow-x: hidden;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    font-family: "Source Sans Pro" !important;
+    z-index: 5;
+  }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/style.css' %}">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/ImageComparison.css' %}">
+<link rel="stylesheet" href="{% static  'chatou_auto/static/css/map_customization.css' %}">
+<script>
+ var staticAddress= {% get_static_prefix %};
+</script>
+<script src="{% static  'chatou_auto/static/js/jquery.js' %}"></script>
+
+<script src="{% static  'chatou_auto/static/js/maps.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/main.js' %}"></script>
+<script src="{% static  'chatou_auto/static/js/comparison_slider.js' %}"></script>
+  <script src="{% static  'chatou_auto/static/js/ImageComparison.js' %}"></script>
+<!--<script src="../js/audioplayer.js"></script>-->
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script> -->
+
+<link rel="stylesheet" href="{% static  'chatou_auto/static/js/dist/simpleLightbox.css' %}">
+<script src="{% static  'chatou_auto/static/js/dist/simpleLightbox.js' %}"></script>
+<!-- <script src="{% static  'chatou_auto/static/js/dist/jssor.slider.min.js' %}"></script> -->
+
+</head>
+{% if page_title == 'home'  %}
+   <body class="is-home-page">
+{% else %}
+    <body >
+{% endif %}
+    {% include 'header_menu_auto.html' %}
+    {% block content %}
+
+	{% endblock %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtcEVJm5a5u1ghSGlD7Fp1_kHYkC7hJ2Q&callback=googleMapMethod" async defer></script>
+
+<footer class="footer">
+    <nav class="level">
+    <div class="level-item has-text-centered">
+        <p>
+            © BLUE LION 2019    <a>MENTIONS LÉGALES</a>
+        </p>
+    </div>
+    <div class="level-item">
+        <img src="{% static  'chatou_auto/static/images/Logo_BlueLion_footer.png' %}" alt="">
+    </div>
+    <div class="level-item">
+        <p>
+            AVEC LE SOUTIEN DE <img src="{% static  'chatou_auto/static/images/Logo_small_Footer.png' %}" alt="">
+        </p>
+
+    </div>
+
+</nav>
+</footer>
+<div class="modal modal-map">
+    <div class="modal-background"></div>
+    <!--Edit by Shayan-->
+    <div class="modal-content" style="width: 90%; max-width: 1040px;">
+        <div class="map-container">
+            <div id="map" class="mapfull">
+
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<!--Edit by Shayan-->
+<script>
+$(document).keydown(function(event) { 
+  if (event.keyCode == 27) { 
+    $('.modal-map .modal-close').click();
+  }
+});
+</script>
+<!--Edit by Shayan-->
+
+{% if step_title == 'step'   %}
+{% include 'step_footer_auto.html' %}
+{% endif  %}
+
+<div id="cookies-eu-banner">
+    En continuant à visiter ce site, vous acceptez l'utilisation de cookies utile au bon fonctionnement du site et à des fins statistiques.
+    <div class="buttons are-small is-pulled-right">
+        <a href="./read-more.html" class="button is-dark" id="cookies-eu-more">Voir plus</a>
+        <button id="cookies-eu-reject" onclick="$('#cookies-eu-banner').hide();" class="button is-dark">Rejeter</button>
+        <button id="cookies-eu-accept" onclick="$('#cookies-eu-banner').hide();" class="button is-dark">Accepter</button>
+    </div>
+</div>
+
+<script src="{% static  'chatou_auto/static/js/cookies-eu-banner.min.js' %}"></script>
+<script>
+new CookiesEuBanner(function () {
+
+});
+</script>
+
+</body>

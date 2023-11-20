@@ -1,0 +1,55 @@
+
+{% load static %}
+
+<article class="content column">
+    <!-- <p class="is-description">
+        Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux
+        événements ayant lieu sur ses îles et le mouvement des Impressionnistes
+    </p> -->
+    <!-- <h3>
+        Localisation
+    </h3> -->
+    {{page_text|safe}}
+    {% include 'cdp_step_cite_auto.html' %}
+    <div>
+       
+            
+        {% for next_page in next_pages_bottom %}
+        {% if forloop.first %}
+            {% if next_page == "NA" %}
+                <br/>
+             {% else %}
+                {% for npm, np in next_page %}
+                    <a class="pagination-right" href="/{{npm.menu_link}}">
+                                <span>
+                                    {{np.page_title}}
+                                </span>
+                        <span class="image">
+                                    <img src="{% static  'commune_de_paris/static/images/Pictos_Arrow_blue_Right.svg' %}">
+                                </span>
+                    </a>
+                 {% endfor %}
+             {% endif %}
+         {% endif %}
+    {% endfor %}
+             
+       
+
+        {% if previous_page_bottom == 'NA' %}
+        {% else %}
+            {% for ppm, pp in previous_page_bottom %}
+                <a class="pagination-left" href="/{{ppm.menu_link}}">
+                    <span class="image">
+                        <img src="{% static  'commune_de_paris/static/images/Pictos_Arrow_blue_Left.svg' %}">
+                    </span>
+                    <span>
+                        {{pp.page_title}}
+                    </span>
+                </a>
+            {% endfor %}
+         {% endif %}
+        <div class="is-clearfix">
+
+        </div>
+    </div>
+</article>

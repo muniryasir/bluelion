@@ -1,0 +1,176 @@
+{% load static %}
+<div class="navbar-tourstep has-background-primary">
+    <div class="container">
+        <div class="level is-mobile">
+            <div class="level-left">
+                <span>MES ETAPES</span>
+            </div>
+            <div class="level-right">
+                <div id="step_menu" class="tabs">
+                    <ul>
+                        {% if page_title == 'step0'  %}
+                        <!-- <li><a class="${props.1-active}" href="/chatou/step1/">1</a></li>
+                        <li><a class="${props.2-active}" href="/chatou/step2/">2</a></li>
+                        <li><a class="${props.3-active}" href="/chatou/step3/">3</a></li> -->
+                        <li><a class="is-active" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step1'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="is-active" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step2'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="is-active" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step3'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="is-active" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step4'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="is-active" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step5'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="is-active" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step6'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="is-active" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step7'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="is-active" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step8'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="is-active" href="/chatou/step8/">9</a></li>
+                        <li><a class="" href="/chatou/step9/">10</a></li>
+                        {% elif page_title == 'step9'  %}
+                        <li><a class="" href="/chatou/step0/">1</a></li>
+
+                        <li><a class="" href="/chatou/step1/">2</a></li>
+                        <li><a class="" href="/chatou/step2/">3</a></li>
+                        <li><a class="" href="/chatou/step3/">4</a></li>
+                        <li><a class="" href="/chatou/step4/">5</a></li>
+                        <li><a class="" href="/chatou/step5/">6</a></li>
+                        <li><a class="" href="/chatou/step6/">7</a></li>
+                        <li><a class="" href="/chatou/step7/">8</a></li>
+                        <li><a class="" href="/chatou/step8/">9</a></li>
+                        <li><a class="is-active" href="/chatou/step9/">10</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        // alert('1');
+        // var myScrollPos = $('.is-active').offset().left + $('.is-active').outerWidth(true)/2 + $('.tabs').scrollLeft();
+        // $('.tabs').scrollLeft(myScrollPos);
+        if (window.matchMedia('(max-width: 1200px)').matches) {
+                // functionality for screens smaller than 1200px
+                // console.log("smaller");
+                $('#step_menu').width(220);
+            } else {
+                // console.log("desktop");
+                $('#step_menu').width(380);
+
+            }
+        $(window).resize(function() {
+            if (window.matchMedia('(max-width: 1200px)').matches) {
+                // functionality for screens smaller than 1200px
+                // console.log("smaller");
+                $('#step_menu').width(220);
+            } else {
+                // console.log("desktop");
+                $('#step_menu').width(380);
+
+            }
+        });
+        neutral_scroll_position = 15;
+        
+
+        function scroll() {
+                var active = $('li a.is-active');
+                var left =  $('#step_menu').scrollLeft();
+                var newPosition =  Math.abs(neutral_scroll_position*active.html());
+                console.log("desktop "+active.html());
+                if(active.html()<=4) {} else {
+                    $('#step_menu').scrollLeft(newPosition); 
+                }
+                console.log("desktop "+left);
+        }
+        scroll();
+        // alert(myScrollPos);
+        //$('.tabs').scrollLeft(50);
+    });
+    </script>

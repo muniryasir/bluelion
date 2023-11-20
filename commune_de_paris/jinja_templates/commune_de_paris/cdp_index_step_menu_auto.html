@@ -1,0 +1,48 @@
+{% load static %}
+<div  id="blue_navbar" class="navbar-tourstep has-background-primary-BLUE">
+    <div   class="container">
+        <div class="level is-mobile">
+            <div class="level-left">
+                <span class="itinerary-link"><a href="/{{Itin_link}}"  style="all:inherit; cursor: pointer;" >CHAPITRES</a></span>
+            </div>
+            <div class="level-right">
+                <div id="step_menu" class="tabs">
+                   
+                    <ul>
+                    <li> {% if previous_page_top == 'NA' %}
+                    <a href="#" style="visibility: hidden;"><img src="{% static  'commune_de_paris/static/images/Arrow_back_grey_64.png' %}"  ></a>
+                    {% else %}
+                        {% for ppm, pp in previous_page_top %}
+                            <a href="/{{ppm.menu_link}}"><img src="{% static  'commune_de_paris/static/images/Arrow_back white_64.png' %}" ></a>
+                        {% endfor %}
+                     {% endif %}</li>
+                     
+                        {% for cpm, cp in current_page %}
+                        <!-- <li><a class="is-active" href="/{{cpm.menu_link}}">{{cp.page_order}}</a></li> -->
+                        <li class="page-number"><span>{{cp.page_order}}</span></li>
+                        {% endfor %}
+                        <li class="left-arrow"> 
+                        {% for next_page in next_pages_top %}
+                            {% if forloop.first %}
+                                {% if next_page == "NA" %}
+                                <a href="#" style="visibility: hidden;" ><img src="{% static  'commune_de_paris/static/images/Arrow_next_grey_64.png' %}"  ></a>
+                                 {% else %}
+                                    {% for npm, np in next_page %}
+                                        <a href="/{{npm.menu_link}}"><img src="{% static  'commune_de_paris/static/images/Arrow_next white_64.png' %}" ></a>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+   
+    });
+    </script>

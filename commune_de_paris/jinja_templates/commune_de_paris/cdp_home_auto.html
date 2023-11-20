@@ -1,0 +1,53 @@
+{% extends "cdp_base_template_auto.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="is-headless">
+    <div></div>
+</div>
+<div class="download-banner is-active">
+    <button class="modal-close" onclick="downloadlater()"></button>
+    <p>
+        Profitez mieux de votre visite
+        en téléchargeant cette application.
+        Vous pourrez aussi le faire plus tard
+        en retrouvant ce lien dans nos pages.
+    </p>
+    <a class="download-app" onclick="appdownloaded()">
+        <span class="image inline-icon is-size-4">
+            <img src="{% static  'commune_de_paris/static/images/Pictos_Big_Telech.svg' %}" alt="Téléchargement app">
+        </span>
+        <span>
+           TÉLÉCHARGER L'APP
+        </span>
+    </a>
+</div>
+<section class="section">
+    <div class="header">
+        <div class="container">
+            <h1 class="title is-size-1 has-text-weight-normal">
+                La Commune de Paris
+            </h1>
+            
+        </div>
+    </div>
+    <div class="home-content">
+        <!--Edited by Shayan-->
+        <div class="twocol_div">
+          
+        {% include 'cdp_home_introductions.html' %}
+        </div>
+        <h3 class="home-title">
+            MES PARCOURS
+        </h3>
+        {% include 'cdp_home_itineraries.html' %}
+        
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

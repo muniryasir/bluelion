@@ -1,0 +1,74 @@
+{% extends "base_template_auto.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'header_introduction.html' %}
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <article class="content column">
+
+                <div class="content">
+                    <h1 class="title is-size-2">
+                        À la source de l’impressionnisme
+                    </h1>
+                    <div class="cta-icon-container">
+                        <a class="audio-player-cta" data-track="MaPiste1">
+                            <img src="{% static  'chatou_auto/static/images/Pictos_Big_Audio.svg' %}" alt="">
+                        </a>
+                        <a class="share-this">
+                            <img src="{% static  'chatou_auto/static/images/Pictos_Big_sharing.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- <p class="is-description">
+                    Chatou est notamment connue pour son riche patrimoine architectural, mais aussi pour les nombreux événements
+                    ayant lieu sur ses îles et le mouvement des Impressionnistes
+                </p> -->
+                <!-- <h3>
+                    Localisation
+                </h3> -->
+                <p>
+                    Le promeneur s’en aperçoit tout de suite, il est au pays des impressionnistes. En arrivant par le pont de Chatou, en train ou en voiture, il suffit de jeter un coup d’œil sur la Seine et ses berges pour ressentir le dépaysement. Tout l’environnement baigne dans des teints bleu-vert profonds : le ciel, certains jours favorables, l’eau de la rivière, autant que les arbres et les buissons qui la longent. Une telle vue ne peut qu’annoncer l’éclosion d’une peinture en plein air : l’impressionnisme. Une des raisons essentielles pour cet engouement des artistes et des promeneurs sur les bords de Seine, est la construction, en 1837, du premier chemin de fer pour voyageurs reliant Paris Saint-Lazare au Pecq. Les peintres, les poètes et avec eux toute la bohème parisienne, affluent dans cette région, aujourd’hui, appelée pays des impressionnistes. Les uns cherchent l’inspiration dans le paysage, les autres, tout simplement le divertissement ou l’échappatoire à la pollution de la grande ville en plein essor industriel.    
+                </p>
+                <p>Autour de 1872, Chatou et les abords de l’Île deviennent bel et bien le lieu de naissance de l’impressionnisme. À cette époque, l’Île porte encore son ancien nom « Île du Chiard » changé en « Île des impressionnistes » seulement cent ans plus tard. Renoir, Manet, Monet et Caillebotte viennent s’imprégner de l’atmosphère toujours changeante de la nature et de l’éclat de ses couleurs qui varient à chaque saison. Le paysage d’eau avec ses reflets de la lumière, accompagné des scènes de canotage, de pêche et de baignade, leur offre des visions splendides. Les guinguettes le long des berges entre Chatou et Croissy, notamment à la Grenouillère, réveillent une joie de vivre et offrent une légèreté du corps et de l’esprit après la guerre franco-prussienne. Sur cette Île vivaient jadis deux familles, la famille Fournaise et la famille Levanneur, dont les résidences étaient aménagées en restaurants au milieu du XIXe siècle.  </p>
+                <p>Les peintres entraînent les poètes et les écrivains tels Guy de Maupassant, canotier à ses heures et un des habitués du célèbre restaurant Fournaise. Cette auberge plein de charme, située sur l’Île des impressionnistes, est le point de rencontre du Paris de la bohème, lui permettant de fuir la capitale. Les dimanches après-midi, bourgeois, artistes, poètes et jeunes badauds y dégustent des bons plats, bavardent, canotent et surtout font la fête. Le témoignage le plus connu de ces scènes de bonheur est celui d’Auguste Renoir avec son célèbre tableau Le Déjeuner des canotiers.  </p>
+                <p>Aux alentours de 1902, une nouvelle génération de peintres va profiter de l’influence de leurs prédécesseurs pour reprendre leurs sujets de plein air, peu importe le temps ou la saison. André Derain, né à Chatou et Maurice de Vlaminck, originaire du Vésinet, donnent désormais naissance au fauvisme. Comme l’indique son nom, il s’agit d’une peinture instinctive au coup de pinceaux spontanés, qui rompent avec les dogmes de la peinture académique. Les artistes font revivre un environnement familier avec des couleurs très franches, éclatantes et sauvages, et des gestes encore plus insolites que les impressionnistes, à croire que ce lieu a un pouvoir magique sur les artistes.  </p>
+                <p>Si la nature était abondante à Chatou jusqu’au début du XXe siècle, elle l’est certes beaucoup moins aujourd’hui, suite à une transformation de l’urbanisme qui n’a pas toujours respecté les valeurs historiques ou écologiques. C’est ainsi que l’image architecturale de la ville va radicalement changer juste avant la deuxième guerre mondiale. En 1937, les promoteurs n’ont pas hésité à raser des villas somptueuses, comme celle de Maurice Berteaux maire de Chatou et ministre de la guerre sous la 3e République. Depuis les années 1950, les vastes résidences logées au milieu des parcs sublimes sont divisées en parcelles pour laisser place à de nouveaux terrains et à la construction d’immeubles collectifs ou de pavillons individuels. </p>
+                <p>En effet, dès l’entrée dans la ville par le pont de Chatou, le regard est heurté par tant de contraste, l’Église Notre-Dame du XIIe siècle, brille comme un bijou précieux au milieu d’un étalage architectural assez fade. Le premier aperçu que nous offre la ville, est marqué par des immeubles modernes loin d’être séduisants. Et pourtant, ce premier regard est trompeur, la ville cache des merveilles incroyables non pas toujours visibles au promeneur distrait. L’Église Notre-Dame n’est heureusement pas l’unique trésor architectural qui a pu être préservé, notamment grâce aux associations tel que Les Amis de la Maison Fournaise et Chatou Notre Ville. Le restaurant Fournaise, déjà cité, en est un, à la fois pour la beauté de son architecture et de son décor peint dans le style du XIXe siècle et pour sa fréquentation par les artistes célèbres.  Il n’a non seulement servi comme restaurant, mais aussi comme garage à canots et location de yoles aux promeneurs en recherche de rendez-vous galants. </p>
+                <p>Juste derrière elle, se situe la maison Levanneur, un bâtiment construit en 1775 par le seigneur Henri-Léonard-Jean-Baptiste Bertin, transformé en restaurant en 1830, avant d’être convertie en atelier d’artistes. Si, la maison Fournaise est à nouveau exploitée comme restaurant, la maison Levanneur a été aménagée en galerie d’art contemporain en 2018. </p>
+           
+                    <a class="pagination-left" href="/chatou_auto/historique/">
+                        <span class="image">
+                            <img src="{% static  'chatou_auto/static/images/Pictos_Arrow_blue_Left.svg' %}">
+                        </span>
+                        <span>
+                           Un peu d’histoire 
+                        </span>
+                    </a>
+                    <a class="pagination-right" href="/chatou_auto/itineraire-dart-et-histoire">
+                        <span>
+                            Itinéraire d’art et d'histoire
+                        </span>
+                        <span class="image">
+                            <img src="{% static  'chatou_auto/static/images/Pictos_Arrow_blue_Right.svg' %}">
+                        </span>
+                    </a>
+                    <div class="is-clearfix">
+
+                    </div>
+
+                
+            </article>
+            {% include 'menu_introduction_auto.html' %}
+        </div>
+    </div>
+</section>
+
+{% include 'footer_introduction.html' %}
+
+{% endblock %}
